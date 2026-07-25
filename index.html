@@ -408,7 +408,9 @@
     .wrap{padding:0 16px 72px}
     .controls{padding:12px 16px; margin:16px -16px 0}
     .masthead{padding-top:36px}
-    .dd-trigger .lbl{display:none}
+    /* keep the purpose label — without it "What" and "Show" look identical */
+    .dd-trigger{padding:9px 11px; gap:7px}
+    .dd-trigger .val{max-width:112px}
     #q{min-width:100%; flex-basis:100%}
     .dayhead{flex-wrap:wrap; gap:9px}
     .dayhead .dnote{flex-basis:100%; order:3}
@@ -467,14 +469,14 @@
 
       <div class="dd" id="ddWhat">
         <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
-          <span class="lbl">What</span><span class="val" id="valWhat">Everything</span><span class="chev"></span>
+          <span class="lbl">What</span><span class="val" id="valWhat">Any type</span><span class="chev"></span>
         </button>
         <div class="dd-menu" id="catRow"></div>
       </div>
 
       <div class="dd" id="ddShow">
         <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
-          <span class="lbl">Show</span><span class="val" id="valShow">Everything</span><span class="chev"></span>
+          <span class="lbl">Show</span><span class="val" id="valShow">All events</span><span class="chev"></span>
         </button>
         <div class="dd-menu">
           <div class="dd-note">Combine as many as you like</div>
@@ -1277,7 +1279,7 @@
   allBtn.className = "dd-item"; allBtn.type = "button";
   allBtn.setAttribute("data-cat","all");
   allBtn.setAttribute("aria-pressed","true");
-  allBtn.innerHTML = 'Everything<span class="tick">✓</span>';
+  allBtn.innerHTML = 'Any type of event<span class="tick">✓</span>';
   catRow.appendChild(allBtn);
   catRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
   CATS.forEach(function(c){
@@ -1296,7 +1298,7 @@
   anyArea.className = "dd-item"; anyArea.type = "button";
   anyArea.setAttribute("data-area","all");
   anyArea.setAttribute("aria-pressed","true");
-  anyArea.innerHTML = 'Anywhere<span class="tick">✓</span>';
+  anyArea.innerHTML = 'Anywhere in the city<span class="tick">✓</span>';
   areaRow.appendChild(anyArea);
   areaRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
   AREAS.forEach(function(a){
@@ -1422,14 +1424,14 @@
       state.area === "all" ? "Anywhere" : ((AREAMAP[state.area] || {}).label || state.area),
       state.area !== "all");
     setVal("valWhat",
-      state.cat === "all" ? "Everything" : ((CATMAP[state.cat] || {}).label || state.cat),
+      state.cat === "all" ? "Any type" : ((CATMAP[state.cat] || {}).label || state.cat),
       state.cat !== "all");
 
     var on = [];
     if (state.onlyNew) on.push("New");
     if (state.free)    on.push("Free");
     if (state.wknd)    on.push("Sat & Sun");
-    setVal("valShow", on.length ? on.join(", ") : "Everything", on.length > 0);
+    setVal("valShow", on.length ? on.join(", ") : "All events", on.length > 0);
 
     var dirty = state.area !== "all" || state.cat !== "all"
              || state.free || state.onlyNew || state.wknd || state.q;
