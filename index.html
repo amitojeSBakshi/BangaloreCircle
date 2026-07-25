@@ -1,0 +1,1475 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Bangalore Circle — where to be, every day of the week.">
+<meta name="theme-color" content="#fdf9f3">
+</head>
+<body><title>Bangalore Circle</title>
+
+<style>
+  :root{
+    --ink:#231d17; --ink-2:#4f453a; --ink-3:#7d7164; --ink-4:#a99c8c;
+    --paper:#fdf9f3; --card:#fffefb; --line:#e6dccd; --line-2:#f1e9dc;
+    --accent:#c2410c;
+    --shadow:0 1px 2px #231d1708, 0 4px 14px #231d170d;
+    --shadow-lg:0 6px 14px #231d1712, 0 18px 40px #231d1718;
+
+    --c-games:#c2410c;
+    --c-startup:#3f5f86;
+    --c-growth:#9c3f6b;
+    --c-product:#1f6f62;
+    --c-ai:#63459b;
+    --c-craft:#a8621b;
+    --c-music:#8c3a8c;
+    --c-stage:#b23a58;
+    --c-books:#54711f;
+    --c-speak:#8a6512;
+    --c-social:#26647f;
+    --c-outdoors:#2e6b45;
+
+    --d0:#c2410c; --d1:#3f5f86; --d2:#1f6f62; --d3:#9c3f6b;
+    --d4:#a8621b; --d5:#63459b; --d6:#b23a58;
+
+    --new:#c2410c;
+    --link:#a8360a;
+
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ink:#f4ece0; --ink-2:#d2c6b6; --ink-3:#9e9284; --ink-4:#776c5f;
+      --paper:#17130f; --card:#211c17; --line:#383027; --line-2:#2a241e;
+      --accent:#f2874f;
+      --shadow:0 1px 2px #0006, 0 4px 14px #0004;
+      --shadow-lg:0 6px 14px #0007, 0 18px 40px #0006;
+      --c-games:#f2874f; --c-startup:#8fb0d8; --c-growth:#dd8fb4;
+      --c-product:#5fbfab; --c-ai:#b09ae2; --c-craft:#e0a05c;
+      --c-music:#d19ad1; --c-stage:#e8899e; --c-books:#a9c065; --c-speak:#dcb75a;
+      --c-social:#6fb2cf; --c-outdoors:#72bd90;
+      --d0:#f2874f; --d1:#8fb0d8; --d2:#5fbfab; --d3:#dd8fb4;
+      --d4:#e0a05c; --d5:#b09ae2; --d6:#e8899e;
+      --new:#f2874f; --link:#f2874f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#f4ece0; --ink-2:#d2c6b6; --ink-3:#9e9284; --ink-4:#776c5f;
+    --paper:#17130f; --card:#211c17; --line:#383027; --line-2:#2a241e;
+    --accent:#f2874f;
+    --shadow:0 1px 2px #0006, 0 4px 14px #0004;
+    --shadow-lg:0 6px 14px #0007, 0 18px 40px #0006;
+    --c-games:#f2874f; --c-startup:#8fb0d8; --c-growth:#dd8fb4;
+    --c-product:#5fbfab; --c-ai:#b09ae2; --c-craft:#e0a05c;
+    --c-music:#d19ad1; --c-stage:#e8899e; --c-books:#a9c065; --c-speak:#dcb75a;
+    --c-social:#6fb2cf; --c-outdoors:#72bd90;
+    --d0:#f2874f; --d1:#8fb0d8; --d2:#5fbfab; --d3:#dd8fb4;
+    --d4:#e0a05c; --d5:#b09ae2; --d6:#e8899e;
+    --new:#f2874f; --link:#f2874f;
+  }
+  :root[data-theme="light"]{
+    --ink:#231d17; --ink-2:#4f453a; --ink-3:#7d7164; --ink-4:#a99c8c;
+    --paper:#fdf9f3; --card:#fffefb; --line:#e6dccd; --line-2:#f1e9dc;
+    --accent:#c2410c;
+    --shadow:0 1px 2px #231d1708, 0 4px 14px #231d170d;
+    --shadow-lg:0 6px 14px #231d1712, 0 18px 40px #231d1718;
+    --c-games:#c2410c; --c-startup:#3f5f86; --c-growth:#9c3f6b;
+    --c-product:#1f6f62; --c-ai:#63459b; --c-craft:#a8621b;
+    --c-music:#8c3a8c; --c-stage:#b23a58; --c-books:#54711f; --c-speak:#8a6512;
+    --c-social:#26647f; --c-outdoors:#2e6b45;
+    --d0:#c2410c; --d1:#3f5f86; --d2:#1f6f62; --d3:#9c3f6b;
+    --d4:#a8621b; --d5:#63459b; --d6:#b23a58;
+    --new:#c2410c; --link:#a8360a;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px 96px}
+  a{color:var(--link)}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
+    outline:2.5px solid var(--accent); outline-offset:3px; border-radius:4px;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{padding:52px 0 0}
+  h1{
+    font-family:var(--serif); font-size:clamp(44px,8vw,78px); font-weight:700;
+    letter-spacing:-.028em; line-height:.95; margin:0; text-wrap:balance;
+  }
+  h1 .dot{color:var(--accent)}
+  .subline{
+    margin:14px 0 0; font-family:var(--serif); font-style:italic;
+    font-size:clamp(17px,2.2vw,22px); color:var(--ink-2);
+  }
+  .tally{margin:14px 0 0; font-size:14.5px; color:var(--ink-3)}
+  .tally b{
+    font-family:var(--serif); font-size:19px; font-weight:700;
+    font-variant-numeric:tabular-nums; color:var(--ink); padding-right:1px;
+  }
+  .tally b.hot{color:var(--accent)}
+  .tally i{font-style:normal; color:var(--ink-4); padding:0 8px}
+  .perf{
+    height:0; margin:26px 0 0;
+    border-top:2px dashed var(--line);
+  }
+
+  /* ---------- tabs ---------- */
+  .tabs{
+    display:flex; flex-wrap:wrap; gap:7px; margin:22px 0 0;
+  }
+  .tab{
+    font-family:var(--sans); font-size:13.5px; font-weight:600; cursor:pointer;
+    background:var(--card); color:var(--ink-2);
+    border:1.5px solid var(--line); border-radius:999px;
+    padding:8px 17px; line-height:1.3; transition:transform .12s, background .12s, color .12s;
+  }
+  .tab:hover{transform:translateY(-1px); border-color:var(--ink-4); color:var(--ink)}
+  .tab[aria-selected="true"]{
+    background:var(--ink); color:var(--paper); border-color:var(--ink);
+  }
+  .tab .n{
+    font-variant-numeric:tabular-nums; opacity:.55; padding-left:6px; font-weight:500;
+  }
+
+  /* ---------- toolbar ---------- */
+  .controls{
+    position:sticky; top:0; z-index:40; background:var(--paper);
+    padding:14px 24px; margin:18px -24px 0;
+    border-bottom:1.5px solid var(--line);
+  }
+  .toolbar{display:flex; flex-wrap:wrap; gap:9px; align-items:center}
+  .count{
+    font-size:13px; color:var(--ink-3); white-space:nowrap;
+    font-variant-numeric:tabular-nums; margin-left:auto; font-weight:600;
+  }
+
+  .dd{position:relative}
+  .dd-trigger{
+    font-family:var(--sans); font-size:13.5px; font-weight:600; cursor:pointer;
+    background:var(--card); color:var(--ink);
+    border:1.5px solid var(--line); border-radius:11px;
+    padding:9px 13px; display:inline-flex; align-items:center; gap:9px;
+    line-height:1.25; min-height:40px; transition:border-color .12s, box-shadow .12s;
+  }
+  .dd-trigger:hover{border-color:var(--ink-4)}
+  .dd-trigger .lbl{
+    font-family:var(--serif); font-style:italic; font-weight:400;
+    font-size:13.5px; color:var(--ink-4);
+  }
+  .dd-trigger .val{max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .dd-trigger .chev{
+    width:9px; height:9px; flex:none; margin-left:1px; opacity:.5;
+    border-right:2px solid currentColor; border-bottom:2px solid currentColor;
+    transform:rotate(45deg) translate(-2px,-2px); transition:transform .15s;
+  }
+  .dd.open .dd-trigger{border-color:var(--ink); box-shadow:0 0 0 3px color-mix(in srgb, var(--ink) 9%, transparent)}
+  .dd.open .dd-trigger .chev{transform:rotate(225deg) translate(-3px,-3px)}
+  .dd-trigger.on{border-color:var(--accent)}
+  .dd-trigger.on .val{color:var(--accent)}
+
+  .dd-menu{
+    display:none; position:absolute; top:calc(100% + 7px); left:0; z-index:60;
+    background:var(--card); border:1.5px solid var(--line); border-radius:13px;
+    box-shadow:var(--shadow-lg); padding:7px; min-width:216px;
+    max-height:min(64vh,420px); overflow:auto;
+  }
+  .dd.open .dd-menu{display:block}
+  .dd-menu.right{left:auto; right:0}
+  .dd-item{
+    font-family:var(--sans); font-size:13.5px; font-weight:500; cursor:pointer;
+    background:none; border:0; border-radius:9px; color:var(--ink-2);
+    padding:8px 11px; width:100%; text-align:left;
+    display:flex; align-items:center; gap:10px; line-height:1.35;
+  }
+  .dd-item:hover{background:var(--line-2); color:var(--ink)}
+  .dd-item .swatch{
+    width:11px; height:11px; border-radius:4px; background:var(--tone,var(--ink-4));
+    flex:none; display:block;
+  }
+  .dd-item .tick{
+    margin-left:auto; flex:none; width:15px; text-align:center;
+    color:var(--accent); font-weight:800; opacity:0;
+  }
+  .dd-item[aria-pressed="true"]{color:var(--ink); font-weight:700; background:var(--line-2)}
+  .dd-item[aria-pressed="true"] .tick{opacity:1}
+  .dd-item .ddmeta{
+    margin-left:auto; font-family:var(--serif); font-style:italic;
+    font-size:12px; color:var(--ink-4); white-space:nowrap; font-weight:400;
+  }
+  .dd-item .ddmeta + .tick{margin-left:8px}
+  #areaRow{min-width:296px}
+  .dd-sep{height:1px; background:var(--line); margin:6px 4px}
+  .dd-note{
+    font-family:var(--serif); font-style:italic; font-size:12.5px;
+    color:var(--ink-4); padding:4px 11px 7px;
+  }
+  .dd-dates{display:flex; align-items:center; gap:7px; padding:2px 11px 8px}
+  input[type="date"],#q{
+    font-family:var(--sans); font-size:13px; padding:7px 9px;
+    background:var(--paper); color:var(--ink);
+    border:1.5px solid var(--line); border-radius:9px;
+  }
+  #q{
+    min-width:190px; flex:1 1 190px; padding:9px 13px;
+    border-radius:11px; background:var(--card); min-height:40px;
+  }
+  .linkbtn{
+    font-family:var(--sans); font-size:13px; font-weight:600; cursor:pointer;
+    background:none; border:0; color:var(--link);
+    text-decoration:underline; text-underline-offset:3px; padding:6px 2px;
+  }
+  .linkbtn:hover{color:var(--ink)}
+  .clearbtn{
+    font-family:var(--sans); font-size:13px; font-weight:600; cursor:pointer;
+    background:none; border:1.5px dashed var(--line); border-radius:11px;
+    color:var(--ink-3); padding:9px 13px; min-height:40px; display:none;
+  }
+  .clearbtn:hover{border-color:var(--accent); color:var(--accent)}
+  .clearbtn.show{display:inline-block}
+
+  /* ---------- views ---------- */
+  .view{display:none}
+  .view.is-on{display:block}
+
+  /* ---------- day rails ---------- */
+  .daygroup{margin:40px 0 0}
+  .dayhead{
+    --day:var(--ink);
+    display:flex; align-items:center; gap:13px; margin:0 0 17px;
+    padding:0 0 9px; border-bottom:2.5px solid var(--day);
+  }
+  .dayhead[data-d="0"]{--day:var(--d0)} .dayhead[data-d="1"]{--day:var(--d1)}
+  .dayhead[data-d="2"]{--day:var(--d2)} .dayhead[data-d="3"]{--day:var(--d3)}
+  .dayhead[data-d="4"]{--day:var(--d4)} .dayhead[data-d="5"]{--day:var(--d5)}
+  .dayhead[data-d="6"]{--day:var(--d6)}
+  .dayhead h2{
+    font-family:var(--serif); font-size:29px; font-weight:700;
+    letter-spacing:-.024em; margin:0; line-height:1.05; color:var(--day);
+  }
+  .dayhead .dnote{
+    font-family:var(--serif); font-style:italic; font-size:14.5px;
+    color:var(--ink-3); flex:1 1 auto; min-width:0;
+  }
+  .dayhead .dn{
+    flex:none; font-size:13px; font-weight:700; color:#fff;
+    background:var(--day); border-radius:999px;
+    min-width:26px; height:26px; padding:0 8px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-variant-numeric:tabular-nums;
+  }
+  @media (prefers-color-scheme:dark){ .dayhead .dn{color:#17130f} }
+  :root[data-theme="dark"] .dayhead .dn{color:#17130f}
+  :root[data-theme="light"] .dayhead .dn{color:#fff}
+  .dayhead.wknd h2::after{content:" ★"; font-size:16px; vertical-align:2px}
+
+  /* ---------- cards ---------- */
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(304px,1fr)); gap:15px}
+  .card{
+    background:var(--card); border:1.5px solid var(--line); border-radius:16px;
+    padding:0 0 15px; display:flex; flex-direction:column; overflow:hidden;
+    box-shadow:var(--shadow); position:relative;
+    transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  }
+  .card:hover{
+    transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:var(--tone);
+  }
+  .cbar{height:6px; background:var(--tone)}
+  .cbody{padding:14px 17px 0; display:flex; flex-direction:column; gap:7px; flex:1}
+  .toprow{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+  .cat{
+    font-size:11.5px; font-weight:700; color:var(--tone);
+    background:color-mix(in srgb, var(--tone) 13%, transparent);
+    border-radius:999px; padding:3px 10px; line-height:1.4;
+  }
+  .tag{
+    font-size:11.5px; font-weight:600; color:var(--ink-3);
+    border:1.5px solid var(--line); border-radius:999px;
+    padding:3px 9px; line-height:1.4;
+  }
+  .tag.isnew{
+    background:var(--new); border-color:var(--new); color:#fff; font-weight:700;
+  }
+  @media (prefers-color-scheme:dark){ .tag.isnew{color:#17130f} }
+  :root[data-theme="dark"] .tag.isnew{color:#17130f}
+  :root[data-theme="light"] .tag.isnew{color:#fff}
+  .card h3{
+    font-family:var(--serif); margin:1px 0 0; font-size:19.5px; font-weight:700;
+    line-height:1.26; letter-spacing:-.014em;
+  }
+  .when{font-size:13px; font-weight:700; color:var(--tone); font-variant-numeric:tabular-nums}
+  .where{font-size:12.5px; color:var(--ink-3); line-height:1.45}
+  .travel{
+    display:flex; flex-wrap:wrap; gap:3px 14px; margin:2px 0 0;
+    font-size:12.5px; color:var(--ink-3);
+  }
+  .travel span{display:inline-flex; align-items:baseline; gap:5px; white-space:nowrap}
+  .travel i{font-family:var(--serif); font-style:italic; color:var(--ink-4)}
+  .travel b{font-weight:700; color:var(--ink-2); font-variant-numeric:tabular-nums}
+  .note{
+    font-family:var(--serif); font-size:14px; color:var(--ink-2);
+    line-height:1.5; margin:2px 0 0;
+  }
+  .foot{
+    margin-top:auto; padding:13px 17px 0; display:flex; flex-wrap:wrap;
+    gap:5px 13px; align-items:baseline; font-size:13px;
+  }
+  .cost{
+    font-weight:700; font-variant-numeric:tabular-nums;
+    background:var(--line-2); border-radius:7px; padding:3px 8px;
+  }
+  .cost.is-free{color:var(--c-outdoors); background:color-mix(in srgb, var(--c-outdoors) 13%, transparent)}
+  .go{
+    font-weight:700; color:var(--link); text-decoration:none;
+  }
+  .go:hover{text-decoration:underline; text-underline-offset:3px}
+  .go::after{content:" →"}
+  .tel{font-size:12.5px; color:var(--ink-3); text-decoration:none}
+  .tel:hover{text-decoration:underline; text-underline-offset:3px}
+  .added{
+    margin-left:auto; font-size:11.5px; color:var(--ink-4);
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* ---------- sections ---------- */
+  section{margin:34px 0 0; scroll-margin-top:120px}
+  .sechead{margin-bottom:22px}
+  .sechead h2{
+    font-family:var(--serif); font-size:34px; font-weight:700;
+    letter-spacing:-.026em; margin:0; line-height:1.08;
+  }
+  .sechead h2 .rule{
+    display:block; width:64px; height:5px; border-radius:999px;
+    background:var(--accent); margin:13px 0 0;
+  }
+  .sechead p{
+    margin:13px 0 0; font-family:var(--serif); font-style:italic;
+    font-size:15px; color:var(--ink-3); max-width:68ch;
+  }
+
+  /* ---------- tables ---------- */
+  .scroll{
+    overflow-x:auto; border:1.5px solid var(--line);
+    border-radius:16px; background:var(--card);
+  }
+  table{border-collapse:collapse; width:100%; min-width:800px; font-size:13.5px}
+  th,td{text-align:left; padding:13px 15px; border-bottom:1px solid var(--line-2); vertical-align:top}
+  th{
+    font-size:12px; color:var(--ink-3); font-weight:700;
+    background:var(--paper); position:sticky; top:0; white-space:nowrap;
+    border-bottom:1.5px solid var(--line);
+  }
+  tbody tr:hover td{background:var(--line-2)}
+  tbody tr:last-child td{border-bottom:0}
+  td b a,td b{font-weight:700}
+  .v-yes,.v-mid,.v-no{font-weight:700; white-space:nowrap}
+  .v-yes{color:var(--c-outdoors)}
+  .v-mid{color:var(--c-speak)}
+  .v-no{color:var(--ink-4)}
+
+  /* ---------- directory ---------- */
+  .dir{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:15px}
+  .dirbox{
+    background:var(--card); border:1.5px solid var(--line); border-radius:16px;
+    padding:0 17px 18px; overflow:hidden; box-shadow:var(--shadow);
+  }
+  .dirbox .cbar{margin:0 -17px 15px}
+  .dirbox h3{
+    font-family:var(--serif); margin:0 0 14px; font-size:19px; font-weight:700;
+    letter-spacing:-.016em; color:var(--tone); text-transform:none;
+  }
+  .dirbox ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px}
+  .dirbox li{font-size:13.5px; line-height:1.45}
+  .dirbox li > a{font-weight:700; text-decoration:none; color:var(--ink)}
+  .dirbox li > a:hover{color:var(--tone); text-decoration:underline; text-underline-offset:3px}
+  .dirbox li span{
+    display:block; font-family:var(--serif); color:var(--ink-3);
+    font-size:13px; line-height:1.45; margin-top:3px;
+  }
+
+  .empty{
+    display:none; padding:52px 20px; text-align:center; color:var(--ink-3);
+    border:2px dashed var(--line); border-radius:16px;
+    font-family:var(--serif); font-style:italic; font-size:15px;
+  }
+  .empty b{display:block; font-style:normal; font-size:19px; color:var(--ink-2); margin-bottom:6px}
+
+  footer{
+    margin-top:76px; padding-top:24px; border-top:2px dashed var(--line);
+    font-family:var(--serif); font-style:italic;
+    font-size:13.5px; color:var(--ink-3); max-width:72ch;
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 16px 72px}
+    .controls{padding:12px 16px; margin:16px -16px 0}
+    .masthead{padding-top:36px}
+    .dd-trigger .lbl{display:none}
+    #q{min-width:100%; flex-basis:100%}
+    .dayhead{flex-wrap:wrap; gap:9px}
+    .dayhead .dnote{flex-basis:100%; order:3}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Bangalore Circle<span class="dot">.</span></h1>
+    <p class="subline">Where to be, every day of the week.</p>
+    <p class="tally"><b id="tCount">—</b> things in range<i>·</i><b id="tFree">—</b> free<i>·</i><b
+      id="tWknd">—</b> on Sat &amp; Sun<i>·</i><b id="tCat">—</b> categories<i>·</i><b
+      id="tNew" class="hot">—</b> added recently</p>
+    <div class="perf"></div>
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
+      <button class="tab" type="button" role="tab" data-view="week"        aria-selected="true">The week</button>
+      <button class="tab" type="button" role="tab" data-view="classes"     aria-selected="false">Classes</button>
+      <button class="tab" type="button" role="tab" data-view="communities" aria-selected="false">Communities to join</button>
+      <button class="tab" type="button" role="tab" data-view="follow"      aria-selected="false">Follow &amp; connect</button>
+      <button class="tab" type="button" role="tab" data-view="platforms"   aria-selected="false">Where to look</button>
+    </nav>
+  </header>
+
+  <div class="controls" id="controls">
+    <div class="toolbar">
+
+      <div class="dd" id="ddWhen">
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+          <span class="lbl">When</span><span class="val" id="valWhen">—</span><span class="chev"></span>
+        </button>
+        <div class="dd-menu">
+          <button class="dd-item" type="button" id="wkBtn">First week of August<span class="tick">✓</span></button>
+          <button class="dd-item" type="button" id="monthBtn">Whole of August<span class="tick">✓</span></button>
+          <div class="dd-sep"></div>
+          <div class="dd-note">Or pick your own range</div>
+          <div class="dd-dates">
+            <input type="date" id="from" value="2026-08-03" aria-label="From date">
+            <span style="color:var(--ink-4)">→</span>
+            <input type="date" id="to" value="2026-08-09" aria-label="To date">
+          </div>
+        </div>
+      </div>
+
+      <div class="dd" id="ddWhere">
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+          <span class="lbl">Where</span><span class="val" id="valWhere">Anywhere</span><span class="chev"></span>
+        </button>
+        <div class="dd-menu" id="areaRow"></div>
+      </div>
+
+      <div class="dd" id="ddWhat">
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+          <span class="lbl">What</span><span class="val" id="valWhat">Everything</span><span class="chev"></span>
+        </button>
+        <div class="dd-menu" id="catRow"></div>
+      </div>
+
+      <div class="dd" id="ddShow">
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+          <span class="lbl">Show</span><span class="val" id="valShow">Everything</span><span class="chev"></span>
+        </button>
+        <div class="dd-menu">
+          <div class="dd-note">Combine as many as you like</div>
+          <button class="dd-item" type="button" id="newBtn" aria-pressed="false">Only new finds<span class="tick">✓</span></button>
+          <button class="dd-item" type="button" id="freeBtn" aria-pressed="false">Only free things<span class="tick">✓</span></button>
+          <button class="dd-item" type="button" id="wkndBtn" aria-pressed="false">Only Sat &amp; Sun<span class="tick">✓</span></button>
+        </div>
+      </div>
+
+      <input id="q" type="search" placeholder="Search a venue, group or area…" aria-label="Search">
+      <button class="clearbtn" type="button" id="clearBtn">Clear all</button>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+
+  <div class="view is-on" data-view="week">
+    <div id="days"></div>
+    <div class="empty" id="daysEmpty">
+      <b>Nothing in this range.</b>
+      Widen the dates, or clear a filter.
+    </div>
+  </div>
+
+  <!-- ============ CLASSES & COURSES ============ -->
+  <div class="view" data-view="classes">
+  <section id="classes">
+    <div class="sechead">
+      <h2>Classes worth committing to<span class="rule"></span></h2>
+      <p>Recurring courses rather than one-night workshops — the kind where you see the same faces each week.</p>
+    </div>
+    <div class="dir" id="classDir"></div>
+  </section>
+  </div>
+
+  <!-- ============ COMMUNITIES ============ -->
+  <div class="view" data-view="communities">
+  <section id="communities">
+    <div class="sechead">
+      <h2>Communities to join<span class="rule"></span></h2>
+      <p>Organisations, not one-off events. Ranked by what they'll actually do for you.</p>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Community</th><th>What it is</th><th>Cost</th><th>Frequency</th><th>Audience</th><th>Worth it?</th></tr></thead>
+        <tbody>
+          <tr><td><b><a href="https://echai.ventures/bengaluru">eChai Ventures</a></b><br><span style="color:var(--ink-4);font-size:12px">24,201+ members</span></td>
+            <td>Startup Open House (Sat 11–1, Koramangala) · Bengaluru Startup Meetup (Sat 6–8, Urban Vault HSR) · monthly Demo Day</td>
+            <td>Free</td><td>Weekly</td><td>Founders, operators, investors, marketers</td><td class="v-yes">Start here</td></tr>
+          <tr><td><b><a href="https://luma.com/hsr-founders-club-events">HSR Founders Club</a></b></td>
+            <td>Workshops, mixers, skill sessions — your neighbourhood founder club</td>
+            <td>Varies</td><td>Weekly–fortnightly</td><td>Founders, operators</td><td class="v-yes">Subscribe today</td></tr>
+          <tr><td><b><a href="https://website.growthx.club/">GrowthX</a></b><br><span style="color:var(--ink-4);font-size:12px">4–5k members</span></td>
+            <td>Private community + monthly BLR chapter. Members from Zepto, CRED, Razorpay, Netflix, Apple</td>
+            <td>Paid, application</td><td>Monthly</td><td>Marketing, growth, product leaders</td><td class="v-yes">Best paid buy for a marketer</td></tr>
+          <tr><td><b><a href="https://bengaluru.aitinkerers.org/">AI Tinkerers Bengaluru</a></b></td>
+            <td>Demo-first meetups — working prototypes, no panel theatre</td>
+            <td>Free–low</td><td>Monthly</td><td>AI engineers, founders, researchers</td><td class="v-yes">Best technical crowd</td></tr>
+          <tr><td><b><a href="https://www.theproductfolks.com/">The Product Folks</a></b></td>
+            <td>Grabchai — casual offline coffee meetups for product people</td>
+            <td>Free–low</td><td>Monthly</td><td>PMs, product leaders, founders</td><td class="v-yes">Highest-value adjacent network</td></tr>
+          <tr><td><b><a href="https://www.headstart.in/bangalore">Headstart Network</a></b></td>
+            <td>Volunteer-led since 2007. Runs HSX, India's largest entrepreneurship conclave</td>
+            <td>Free</td><td>Monthly</td><td>Early-stage founders, students</td><td class="v-yes">Volunteer — you meet everyone</td></tr>
+          <tr><td><b><a href="https://www.startupgrind.com/bangalore/">Startup Grind Bangalore</a></b></td>
+            <td>Monthly fireside chats + Global Pitch Battle</td><td>Ticketed</td>
+            <td>Monthly</td><td>Entrepreneurs, investors</td><td class="v-yes">Reliable, strong speakers</td></tr>
+          <tr><td><b><a href="https://dtoc.the-rise.in/">Bharat D2C Meetups</a></b></td>
+            <td>Quick-commerce, viral trends, UGC and influencer playbooks, vernacular marketing</td>
+            <td>Varies</td><td>Periodic</td><td>D2C marketers, growth</td><td class="v-yes">Narrowest fit to your skillset</td></tr>
+          <tr><td><b><a href="https://www.meetup.com/producttank-bangalore/">ProductTank Bengaluru</a></b></td>
+            <td>Product design, metrics, UX talks + drinks. Mind the Product brand</td>
+            <td>Free–low</td><td>Monthly</td><td>PMs, designers, engineers</td><td class="v-yes">Free and consistent</td></tr>
+          <tr><td><b><a href="https://www.meetup.com/bhive-startup-and-entrepreneur-community/">BHIVE Startup Community</a></b></td>
+            <td>Coworking-hosted events. HSR Sector 6 <i>and</i> BHIVE Platinum Church Street</td>
+            <td>Free–low</td><td>Regular</td><td>Founders, freelancers</td><td class="v-yes">One site in each of your zones</td></tr>
+          <tr><td><b><a href="https://fi.co/event/182522-bangalore-founder-cafe-network-with-city-entrepreneurs">Founder Institute — Founder Café</a></b></td>
+            <td>Structured founder networking, global accelerator brand</td><td>Usually free</td>
+            <td>Periodic</td><td>Aspiring &amp; early founders</td><td class="v-yes">Few people know it runs here</td></tr>
+          <tr><td><b><a href="http://bangalore.tie.org/">TiE Bangalore</a></b></td>
+            <td>Mentorship, investor connect, masterclasses, D2C Summit</td>
+            <td>Paid membership</td><td>Continuous</td><td>Founders, investors, senior operators</td><td class="v-mid">Year two — ticketed events first</td></tr>
+          <tr><td><b><a href="https://www.meetup.com/tfugblr/">AI Bangalore Community</a></b><br><span style="color:var(--ink-4);font-size:12px">20,366+ members</span></td>
+            <td>GenAI, ML and applied AI meetups</td><td>Free</td>
+            <td>Monthly</td><td>Developers, researchers</td><td class="v-yes">Huge and active</td></tr>
+          <tr><td><b><a href="https://www.meetup.com/bangalore-startup-founder-101/">Bangalore Startup Founder 101</a></b></td>
+            <td>Beginner-friendly founder meetup group</td><td>Free–low</td>
+            <td>Periodic</td><td>First-time founders</td><td class="v-mid">Join for calendar coverage</td></tr>
+          <tr><td><b>NASSCOM</b></td>
+            <td>Industry body — 10,000 Startups, product conclaves</td><td>Corporate/paid</td>
+            <td>Periodic</td><td>Enterprise, funded startups</td><td class="v-no">Low value early on</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  </div>
+
+  <!-- ============ PLATFORMS ============ -->
+  <div class="view" data-view="platforms">
+  <section id="platforms">
+    <div class="sechead">
+      <h2>Where to look yourself<span class="rule"></span></h2>
+      <p>The platforms this board is built from — browse them between refreshes.</p>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Platform</th><th>Best for</th><th>Cost</th><th>Frequency</th><th>Audience</th><th>Worth it?</th></tr></thead>
+        <tbody>
+          <tr><td><b><a href="https://luma.com/bengaluru">Luma</a></b></td>
+            <td>Startup, AI, product, founder meetups. Now the default for BLR tech</td>
+            <td>Free–₹2k</td><td>Daily</td><td>Founders, builders, AI engineers, VCs</td><td class="v-yes">Essential</td></tr>
+          <tr><td><b><a href="https://www.district.in/activities/games-quizzes-in-bengaluru">District</a></b></td>
+            <td>Board games, mafia nights, trivia, craft workshops. Best inventory anywhere</td>
+            <td>₹99–₹899</td><td>Daily</td><td>Young professionals, 22–35</td><td class="v-yes">Essential</td></tr>
+          <tr><td><b><a href="https://www.meetup.com/find/in--bangalore/">Meetup</a></b></td>
+            <td>Recurring communities with reliable weekly schedules</td>
+            <td>Free–₹400</td><td>Daily</td><td>Hobbyists, tech, board gamers</td><td class="v-yes">Essential for recurring</td></tr>
+          <tr><td><b><a href="https://highape.com/bangalore">HighApe</a></b></td>
+            <td>Workshops, pottery, experiences, nightlife. Strong on creative classes</td>
+            <td>₹300–₹1.5k</td><td>Daily</td><td>Experience-seekers</td><td class="v-yes">Underused — good craft coverage</td></tr>
+          <tr><td><b><a href="https://allevents.in/bangalore/all">AllEvents.in</a></b></td>
+            <td>Broadest sweep. Category pages + date filters, 2–6 weeks ahead</td>
+            <td>Varies</td><td>Daily</td><td>Everyone — low curation</td><td class="v-yes">Earliest visibility</td></tr>
+          <tr><td><b><a href="https://echai.ventures/bengaluru">eChai Ventures</a></b></td>
+            <td>Free founder meetups, demo days, open houses. Since 2009</td>
+            <td>Free</td><td>Weekly</td><td>Founders, operators, investors</td><td class="v-yes">Best free network in India</td></tr>
+          <tr><td><b><a href="https://insider.in/all-events-in-bengaluru/workshops">Paytm Insider</a></b></td>
+            <td>Workshops, meetups, games &amp; quizzes, experiences</td>
+            <td>₹200–₹2k</td><td>Daily</td><td>Mainstream urban crowd</td><td class="v-mid">Browse manually — blocks bots</td></tr>
+          <tr><td><b><a href="https://www.townscript.com/in/bangalore">Townscript</a></b></td>
+            <td>Indie workshops, bootcamps, niche meetups</td><td>Varies</td>
+            <td>Weekly</td><td>Learners, hobbyists</td><td class="v-mid">Check monthly</td></tr>
+          <tr><td><b><a href="https://in.bookmyshow.com/explore/events-bengaluru">BookMyShow</a></b></td>
+            <td>Comedy, music, ticketed experiences</td><td>₹250–₹1k</td>
+            <td>Daily</td><td>General</td><td class="v-mid">Good for comedy and gigs</td></tr>
+          <tr><td><b>Swiggy Scenes</b> <span style="color:var(--ink-4)">(in app)</span></td>
+            <td>Board game and social nights — few people check it</td>
+            <td>₹200–₹400</td><td>Weekly</td><td>Young professionals</td><td class="v-mid">Underrated sleeper</td></tr>
+          <tr><td><b><a href="https://www.eventbrite.com/d/india--bangalore/networking/">Eventbrite</a></b></td>
+            <td>Corporate networking, conferences</td><td>Varies</td>
+            <td>Weekly</td><td>Corporate professionals</td><td class="v-mid">Declining in India</td></tr>
+          <tr><td><b>Airmeet</b></td>
+            <td>Virtual events only</td><td>Varies</td><td>—</td><td>Remote</td>
+            <td class="v-no">Skip — wrong tool for a real circle</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  </div>
+
+  <!-- ============ FOLLOW & CONNECT ============ -->
+  <div class="view" data-view="follow">
+  <section id="connect">
+    <div class="sechead">
+      <h2>Follow &amp; connect<span class="rule"></span></h2>
+      <p>WhatsApp invites are live links — join before you move so you land with context.</p>
+    </div>
+    <div class="dir">
+
+      <div class="dirbox" style="--tone:var(--c-outdoors)">
+        <div class="cbar"></div>
+        <h3>WhatsApp — join these</h3>
+        <ul>
+          <li><a href="https://chat.whatsapp.com/FfE4mfE7oVuLXTMbiK8JiM">VIPO Board Games</a><span>Thu HSR · Sat Koramangala · Sun Sarjapur. ₹300. Also <a href="tel:+917760194951">7760194951</a></span></li>
+          <li><a href="https://chat.whatsapp.com/Cqr2Wv7U9AJ9JtLQoh9v2W">The Fun Boardgames</a><span>Party &amp; social-deception nights. Also <a href="tel:+919606735383">9606735383</a></span></li>
+          <li><a href="https://boardgamecompany.in/whatsapp">Board Game Company</a><span>150+ games at The Bangalore Local, Koramangala. D&amp;D and TTRPG too</span></li>
+          <li><a href="tel:+917090528592">BLR Events Hub — Vindhya</a><span>Thu 8 PM hangout, Sat mixer, Sun book club. 7090528592</span></li>
+          <li><a href="tel:+919686694048">The Boardgame Den</a><span>Church Street, 350+ games. 9686694048</span></li>
+        </ul>
+      </div>
+
+      <div class="dirbox" style="--tone:var(--c-stage)">
+        <div class="cbar"></div>
+        <h3>Instagram — events &amp; social</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/blreventshub/">@blreventshub</a><span>Thu–Sun across HSR, Bellandur, Koramangala. Your exact geography</span></li>
+          <li><a href="https://www.instagram.com/lbbbangalore/">@lbbbangalore</a><span>309k. The city's definitive curation account</span></li>
+          <li><a href="https://www.instagram.com/lahelahe/">@lahelahe</a><span>Indiranagar creative hub — jams, pottery, open mics, comedy, workshops</span></li>
+          <li><a href="https://www.instagram.com/vipo_boardgames/">@vipo_boardgames</a><span>Three weekly sessions, two near you</span></li>
+          <li><a href="https://www.instagram.com/theboardgameden/">@theboardgameden</a><span>350+ games, Church Street — 50 m from your office</span></li>
+          <li><a href="https://www.instagram.com/thefunboardgames/">@thefunboardgames</a><span>Party games = highest conversation density</span></li>
+          <li><a href="https://www.instagram.com/meepsclub/">@meepsclub</a><span>Bangalore social &amp; networking meetups</span></li>
+          <li><a href="https://www.instagram.com/bangaloreevents/">@bangaloreevents</a><span>16k. Nightlife and the social side</span></li>
+        </ul>
+      </div>
+
+      <div class="dirbox" style="--tone:var(--c-craft)">
+        <div class="cbar"></div>
+        <h3>Instagram — makers &amp; studios</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/claystation.in/">@claystation.in</a><span>HSR Layout — pottery, sculpting, terracotta jewellery. Weekday and weekend batches</span></li>
+          <li><a href="https://www.instagram.com/maatisona/">@maatisona</a><span>HSR — hand-building through wheel to glazing</span></li>
+          <li><a href="https://www.instagram.com/mudcastpottery/">@mudcastpottery</a><span>Indiranagar — beginner workshops, 3-day hand-building courses</span></li>
+          <li><a href="https://www.instagram.com/slowpottery/">@slowpottery</a><span>Studio courses and one-off wheel sessions</span></li>
+          <li><a href="https://www.bangalorepotters.com/">Bangalore Potters</a><span>Community calendar of weekend beginner workshops citywide</span></li>
+        </ul>
+      </div>
+
+      <div class="dirbox" style="--tone:var(--c-startup)">
+        <div class="cbar"></div>
+        <h3>Instagram — startup &amp; growth</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/echaiventures/">@echaiventures</a><span>Free weekly founder meetups, Bangalore-heavy</span></li>
+          <li><a href="https://www.instagram.com/growthx.club/">@growthx.club</a><span>Your profession's community + event drops</span></li>
+          <li><a href="https://www.instagram.com/theproductfolks/">@theproductfolks</a><span>Grabchai coffee meetup announcements</span></li>
+          <li><a href="https://www.instagram.com/tie_bangalore/">@tie_bangalore</a><span>D2C Summit and flagship events</span></li>
+          <li><a href="https://www.instagram.com/headstartnetwork/">@headstartnetwork</a><span>HSX conclave — the volunteer route in</span></li>
+          <li><a href="https://www.instagram.com/hsrtoastmasters/">@hsrtoastmasters</a><span>Sat 4–6 PM, Hustlehub HSR</span></li>
+          <li><a href="https://www.instagram.com/cubbonreads/">@cubbonreads</a><span>~30k. Started a global movement from Bangalore</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+  </div>
+
+  <footer>
+    <p>Every card carries two travel estimates: <b>home</b> is Amblipura on Sarjapur Road, <b>office</b> is Trinity Circle at the east end of MG Road. They are rough times in typical evening traffic, not measured routes — a sanity check rather than a plan. Note that Church Street and Brigade Road sit at the far end of MG Road, so “MG Road” venues are a 15–20 minute walk or one metro stop, not a doorstep. Confirm price and timing on the linked page before you travel; small venues change schedules often.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var TODAY = "2026-07-25";      // refresh marker — bump on every update
+  var BASELINE = "2026-07-25";   // initial load; entries from this date are not "new"
+  var NEW_WINDOW_DAYS = 3;       // "NEW" badge lifetime after that
+
+  var CATS = [
+    {k:"games",    label:"Board games",   tone:"--c-games"},
+    {k:"startup",  label:"Startup",       tone:"--c-startup"},
+    {k:"growth",   label:"Marketing",     tone:"--c-growth"},
+    {k:"product",  label:"Product",       tone:"--c-product"},
+    {k:"ai",       label:"AI & tech",     tone:"--c-ai"},
+    {k:"craft",    label:"Arts & craft",  tone:"--c-craft"},
+    {k:"music",    label:"Music & jams",  tone:"--c-music"},
+    {k:"stage",    label:"Comedy & shows",tone:"--c-stage"},
+    {k:"books",    label:"Books & quiz",  tone:"--c-books"},
+    {k:"speak",    label:"Speaking",      tone:"--c-speak"},
+    {k:"social",   label:"Social",        tone:"--c-social"},
+    {k:"outdoors", label:"Outdoors",      tone:"--c-outdoors"}
+  ];
+  var CATMAP = {}; CATS.forEach(function(c){ CATMAP[c.k] = c; });
+
+  /* areas, and the drive-time estimate from each of the two anchors */
+  var AREAS = [
+    {k:"cbd",      label:"MG Road & Church Street"},
+    {k:"indira",   label:"Indiranagar"},
+    {k:"kora",     label:"Koramangala"},
+    {k:"hsr",      label:"HSR Layout"},
+    {k:"sarjapur", label:"Sarjapur Rd & Bellandur"},
+    {k:"white",    label:"Whitefield"},
+    {k:"north",    label:"North Bengaluru"},
+    {k:"south",    label:"South & West"},
+    {k:"multi",    label:"Rotating venues"}
+  ];
+  var AREAMAP = {}; AREAS.forEach(function(a){ AREAMAP[a.k] = a; });
+
+  /* s = from home, Amblipura / Sarjapur Rd
+     m = from the office, Trinity Circle / Trinity Metro — the east end of MG Road
+     Rough estimates in typical evening traffic, not measured routes. */
+  var TRAVEL = {
+    cbd:      {s:"45–60 min", m:"15–20 min walk"},
+    indira:   {s:"35–45 min", m:"10–15 min"},
+    kora:     {s:"25–30 min", m:"20–30 min"},
+    hsr:      {s:"12–15 min", m:"35–45 min"},
+    sarjapur: {s:"10–20 min", m:"45–60 min"},
+    white:    {s:"35–45 min", m:"45–60 min"},
+    north:    {s:"60–80 min", m:"30–50 min"},
+    south:    {s:"40–55 min", m:"30–45 min"},
+    multi:    {s:"varies",    m:"varies"}
+  };
+
+  var DAYNAMES = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var DAYNOTE = {
+    0:"Slow start, then something local. Board games and book clubs run all afternoon.",
+    1:"The quietest night in the city. One low-key social, or use it to plan and RSVP.",
+    2:"Business and sales meetups land tonight — most start around 7:30.",
+    3:"Socials that run late, so arriving at 8 still leaves you real time.",
+    4:"The best weeknight in Bangalore. Tabletop, jams and shared dinner tables.",
+    5:"Board games near HSR, or Church Street straight after work.",
+    6:"The big day. Pick two or three things, not five."
+  };
+
+  /* a: see AREAS   cat: see CATS   dow: 0-6 weekly recurring
+     date: "YYYY-MM-DD" one-off   ts/tm: override the TRAVEL estimate */
+  var E = [
+    /* ================= MONDAY ================= */
+    {dow:1, a:"hsr", cat:"craft", name:"Clay Station — weekday pottery batch",
+     when:"Mon–Fri · evening batches", where:"Clay Station, HSR Layout",
+     note:"Pottery, sculpting and terracotta or stoneware jewellery. Weekday batches exist, so a slot can survive office hours.",
+     cost:"Course fee — ask", url:"https://lbb.in/bangalore/pottery-classes-workshops-studios-bangalore/", added:"2026-07-25"},
+
+    {dow:1, a:"multi", cat:"social", name:"Weekend Unwind — curated hangout",
+     when:"Every Mon & Sat · 7:00 PM", where:"Rotates — hosted, small group",
+     note:"About the only thing running on a Monday night, which is its whole value. Small curated group rather than an open mixer, so it fills the emptiest slot in the week.",
+     cost:"₹799", url:"https://www.meetup.com/bangalore-stress-release-meetup-group/", added:"2026-08-01"},
+
+    /* ================= TUESDAY ================= */
+    {dow:2, a:"cbd", cat:"craft", name:"Sip and Paint",
+     when:"Every Sat & Sun · multiple slots", where:"CBD — Central Bar District, MG Road",
+     note:"Guided painting with a drink in hand, no experience needed. A walk or one metro stop west of the office, and it books out on weekends.",
+     cost:"₹349+", url:"https://www.district.in/events/sip-and-paint-mar7-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:2, a:"multi", cat:"growth", name:"Sales and Business Growth",
+     when:"Every Tuesday · 7:30 PM", where:"Bangalore Growth & Expansion group — venue on the listing",
+     note:"The closest thing to a weekly fixture for commercial rather than technical people, and the 7:30 start actually clears a normal workday. Nearest match on this board to what you do for a living.",
+     cost:"Free", free:true, url:"https://www.meetup.com/bangalore-growth-and-expansion-meetup-group/", added:"2026-08-01"},
+
+    /* ================= WEDNESDAY ================= */
+    {dow:3, a:"cbd", cat:"social", name:"After Hours with Eleven AM Club",
+     when:"Every Wednesday · 7:00–10:00 PM", where:"Underline Center, near MG Road",
+     note:"Runs until 10, so an 8 PM arrival still leaves two hours. One of very few weeknight socials that does not require leaving work early.",
+     cost:"₹249+", url:"https://www.district.in/events/after-hours-with-eleven-am-club-buy-tickets", added:"2026-07-25"},
+
+    {date:"2026-08-05", a:"white", cat:"stage", name:"Standing Up — Kunal Kamra",
+     when:"Wed 5 Aug · 8:00 PM", where:"URU, Whitefield",
+     note:"1,202+ interested. A rare weeknight show that starts late enough to reach after work, if the Whitefield run is worth it.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/all", added:"2026-07-25"},
+
+    {date:"2026-08-05", a:"north", cat:"ai", name:"DataHack Summit 2026",
+     when:"Wed 5 Aug · 9:00 AM", where:"The Leela Bhartiya City",
+     note:"7th edition, billed as India's largest AI conference, on reasoning and agentic systems. A weekday daytime event, so it costs a day of leave.",
+     cost:"Ticketed", ts:"80–95 min", tm:"55–70 min",
+     url:"https://allevents.in/bangalore/datahack-summit-2026/3900030270573546", added:"2026-07-25"},
+
+    /* ================= THURSDAY ================= */
+    {dow:4, a:"multi", cat:"social", name:"BLR Events Hub — Thursday Hangout",
+     when:"Every Thursday · 8:00–10:00 PM", where:"Rotates: Indiranagar · Koramangala · HSR",
+     note:"An 8 PM start makes this one of the most schedule-friendly weeknight socials going. Check which edition is running before you set off.",
+     cost:"₹500", url:"https://www.meetup.com/bangalore-eventshub/", tel:"+917090528592", added:"2026-07-25"},
+
+    {dow:4, a:"cbd", cat:"games", name:"Tabletop Thursday — ReRoll Board Games",
+     when:"Every Thursday · gates 6:30 PM", where:"Underline Center, near MG Road",
+     note:"One of the few weeknight tabletop options in the centre. Hosts pick the game, set it up, teach the rules and slot latecomers in.",
+     cost:"₹299+", url:"https://www.district.in/events/tabletop-thursday-with-reroll-board-games-buy-tickets", added:"2026-07-25"},
+
+    {dow:4, a:"hsr", cat:"games", name:"VIPO — Thursday Game Night",
+     when:"Every Thursday · 6:00 PM", where:"Big Bean Cafe, 19th Main, 1st Sector, HSR",
+     note:"Registration on the spot. The same venue hosts several other communities, so faces start overlapping — which is how a scene forms rather than a series of events.",
+     cost:"₹300", url:"https://www.meetup.com/vipo_boardgames/", tel:"+917760194951", added:"2026-07-25"},
+
+    {dow:4, a:"multi", cat:"social", name:"Thursday Dinner Table",
+     when:"Every Thursday · 8:00 PM", where:"Rotates: Koramangala · Indiranagar · HSR",
+     note:"An 8 PM start and a shared table of about ten people. A seated dinner needs neither an early exit nor the confidence to work a room.",
+     cost:"₹500", url:"https://www.meetup.com/bangalore-eventshub/", added:"2026-07-25"},
+
+    {dow:4, a:"multi", cat:"music", name:"Thursday Jamming Night",
+     when:"Every Thursday · 8:00 PM", where:"Bangalore Meetup Group — venue on the listing",
+     note:"At ₹199 the cheapest weeknight thing on this board, and a jam gives you something to do with your hands instead of small talk. Bring an instrument or just sing along.",
+     cost:"₹199", url:"https://www.meetup.com/meetup-group-amomvugy/", added:"2026-08-01"},
+
+    /* ================= FRIDAY ================= */
+    {dow:5, a:"hsr", cat:"games", name:"HSR Meetups — BoardGames & Dinner",
+     when:"Every Friday · 7:15 PM", where:"Big Bean Cafe, HSR Layout",
+     note:"A rare Friday format that forgives a late arrival: games rotate every 20–30 minutes, so joining at 8:20 costs you nothing.",
+     cost:"₹250 + ₹99 cover", url:"https://www.meetup.com/hsrmeetups/", added:"2026-07-25"},
+
+    {dow:5, a:"cbd", cat:"speak", name:"Bangalore Toastmasters Club",
+     when:"Every Friday · 6:30 PM", where:"Loyola Hall, Ashirvad, St Marks Road",
+     note:"Second-oldest club in the city and you can drop in any Friday as a guest. About 20 minutes on foot from Trinity, or five by auto, so even a partial visit pays.",
+     cost:"Free as guest", free:true, url:"https://btmc.toastmastersclubs.org/", added:"2026-07-25"},
+
+    {dow:5, a:"cbd", cat:"music", name:"FLO Church Street — Friday & Saturday",
+     when:"Fri & Sat nights", where:"FLO, Church Street",
+     note:"Free entry, and a straight 15-minute walk west down MG Road from Trinity. The default answer to “where now” once a Friday meetup winds up.",
+     cost:"Free", free:true, url:"https://highape.com/bangalore/events/friday-switch-flo-church-street-h9st4k984m", added:"2026-07-25"},
+
+    {date:"2026-08-07", a:"north", cat:"social", name:"Bongo Utsav 3.0",
+     when:"Fri 7 Aug · from 10:00 AM", where:"Gate 9, Palace Grounds",
+     note:"602+ interested. A large cultural festival that runs across the weekend, so a Saturday drop-in is easier than the Friday opening.",
+     cost:"Varies", url:"https://allevents.in/bangalore/all", added:"2026-07-25"},
+
+    /* ================= SATURDAY ================= */
+    {dow:6, a:"hsr", cat:"startup", name:"eChai Bengaluru Startup Meetup",
+     when:"Every Saturday · 6:00–8:00 PM", where:"Urban Vault, HSR Layout",
+     note:"Free, weekly, a 24,000-strong network, and the building houses five AI startups across five floors. The single most valuable recurring slot here.",
+     cost:"Free", free:true, url:"https://echai.ventures/bengaluru", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"startup", name:"eChai Startup Demo Day",
+     when:"Monthly Saturday · 6:00–8:00 PM", where:"Founder Startup House, Koramangala",
+     note:"The monthly companion to the weekly meetup — same network, but founders presenting rather than milling about. The demos hand you a reason to start talking.",
+     cost:"Free", free:true, url:"https://echai.ventures/bengaluru", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"startup", name:"eChai Startup Open House",
+     when:"Sat & Sun · 11:00 AM–1:00 PM", where:"Founder Startup House, Koramangala",
+     note:"Daytime and founder-dense with no barrier to entry. The obvious pick when the evening is already committed.",
+     cost:"Free", free:true, url:"https://echai.ventures/bengaluru", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"outdoors", name:"Founders Running Club — Bangalore",
+     when:"Every Saturday · 7:00 AM", where:"Bangalore chapter — route on the listing",
+     note:"Founders who run, which means the network happens at the coffee afterwards rather than over a pitch. Free, early, and done before the day starts.",
+     cost:"Free", free:true, url:"https://www.meetup.com/founders-running-club-bangalore/", added:"2026-08-01"},
+
+    {dow:6, a:"sarjapur", cat:"outdoors", name:"Saturday run — HSR / PaceX / Soles",
+     when:"Every Saturday · from 6:30 AM", where:"Agara Lake · Ecoworld, Sarjapur Road · HSR",
+     note:"HSR Run & Sports Club, PaceX and Soles of Bangalore all run weekend groups here. The run is the excuse; the coffee afterwards is the point.",
+     cost:"Free", free:true, url:"https://www.endorfin.run/clubs/hsrrunsportsclub", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"startup", name:"AI Builders & Founders Walk — Agara Lake",
+     when:"Saturdays · 5:15 PM — check the group", where:"Agara Lake, HSR",
+     note:"A walking meetup instead of a room with chairs, so conversation is the format rather than a side effect. Closest venue on this board to the flat.",
+     cost:"Free", free:true, url:"https://www.meetup.com/builders-founders/", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"speak", name:"HSR Toastmasters",
+     when:"Every Saturday · 4:00–6:00 PM", where:"Hustlehub Tech Park, Sector 2, HSR",
+     note:"The only place here where you speak in front of the same 25 people every week, which is what actually builds the skill. Guests attend free.",
+     cost:"Free as guest", free:true, url:"https://www.meetup.com/hsr-toastmasters-club/", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"books", name:"HSR Reads — silent reading",
+     when:"Every Saturday · morning", where:"Hemavathi Park, HSR Layout",
+     note:"No registration, just turn up with a book. More intimate than Cubbon Reads' 300-person crowd, and it self-selects for curious, unhurried people.",
+     cost:"Free", free:true, url:"https://lbb.in/bangalore/cubbon-reads-bangalore/", added:"2026-07-25"},
+
+    {dow:6, a:"cbd", cat:"games", name:"Church Street Gaming — The Boardgame Den",
+     when:"Sat 3:00 PM · Sun 1:00 PM", where:"Pavilion Mall, 62/63 Church Street — 50 m from MG Road Metro",
+     note:"350+ games from gateway titles to heavy euros, and dropping in late is explicitly allowed. About as accessible as a board game night gets.",
+     cost:"₹400–450", url:"https://www.meetup.com/the-boardgame-den/", tel:"+919686694048", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"games", name:"VIPO — Meeples Meetup",
+     when:"Every Saturday · 3:00 PM", where:"Cafe du L'Amour, Koramangala",
+     note:"Saturday sibling of the Sunday Sarjapur session. Pre-pay by UPI or settle at the venue.",
+     cost:"₹300", url:"https://www.meetup.com/vipo_boardgames/", tel:"+917760194951", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"games", name:"Koramangala's Premium Boardgame Night",
+     when:"Every Saturday · 7:00 PM", where:"PlayHouse, Koramangala",
+     note:"A separate group from the VIPO and Fun Boardgames crowds, so a different set of faces on the same night. The 7 PM start stacks after an afternoon plan.",
+     cost:"Check listing", url:"https://www.meetup.com/playhouse-koramangala/", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"social", name:"BLR Events Hub — Saturday Social Mixer",
+     when:"Every Saturday · 3:00 PM", where:"Euphoria Cafe, Koramangala 6th Block",
+     note:"Pairs neatly with the 5 PM board gaming at the same venue — one trip, two different rooms of people.",
+     cost:"₹350", url:"https://www.meetup.com/bangalore-eventshub/", tel:"+917090528592", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"social", name:"Mafia Night — Koramangala",
+     when:"Every Saturday · multiple dates", where:"Euphoria Cafe, Koramangala",
+     note:"Pure social deception, and nothing forces conversation harder — you cannot play Mafia quietly. Good if standing-around mixers feel like work.",
+     cost:"₹299", url:"https://www.district.in/events/mafia-night-in-koramangala-jun13-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"games", name:"Saturday Midnight Werewolf Game Night",
+     when:"Every Saturday · late", where:"Euphoria Cafe, Koramangala",
+     note:"Werewolf is social deception at its purest — a whole room arguing, bluffing and reading each other. Highest conversation density of any format here.",
+     cost:"₹349", url:"https://highape.com/bangalore/events/midnight-werewolf-game-night-y8xgnvbuv5", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"games", name:"Board Games in Euphoria Cafe",
+     when:"Saturdays · multiple dates", where:"Euphoria Cafe, Koramangala",
+     note:"At ₹199 among the cheapest board game nights in the city, in the same cafe as the Saturday mixer. Stack the two and one trip gets two rooms.",
+     cost:"₹199+", url:"https://www.district.in/events/board-games-in-euphoria-cafe-jun13-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"games", name:"Board Game Night — HSR Layout",
+     when:"Fri–Sun · multiple dates", where:"Tim Hortons, HSR Layout",
+     note:"40+ games, a host who runs ice-breakers, and ₹100 back against food. Sequence, Catan, Secret Hitler, Codenames, Splendor and Azul.",
+     cost:"₹349+", url:"https://www.district.in/events/board-game-night-in-hsr-layout-jan17-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"games", name:"Social Deduction",
+     when:"Saturdays · multiple dates", where:"Tim Hortons, HSR Layout",
+     note:"Werewolf and Mafia-style hidden-role games, same room as the HSR board game night. Social deduction forces talking in a way euro games never do.",
+     cost:"₹349+", url:"https://www.district.in/events/social-deduction-may23-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:6, a:"cbd", cat:"games", name:"Weekend Games with ReRoll",
+     when:"Every Saturday · 6:00 PM", where:"Underline Center, near MG Road",
+     note:"ReRoll also run Magic: The Gathering nights at the same venue, for anyone wanting more depth than party games offer.",
+     cost:"₹349+", url:"https://www.district.in/events/weekend-games-with-reroll-buy-tickets", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"craft", name:"The Art of Kintsugi",
+     when:"Sat & Sun · multiple slots", where:"Big Bean Cafe, HSR Layout",
+     note:"The Japanese art of repairing pottery with gold. Slow, tactile work in small groups, so conversation happens without anyone forcing it.",
+     cost:"₹899", url:"https://www.district.in/events/the-art-of-kintsugi-workshop-feb27-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"craft", name:"Couple Clay Keychain",
+     when:"Fri–Sun · multiple slots", where:"Big Bean Cafe, HSR Layout",
+     note:"Short, cheap and hands-on. A sensible low-commitment first craft session before committing to a full pottery course.",
+     cost:"₹599", url:"https://www.district.in/events/couple-clay-keychain-feb27-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:6, a:"cbd", cat:"craft", name:"Japanese Kintsugi at CBD",
+     when:"Sat & Sun · multiple slots", where:"CBD Central Bar District, MG Road",
+     note:"Same craft as the HSR sessions but right in the centre, so it works without a car. Cheaper too, at ₹599.",
+     cost:"₹599+", url:"https://www.district.in/events/japanese-kintsugi-may1-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"craft", name:"Japanese Kintsugi at Cafe De Verde",
+     when:"Weekends · multiple dates", where:"Cafe De Verde, Koramangala",
+     note:"A quieter room than most kintsugi sessions. Repairing broken pottery with gold turns out to be an unusually good icebreaker.",
+     cost:"₹799", url:"https://highape.com/bangalore/events/japanese-kintsugi-7zfoz53axm", added:"2026-07-25"},
+
+    {dow:6, a:"kora", cat:"craft", name:"Sashiko Stitch Journal",
+     when:"Weekends · multiple dates", where:"Pinball, Koramangala",
+     note:"Japanese running-stitch embroidery on a handmade journal. Small groups, so conversation builds across three hours of slow work.",
+     cost:"₹1,190", url:"https://highape.com/bangalore/events/sashiko-stitch-journal-artsy-workshop-fi05tl3oas", added:"2026-07-25"},
+
+    {dow:6, a:"indira", cat:"craft", name:"Moon Lamp Workshop",
+     when:"Weekends · multiple dates", where:"Bohemians, Indiranagar",
+     note:"Build a working moon lamp and take it home. Bohemians run a rotating craft programme, so one visit usually surfaces three more things worth booking.",
+     cost:"₹999", url:"https://highape.com/bangalore/events/moon-lamp-workshop-5ja9fwixqx", added:"2026-07-25"},
+
+    {dow:6, a:"indira", cat:"craft", name:"Lippan Art Workshop",
+     when:"Weekends · multiple dates", where:"Bohemians, Indiranagar",
+     note:"Traditional Kutch mud-and-mirror work. Slow, tactile and genuinely absorbing — a better first craft class than a paint-and-sip if you want to learn something.",
+     cost:"₹999", url:"https://highape.com/bangalore/events/lippan-art-workshop-mcugrrx03k", added:"2026-07-25"},
+
+    {dow:6, a:"hsr", cat:"music", name:"Live music at DND, HSR Layout",
+     when:"Weekend nights", where:"DND The Venue, HSR Layout",
+     note:"Live gigs on the south-east side of town, which is rarer than it should be. Worth following the venue rather than any individual act.",
+     cost:"₹299", url:"https://highape.com/bangalore/events/dnd-ft-vaishnav-girish-live-4c6q4w8ly8", added:"2026-07-25"},
+
+    {dow:6, a:"multi", cat:"music", name:"SongGully Music Jams — SingAlong",
+     when:"Saturdays · 7:00 PM", where:"Song Gully — venue on the listing",
+     note:"A singalong rather than a performance, so nobody has to be good. Low-stakes and repeat-friendly, which is what turns strangers into regulars.",
+     cost:"₹350", url:"https://www.meetup.com/songgully/", added:"2026-08-01"},
+
+    {dow:6, a:"multi", cat:"startup", name:"Global Startups Club",
+     when:"Monthly", where:"Rotates — central Bangalore",
+     note:"Founders, VCs, directors and consultants in one room as a monthly fixture. Smaller and more transactional than eChai, which suits it to specific asks.",
+     cost:"Ticketed", url:"https://highape.com/bangalore/events/global-startups-club-l-startup-networking-Q7wV80aDrM", added:"2026-07-25"},
+
+    {dow:6, a:"cbd", cat:"social", name:"BFLI Professional Networking Mixer",
+     when:"Periodic weekends", where:"Central Bangalore",
+     note:"Business, Friendship, Lifestyle and Inspiration — a free meet-and-greet aimed at professional and personal growth rather than fundraising.",
+     cost:"Free", free:true, url:"https://highape.com/bangalore/events/professional-networking--socializing-meetup-mixer--bangalore-djrvb6o4rY", added:"2026-07-25"},
+
+    {dow:6, a:"south", cat:"outdoors", name:"Netravathi Peak trek — Namma Trip",
+     when:"Weekend departures", where:"Netravati Peak — overnight from Bangalore",
+     note:"A proper weekend trek rather than a day trip. One of these builds more friendship than ten meetups, because nobody can small-talk for twelve hours.",
+     cost:"₹2,099", ts:"overnight trip", tm:"overnight trip",
+     url:"https://highape.com/bangalore/events/netravathi-trek-namma-trip-sgh4shytt9", added:"2026-07-25"},
+
+    {date:"2026-08-08", a:"south", cat:"startup", name:"Startup World Cup 2026",
+     when:"Sat 8 Aug · 10:00 AM", where:"RV Institute of Technology",
+     note:"Pegasus Tech Ventures with CEDAT, 48+ interested. Free and legitimately large, but a spectator pitch format rather than a networking room.",
+     cost:"Free", free:true, ts:"60–75 min", tm:"45–60 min",
+     url:"https://allevents.in/bangalore/startup", added:"2026-07-25"},
+
+    {date:"2026-08-08", a:"north", cat:"ai", name:"Generative & Agentic AI",
+     when:"Sat 8 Aug · 10:00 AM", where:"Indian Institute of Science",
+     note:"26+ interested. A serious technical day at IISc rather than a meetup — go for depth on agents, not for the networking.",
+     cost:"₹2,200", ts:"65–80 min", tm:"35–45 min",
+     url:"https://allevents.in/bangalore/all", added:"2026-07-25"},
+
+    {date:"2026-08-08", a:"white", cat:"stage", name:"Love, Death & Ketchup — Varun Grover",
+     when:"Sat 8 Aug · 4:30 PM", where:"MLR Convention Centre, Whitefield",
+     note:"66+ interested. Grover writes as well as he performs — one of the better standup bookings this month.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/love-death-and-ketchup-by-varun-grover/3900030021430427", added:"2026-07-25"},
+
+    {date:"2026-08-08", a:"north", cat:"music", name:"25 Years of The Raghu Dixit Project",
+     when:"Sat 8 Aug · 7:00 PM", where:"Eden Event Area, Phoenix Mall of Asia",
+     note:"267+ interested. A landmark anniversary gig for one of Bangalore's own bands — the kind of night the city turns out for.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/25-years-of-the-raghu-dixit-project/3900030213645229", added:"2026-07-25"},
+
+    {date:"2026-08-08", a:"cbd", cat:"social", name:"The Edge of Nutrition 2026",
+     when:"Sat 8 Aug · 9:00 AM–2:00 PM", where:"The Chancery Pavilion, Ashok Nagar",
+     note:"A morning summit that frees the rest of the Saturday, and a professional crowd well outside the startup circuit. Useful precisely because it is a different room.",
+     cost:"₹1,299", ts:"40–50 min", tm:"15–20 min",
+     url:"https://allevents.in/bangalore/the-edge-of-nutrition-2026-tickets/80003694098114", added:"2026-08-01"},
+
+    /* ================= SUNDAY ================= */
+    {dow:0, a:"sarjapur", cat:"games", name:"VIPO — Impromptu Sunday Meetup",
+     when:"Every Sunday · 3:00 PM", where:"Board Game Inc, Sarjapur Road — 2nd floor, above Subway",
+     note:"Age 14+, crowd mostly 22–45, and you can join at any point in the session. The closest recurring event of any kind to home.",
+     cost:"₹300", url:"https://www.meetup.com/vipo_boardgames/", tel:"+917760194951", added:"2026-07-25"},
+
+    {dow:0, a:"sarjapur", cat:"games", name:"HSR Meetups — BoardGames & Conversation",
+     when:"Every Sunday · 5:15 PM", where:"THE HUB, Bellandur",
+     note:"Games rotate every 20–30 minutes, so one session gets you talking to 8–12 people. Substance-free, and the largest meetup community in the city at 15,563 members.",
+     cost:"₹299–399", url:"https://www.meetup.com/hsrmeetups/", added:"2026-07-25"},
+
+    {dow:0, a:"sarjapur", cat:"games", name:"Board Games at Chin Lung Brewery",
+     when:"Every Sunday · multiple slots", where:"Chin Lung Brewery, Kadubeesanahalli",
+     note:"From ₹99, among the cheapest board game nights anywhere. A brewery paired with a 40–45 game library is a rarer combination than it sounds.",
+     cost:"₹99+", url:"https://www.district.in/events/board-games-may24-2026-buy-tickets", added:"2026-07-25"},
+
+    {dow:0, a:"kora", cat:"books", name:"BLR Events Hub — Sunday Book Club",
+     when:"Every Sunday · 3:00 PM", where:"Euphoria Cafe, Koramangala",
+     note:"A discussion format rather than silent reading, which makes it the more social of the two book options.",
+     cost:"₹350", url:"https://www.meetup.com/bangalore-eventshub/", added:"2026-07-25"},
+
+    {dow:0, a:"multi", cat:"social", name:"The Fun Boardgames — Sunday",
+     when:"Every Sunday · 4:00–7:00 PM", where:"TreeHouse, Indiranagar · Buddiezz, Koramangala",
+     note:"Coup, Saboteur and Codenames, explicitly beginner- and introvert-friendly, with gamemasters teaching on the night. Social deception forces conversation in a way euro games never do.",
+     cost:"₹249–299", url:"https://chat.whatsapp.com/Cqr2Wv7U9AJ9JtLQoh9v2W", tel:"+919606735383", added:"2026-07-25"},
+
+    {dow:0, a:"multi", cat:"music", name:"Booze & Jam by Spotlyte",
+     when:"Every Sunday · 8:30 PM", where:"Spotlyte Events — venue on the listing",
+     note:"A late Sunday jam, which is an unusual slot and therefore an unusual crowd. Good closer to a weekend that started with a 7 AM run.",
+     cost:"₹499", url:"https://www.meetup.com/spotlyte-live/", added:"2026-08-01"},
+
+    {dow:0, a:"north", cat:"outdoors", name:"Nandi Hills sunrise — Namma Trip",
+     when:"Weekend departures · pre-dawn", where:"Nandi Hills — organised pickup",
+     note:"₹189 for a sunrise trip is about the cheapest social outing in the city. Shared transport means hours of unstructured talking, which is the real point.",
+     cost:"₹189", ts:"90 min+", tm:"75 min+",
+     url:"https://highape.com/bangalore/events/nandi-hills-namma-trip-65wkbr87iy", added:"2026-07-25"},
+
+    {date:"2026-08-02", a:"cbd", cat:"books", name:"The Clueless Crossword — Quiz Pro Quo",
+     when:"Sun 2 Aug · 11:00 AM", where:"Underline Center, near MG Road",
+     note:"A cryptic crossword run as a team event, which draws a sharper and smaller crowd than a pub quiz. Same venue as the Wednesday and Thursday nights.",
+     cost:"₹399", url:"https://www.district.in/events/the-clueless-crossword-by-quiz-pro-quo-may17-2026-buy-tickets", added:"2026-07-25"},
+
+    {date:"2026-08-09", a:"cbd", cat:"social", name:"The Great Indian Spirit Festival",
+     when:"Sun 9 Aug · 12:00–10:00 PM", where:"1 MG — Lido Mall",
+     note:"A ten-hour festival you can drop into and leave, central enough to reach easily. From ₹199, and a low-effort way to close the week.",
+     cost:"₹199–1,099", url:"https://allevents.in/bangalore/the-great-indian-spirit-festival-gisf/4100030323795900", added:"2026-07-25"},
+
+    /* ---- later in August ---- */
+    {date:"2026-08-11", a:"south", cat:"startup", name:"South Bengaluru Startups Meetup — CEDAT",
+     when:"Tue 11 Aug · 6:00 PM", where:"South Bengaluru — venue on the listing",
+     note:"CEDAT split their meetups by zone and this is the south edition. The 6 PM start is the catch coming straight from the office.",
+     cost:"Free", free:true, url:"https://www.meetup.com/startups-entrepreneurs-network-senex-by-cedat/events/315542627/", added:"2026-07-25"},
+
+    {date:"2026-08-15", a:"cbd", cat:"stage", name:"Allow Me! — Rahul Dua",
+     when:"Sat 15 Aug · 8:00 PM", where:"St Joseph's University Auditorium",
+     note:"A full solo hour from one of the more dependable touring comics. Unusually central for a big booking — no Whitefield round trip.",
+     cost:"Ticketed", ts:"40–50 min", tm:"20–25 min",
+     url:"https://allevents.in/bangalore/allow-me-a-standup-comedy-show-by-rahul-dua/3900030300972154", added:"2026-07-25"},
+
+    {date:"2026-08-21", a:"white", cat:"stage", name:"Harsh'O'Ullas ft. Harsh Gujral",
+     when:"Fri 21 Aug · 8:00 PM", where:"MLR Convention Centre, Whitefield",
+     note:"Friday plus Whitefield is a rough traffic pairing unless you are already east. The 8 PM start does forgive a normal finish to the workday.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/harshoullas-ft-harsh-gujral/3900030387698359", added:"2026-07-25"},
+
+    {date:"2026-08-22", a:"multi", cat:"music", name:"Saturday Night Special ft. Usha Uthup",
+     when:"Sat 22 Aug · 8:00 PM", where:"ICB Indian Craft Brewery — check which branch",
+     note:"A brewery gig rather than an arena show, small enough to talk between sets. Confirm the branch before booking — there is more than one.",
+     cost:"Ticketed", ts:"depends on branch", tm:"depends on branch",
+     url:"https://allevents.in/bangalore/saturday-night-special-live-singer-ft-usha-uthup/3900030234989958", added:"2026-07-25"}
+  ];
+
+  var CLASSES = [
+    {tone:"--c-craft", title:"Pottery — near home", items:[
+      {n:"Clay Station, HSR Layout", u:"https://lbb.in/bangalore/pottery-classes-workshops-studios-bangalore/",
+       d:"Pottery, sculpting, terracotta and stoneware jewellery. Weekday and weekend batches — 12 min away."},
+      {n:"Maati Sona, HSR Layout", u:"https://lbb.in/bangalore/pottery-classes-workshops-studios-bangalore/",
+       d:"Hand-building through wheel work to glaze application. Weekday and weekend classes."},
+      {n:"The Potter's Place, HSR Sector 1", u:"https://lbb.in/bangalore/pottery-classes-workshops-studios-bangalore/",
+       d:"1008, 25th Main — a shared studio where potters practise and learn from each other rather than a taught course."}
+    ]},
+    {tone:"--c-craft", title:"Pottery — near the office", items:[
+      {n:"Mudcast Pottery Studio, Indiranagar", u:"https://mudcastpottery.com/",
+       d:"Complete-beginner workshops plus a 3-day hand-building course. Popular for couples and small groups."},
+      {n:"Lahe Lahe, Indiranagar", u:"https://www.instagram.com/lahelahe/",
+       d:"Creative-arts space with its own pottery studio and cafe. Also runs jams, painting, comedy and open mics."},
+      {n:"Bangalore Potters", u:"https://www.bangalorepotters.com/",
+       d:"Community calendar listing weekend beginner workshops across the city — good for sampling studios."}
+    ]},
+    {tone:"--c-speak", title:"Speaking", items:[
+      {n:"HSR Toastmasters", u:"https://www.meetup.com/hsr-toastmasters-club/",
+       d:"Sat 4–6 PM, Hustlehub HSR. Your primary — same 25 people weekly, guests free."},
+      {n:"Sarjapura Road Toastmasters", u:"https://www.toastmasters.org/Find-a-Club/04393223-sarjapura-road-toastmasters-club",
+       d:"Nuk Library Cafe, Sarjapur Road. Backup if the HSR slot clashes with eChai."},
+      {n:"Bangalore Toastmasters Club", u:"https://btmc.toastmastersclubs.org/",
+       d:"Fri 6:30 PM, St Marks Road — a 12-minute walk from your office, but you catch only the second half."}
+    ]},
+    {tone:"--c-craft", title:"Craft studios & workshop venues", items:[
+      {n:"Bohemians, Indiranagar", u:"https://highape.com/bangalore/events/lippan-art-workshop-mcugrrx03k",
+       d:"Rotating craft programme — moon lamps, Lippan art, resin. Near the office, so a weeknight option."},
+      {n:"Pinball, Koramangala", u:"https://highape.com/bangalore/events/sashiko-stitch-journal-artsy-workshop-fi05tl3oas",
+       d:"Small-group textile and paper workshops. Sashiko, journaling, slow craft."},
+      {n:"Big Bean Cafe, HSR", u:"https://www.district.in/events/the-art-of-kintsugi-workshop-feb27-2026-buy-tickets",
+       d:"Kintsugi and clay sessions in the same room that hosts your Thursday and Friday board game nights."},
+      {n:"Underline Center", u:"https://www.district.in/events/after-hours-with-eleven-am-club-buy-tickets",
+       d:"Wednesday socials, ReRoll tabletop nights, puzzle competitions. The most reliable weeknight venue near work."}
+    ]},
+    {tone:"--c-outdoors", title:"Outdoors & adventure", items:[
+      {n:"Bangalore Hikers", u:"https://www.bangalorehikers.com/",
+       d:"Non-profit and explicitly a social club. One weekend trek is worth months of meetups in relationship depth."},
+      {n:"Bangalore Mountaineering Club", u:"https://www.bmcadventures.com/",
+       d:"Structured weekend treks and climbs with a long-running community."},
+      {n:"BumsOnTheSaddle", u:"https://bumsonthesaddle.com/",
+       d:"The city's best-known cycling community. Sarjapur Road's service roads are a favourite training stretch."},
+      {n:"Youth for Seva — Bengaluru", u:"https://youthforseva.org/chapters/bengaluru/",
+       d:"Founded here, largest chapter here. Seva Circle groups are open to working professionals."}
+    ]}
+  ];
+
+  /* ---------------- helpers ---------------- */
+  function d(s){ var p = s.split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function iso(dt){
+    return dt.getFullYear() + "-" +
+      String(dt.getMonth()+1).padStart(2,"0") + "-" +
+      String(dt.getDate()).padStart(2,"0");
+  }
+  function daysBetween(a,b){ return Math.round((d(b) - d(a)) / 86400000); }
+  function isNew(e){
+    if (e.added <= BASELINE) return false;   // baseline load is not "new"
+    var age = daysBetween(e.added, TODAY);
+    return age >= 0 && age < NEW_WINDOW_DAYS;
+  }
+  function fmtAdded(s){
+    var p = s.split("-");
+    var m = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return +p[2] + " " + m[+p[1]-1];
+  }
+  /* which weekdays occur between two dates (inclusive) */
+  function dowsInRange(from, to){
+    var set = {}, cur = d(from), end = d(to), n = 0;
+    while (cur <= end && n < 400){ set[cur.getDay()] = true; cur.setDate(cur.getDate()+1); n++; }
+    return set;
+  }
+
+  var state = {area:"all", cat:"all", free:false, onlyNew:false, wknd:false, q:"",
+               from:"2026-08-03", to:"2026-08-09"};
+
+  function inRange(e, dows){
+    if (e.date) return e.date >= state.from && e.date <= state.to;
+    return !!dows[e.dow];
+  }
+  function matches(e){
+    if (state.area !== "all" && e.a !== state.area) return false;
+    if (state.cat !== "all" && e.cat !== state.cat) return false;
+    if (state.free && !e.free) return false;
+    if (state.onlyNew && !isNew(e)) return false;
+    if (state.wknd){
+      var day = e.date ? d(e.date).getDay() : e.dow;
+      if (day !== 0 && day !== 6) return false;
+    }
+    if (state.q){
+      var hay = (e.name+" "+e.where+" "+e.note+" "+e.when+" "+(CATMAP[e.cat]||{}).label).toLowerCase();
+      if (hay.indexOf(state.q) === -1) return false;
+    }
+    return true;
+  }
+
+  function cardHTML(e){
+    var c = CATMAP[e.cat] || {label:e.cat, tone:"--c-social"};
+    var area = AREAMAP[e.a]
+      ? '<span class="tag">' + AREAMAP[e.a].label + '</span>' : '';
+    var t = TRAVEL[e.a] || {s:"—", m:"—"};
+    var travel = ''
+      + '<div class="travel">'
+      +   '<span><i>home</i> <b>' + (e.ts || t.s) + '</b></span>'
+      +   '<span><i>office</i> <b>' + (e.tm || t.m) + '</b></span>'
+      + '</div>';
+    return ''
+      + '<article class="card" style="--tone:var(' + c.tone + ')">'
+      +   '<div class="cbar"></div>'
+      +   '<div class="cbody">'
+      +     '<div class="toprow">'
+      +       '<span class="cat">' + c.label + '</span>' + area
+      +       (isNew(e) ? '<span class="tag isnew">New</span>' : '')
+      +     '</div>'
+      +     '<h3>' + e.name + '</h3>'
+      +     '<div class="when">' + e.when + '</div>'
+      +     '<div class="where">' + e.where + '</div>'
+      +     travel
+      +     '<p class="note">' + e.note + '</p>'
+      +   '</div>'
+      +   '<div class="foot">'
+      +     '<span class="cost' + (e.free ? ' is-free' : '') + '">' + e.cost + '</span>'
+      +     (e.url ? '<a class="go" href="' + e.url + '">Open</a>' : '')
+      +     (e.tel ? '<a class="tel" href="tel:' + e.tel + '">' + e.tel.replace("+91","") + '</a>' : '')
+      +     '<span class="added">Added ' + fmtAdded(e.added) + '</span>'
+      +   '</div>'
+      + '</article>';
+  }
+
+  function render(){
+    var dows = dowsInRange(state.from, state.to);
+    var shown = E.filter(function(e){ return inRange(e, dows) && matches(e); });
+
+    /* group by weekday: Mon..Sun so the working week reads first */
+    var order = [1,2,3,4,5,6,0];
+    var buckets = {}; order.forEach(function(i){ buckets[i] = []; });
+    shown.forEach(function(e){
+      var day = e.date ? d(e.date).getDay() : e.dow;
+      buckets[day].push(e);
+    });
+
+    var html = "";
+    order.forEach(function(i){
+      var rows = buckets[i];
+      if (!rows.length) return;
+      var wknd = (i === 0 || i === 6);
+      html += '<div class="daygroup">'
+           +    '<div class="dayhead' + (wknd ? ' wknd' : '') + '" data-d="' + i + '">'
+           +      '<h2>' + DAYNAMES[i] + '</h2>'
+           +      '<span class="dnote">' + DAYNOTE[i] + '</span>'
+           +      '<span class="dn">' + rows.length + '</span>'
+           +    '</div>'
+           +    '<div class="grid">' + rows.map(cardHTML).join("") + '</div>'
+           + '</div>';
+    });
+
+    document.getElementById("days").innerHTML = html;
+    document.getElementById("daysEmpty").style.display = shown.length ? "none" : "block";
+    document.getElementById("count").textContent =
+      shown.length + (shown.length === 1 ? " thing" : " things");
+
+    document.getElementById("tCount").textContent = shown.length;
+    document.getElementById("tNew").textContent = shown.filter(isNew).length;
+    document.getElementById("tFree").textContent = shown.filter(function(e){return e.free;}).length;
+    document.getElementById("tWknd").textContent = shown.filter(function(e){
+      var day = e.date ? d(e.date).getDay() : e.dow; return day === 0 || day === 6;
+    }).length;
+    document.getElementById("tCat").textContent =
+      Object.keys(shown.reduce(function(a,e){ a[e.cat]=1; return a; }, {})).length;
+
+    syncLabels();
+  }
+
+  /* ---------------- build the What menu ---------------- */
+  var catRow = document.getElementById("catRow");
+  var allBtn = document.createElement("button");
+  allBtn.className = "dd-item"; allBtn.type = "button";
+  allBtn.setAttribute("data-cat","all");
+  allBtn.setAttribute("aria-pressed","true");
+  allBtn.innerHTML = 'Everything<span class="tick">✓</span>';
+  catRow.appendChild(allBtn);
+  catRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
+  CATS.forEach(function(c){
+    var b = document.createElement("button");
+    b.className = "dd-item"; b.type = "button";
+    b.setAttribute("data-cat", c.k);
+    b.setAttribute("aria-pressed","false");
+    b.style.setProperty("--tone","var("+c.tone+")");
+    b.innerHTML = '<span class="swatch"></span>' + c.label + '<span class="tick">✓</span>';
+    catRow.appendChild(b);
+  });
+
+  /* ---------------- build the Where menu ---------------- */
+  var areaRow = document.getElementById("areaRow");
+  var anyArea = document.createElement("button");
+  anyArea.className = "dd-item"; anyArea.type = "button";
+  anyArea.setAttribute("data-area","all");
+  anyArea.setAttribute("aria-pressed","true");
+  anyArea.innerHTML = 'Anywhere<span class="tick">✓</span>';
+  areaRow.appendChild(anyArea);
+  areaRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
+  AREAS.forEach(function(a){
+    var t = TRAVEL[a.k] || {s:"—", m:"—"};
+    var b = document.createElement("button");
+    b.className = "dd-item"; b.type = "button";
+    b.setAttribute("data-area", a.k);
+    b.setAttribute("aria-pressed","false");
+    b.innerHTML = a.label
+      + '<span class="ddmeta">' + t.s + ' / ' + t.m + '</span>'
+      + '<span class="tick">✓</span>';
+    areaRow.appendChild(b);
+  });
+
+  function bindGroup(attr, key){
+    var btns = Array.prototype.slice.call(document.querySelectorAll("[data-"+attr+"]"));
+    btns.forEach(function(b){
+      b.addEventListener("click", function(){
+        state[key] = b.getAttribute("data-"+attr);
+        btns.forEach(function(o){ o.setAttribute("aria-pressed", String(o === b)); });
+        render();
+      });
+    });
+  }
+  bindGroup("area","area");
+  bindGroup("cat","cat");
+
+  function toggle(id, key){
+    var b = document.getElementById(id);
+    b.addEventListener("click", function(){
+      state[key] = !state[key];
+      b.setAttribute("aria-pressed", String(state[key]));
+      render();
+    });
+  }
+  toggle("freeBtn","free");
+  toggle("newBtn","onlyNew");
+  toggle("wkndBtn","wknd");
+
+  var from = document.getElementById("from"), to = document.getElementById("to");
+  function onDate(){
+    if (from.value) state.from = from.value;
+    if (to.value)   state.to   = to.value;
+    if (state.to < state.from){ state.to = state.from; to.value = state.to; }
+    render();
+  }
+  from.addEventListener("change", onDate);
+  to.addEventListener("change", onDate);
+
+  document.getElementById("wkBtn").addEventListener("click", function(){
+    from.value = "2026-08-03"; to.value = "2026-08-09"; onDate();
+  });
+  document.getElementById("monthBtn").addEventListener("click", function(){
+    from.value = "2026-08-03"; to.value = "2026-08-31"; onDate();
+  });
+
+  var q = document.getElementById("q");
+  q.addEventListener("input", function(){
+    state.q = q.value.trim().toLowerCase(); render();
+  });
+
+  /* ---------------- classes directory ---------------- */
+  document.getElementById("classDir").innerHTML = CLASSES.map(function(g){
+    return '<div class="dirbox" style="--tone:var(' + g.tone + ')">'
+         +   '<div class="cbar"></div><h3>' + g.title + '</h3><ul>'
+         +   g.items.map(function(i){
+                return '<li><a href="' + i.u + '">' + i.n + '</a><span>' + i.d + '</span></li>';
+              }).join("")
+         +   '</ul></div>';
+  }).join("");
+
+  /* ---------------- dropdowns ---------------- */
+  var dds = Array.prototype.slice.call(document.querySelectorAll(".dd"));
+
+  function closeAll(except){
+    dds.forEach(function(dd){
+      if (dd === except) return;
+      dd.classList.remove("open");
+      dd.querySelector(".dd-trigger").setAttribute("aria-expanded","false");
+    });
+  }
+
+  dds.forEach(function(dd){
+    var trigger = dd.querySelector(".dd-trigger");
+    var menu    = dd.querySelector(".dd-menu");
+
+    trigger.addEventListener("click", function(ev){
+      ev.stopPropagation();
+      var willOpen = !dd.classList.contains("open");
+      closeAll(dd);
+      dd.classList.toggle("open", willOpen);
+      trigger.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    /* clicks inside a menu must not bubble to the document closer */
+    menu.addEventListener("click", function(ev){ ev.stopPropagation(); });
+  });
+
+  /* single-choice menus close on pick; Show stays open so you can stack filters */
+  Array.prototype.slice.call(
+    document.querySelectorAll("#ddWhen .dd-item, #ddWhere .dd-item, #ddWhat .dd-item")
+  ).forEach(function(b){
+    b.addEventListener("click", function(){ closeAll(null); });
+  });
+
+  document.addEventListener("click", function(){ closeAll(null); });
+  document.addEventListener("keydown", function(ev){
+    if (ev.key === "Escape" || ev.key === "Esc") closeAll(null);
+  });
+
+  /* ---------------- trigger labels ---------------- */
+  /* AREAMAP supplies the Where label */
+
+  function setVal(id, text, active){
+    var el = document.getElementById(id);
+    el.textContent = text;
+    el.parentNode.classList.toggle("on", !!active);
+  }
+
+  function syncLabels(){
+    setVal("valWhen", fmtAdded(state.from) + " – " + fmtAdded(state.to), false);
+    setVal("valWhere",
+      state.area === "all" ? "Anywhere" : ((AREAMAP[state.area] || {}).label || state.area),
+      state.area !== "all");
+    setVal("valWhat",
+      state.cat === "all" ? "Everything" : ((CATMAP[state.cat] || {}).label || state.cat),
+      state.cat !== "all");
+
+    var on = [];
+    if (state.onlyNew) on.push("New");
+    if (state.free)    on.push("Free");
+    if (state.wknd)    on.push("Sat & Sun");
+    setVal("valShow", on.length ? on.join(", ") : "Everything", on.length > 0);
+
+    var dirty = state.area !== "all" || state.cat !== "all"
+             || state.free || state.onlyNew || state.wknd || state.q;
+    document.getElementById("clearBtn").classList.toggle("show", !!dirty);
+  }
+
+  /* ---------------- clear all ---------------- */
+  document.getElementById("clearBtn").addEventListener("click", function(){
+    state.area = "all"; state.cat = "all";
+    state.free = false; state.onlyNew = false; state.wknd = false; state.q = "";
+    q.value = "";
+    Array.prototype.slice.call(document.querySelectorAll("[data-area]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-area") === "all"));
+    });
+    Array.prototype.slice.call(document.querySelectorAll("[data-cat]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-cat") === "all"));
+    });
+    ["newBtn","freeBtn","wkndBtn"].forEach(function(id){
+      document.getElementById(id).setAttribute("aria-pressed","false");
+    });
+    closeAll(null);
+    render();
+  });
+
+  /* ---------------- section tabs ---------------- */
+  var tabs  = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var views = Array.prototype.slice.call(document.querySelectorAll(".view"));
+  var controlsEl = document.getElementById("controls");
+
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      var v = t.getAttribute("data-view");
+      tabs.forEach(function(o){ o.setAttribute("aria-selected", String(o === t)); });
+      views.forEach(function(x){ x.classList.toggle("is-on", x.getAttribute("data-view") === v); });
+      /* the filter bar only governs the week board */
+      controlsEl.style.display = (v === "week") ? "" : "none";
+      closeAll(null);
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
