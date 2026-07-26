@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260725-203102-8431">
+<meta name="build" content="20260726-210612-889">
 </head>
 <body><title>Bangalore Circle</title>
 
@@ -30,6 +30,7 @@
     --c-speak:#8a6512;
     --c-social:#26647f;
     --c-outdoors:#2e6b45;
+    --c-wellness:#4a7c6f;
 
     --d0:#c2410c; --d1:#3f5f86; --d2:#1f6f62; --d3:#9c3f6b;
     --d4:#a8621b; --d5:#63459b; --d6:#b23a58;
@@ -50,7 +51,7 @@
       --c-games:#f2874f; --c-startup:#8fb0d8; --c-growth:#dd8fb4;
       --c-product:#5fbfab; --c-ai:#b09ae2; --c-craft:#e0a05c;
       --c-music:#d19ad1; --c-stage:#e8899e; --c-books:#a9c065; --c-speak:#dcb75a;
-      --c-social:#6fb2cf; --c-outdoors:#72bd90;
+      --c-social:#6fb2cf; --c-outdoors:#72bd90; --c-wellness:#7bc4b0;
       --d0:#f2874f; --d1:#8fb0d8; --d2:#5fbfab; --d3:#dd8fb4;
       --d4:#e0a05c; --d5:#b09ae2; --d6:#e8899e;
       --new:#f2874f; --link:#f2874f;
@@ -65,7 +66,7 @@
     --c-games:#f2874f; --c-startup:#8fb0d8; --c-growth:#dd8fb4;
     --c-product:#5fbfab; --c-ai:#b09ae2; --c-craft:#e0a05c;
     --c-music:#d19ad1; --c-stage:#e8899e; --c-books:#a9c065; --c-speak:#dcb75a;
-    --c-social:#6fb2cf; --c-outdoors:#72bd90;
+    --c-social:#6fb2cf; --c-outdoors:#72bd90; --c-wellness:#7bc4b0;
     --d0:#f2874f; --d1:#8fb0d8; --d2:#5fbfab; --d3:#dd8fb4;
     --d4:#e0a05c; --d5:#b09ae2; --d6:#e8899e;
     --new:#f2874f; --link:#f2874f;
@@ -79,7 +80,7 @@
     --c-games:#c2410c; --c-startup:#3f5f86; --c-growth:#9c3f6b;
     --c-product:#1f6f62; --c-ai:#63459b; --c-craft:#a8621b;
     --c-music:#8c3a8c; --c-stage:#b23a58; --c-books:#54711f; --c-speak:#8a6512;
-    --c-social:#26647f; --c-outdoors:#2e6b45;
+    --c-social:#26647f; --c-outdoors:#2e6b45; --c-wellness:#4a7c6f;
     --d0:#c2410c; --d1:#3f5f86; --d2:#1f6f62; --d3:#9c3f6b;
     --d4:#a8621b; --d5:#63459b; --d6:#b23a58;
     --new:#c2410c; --link:#a8360a;
@@ -115,6 +116,17 @@
   }
   .tally b.hot{color:var(--accent)}
   .tally i{font-style:normal; color:var(--ink-4); padding:0 8px}
+  .byline{
+    margin:8px 0 0; font-family:var(--serif); font-style:italic;
+    font-size:15px; color:var(--ink-3);
+  }
+  .byline b{font-style:normal; font-weight:700; color:var(--ink-2)}
+  .byline a{
+    font-style:normal; font-weight:700; color:var(--accent);
+    text-decoration:none; white-space:nowrap;
+  }
+  .byline a:hover{text-decoration:underline}
+  .byline i{font-style:normal; color:var(--ink-4); padding:0 8px}
   .perf{
     height:0; margin:26px 0 0;
     border-top:2px dashed var(--line);
@@ -431,6 +443,7 @@
     <p class="tally"><b id="tCount">—</b> things in range<i>·</i><b id="tFree">—</b> free<i>·</i><b
       id="tWknd">—</b> on Sat &amp; Sun<i>·</i><b id="tCat">—</b> categories<i>·</i><b
       id="tNew" class="hot">—</b> added recently</p>
+    <p class="byline">Managed by <b>Amitoje Singh Bakshi</b><i>·</i><a href="tel:+918287028821">+91 82870 28821</a></p>
     <div class="perf"></div>
     <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
       <button class="tab" type="button" role="tab" data-view="week"        aria-selected="true">The week</button>
@@ -449,14 +462,15 @@
           <span class="lbl">When</span><span class="val" id="valWhen">—</span><span class="chev"></span>
         </button>
         <div class="dd-menu">
-          <button class="dd-item" type="button" id="wkBtn">First week of August<span class="tick">✓</span></button>
-          <button class="dd-item" type="button" id="monthBtn">Whole of August<span class="tick">✓</span></button>
+          <button class="dd-item" type="button" id="wkBtn">This week<span class="tick">✓</span></button>
+          <button class="dd-item" type="button" id="monthBtn">Next 30 days<span class="tick">✓</span></button>
+          <button class="dd-item" type="button" id="aheadBtn">Everything ahead<span class="tick">✓</span></button>
           <div class="dd-sep"></div>
           <div class="dd-note">Or pick your own range</div>
           <div class="dd-dates">
-            <input type="date" id="from" value="2026-08-03" aria-label="From date">
+            <input type="date" id="from" aria-label="From date">
             <span style="color:var(--ink-4)">→</span>
-            <input type="date" id="to" value="2026-08-09" aria-label="To date">
+            <input type="date" id="to" aria-label="To date">
           </div>
         </div>
       </div>
@@ -702,7 +716,7 @@
 (function(){
   "use strict";
 
-  var TODAY = "2026-07-26";      // refresh marker — bump on every update
+  var TODAY = "2026-07-27";      // refresh marker — bump on every update
   var BASELINE = "2026-07-25";   // initial load; entries from this date are not "new"
   var NEW_WINDOW_DAYS = 3;       // "NEW" badge lifetime after that
 
@@ -718,7 +732,8 @@
     {k:"books",    label:"Books & quiz",  tone:"--c-books"},
     {k:"speak",    label:"Speaking",      tone:"--c-speak"},
     {k:"social",   label:"Social",        tone:"--c-social"},
-    {k:"outdoors", label:"Outdoors",      tone:"--c-outdoors"}
+    {k:"outdoors", label:"Outdoors",      tone:"--c-outdoors"},
+    {k:"wellness", label:"Yoga & sound",  tone:"--c-wellness"}
   ];
   var CATMAP = {}; CATS.forEach(function(c){ CATMAP[c.k] = c; });
 
@@ -1099,7 +1114,235 @@
      when:"Sat 22 Aug · 8:00 PM", where:"ICB Indian Craft Brewery — check which branch",
      note:"A brewery gig rather than an arena show, small enough to talk between sets. Confirm the branch before booking — there is more than one.",
      cost:"Ticketed", ts:"depends on branch", tm:"depends on branch",
-     url:"https://allevents.in/bangalore/saturday-night-special-live-singer-ft-usha-uthup/3900030234989958", added:"2026-07-25"}
+     url:"https://allevents.in/bangalore/saturday-night-special-live-singer-ft-usha-uthup/3900030234989958", added:"2026-07-25"},
+
+    /* ================= SUFI, QAWWALI & GHAZAL ================= */
+    {date:"2026-08-08", a:"indira", cat:"music", name:"Dil-e-Sukoon — Ghazal & Sufi Night",
+     when:"Sat 8 Aug · 7:30 PM", where:"Bloom Creative Zone, Indiranagar",
+     note:"578+ interested for a room that seats a fraction of that, so book rather than walk in. Small-venue Sufi is the version worth hearing — close enough to catch the harmonium breathing between lines.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/dil-e-sukoon-a-ghazal-and-sufi-night-by-ruh-voyage/3900030416902158", added:"2026-07-27"},
+
+    {date:"2026-09-19", a:"cbd", cat:"music", name:"Chitti Ayee Hai — Qawwali & Sufi Music",
+     when:"Sat 19 Sep · 6:00 PM", where:"Dr B.R. Ambedkar Bhavan, Millers Road",
+     note:"1,200+ interested and the biggest qawwali billing on the calendar right now. A proper auditorium rather than a bar, so the sound holds and the crowd is there to listen.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/chitti-ayee-hai-qawwali-and-sufi-music-bengaluru/3900030456495457", added:"2026-07-27"},
+
+    {date:"2026-09-12", a:"white", cat:"music", name:"Sukoon Wali Qawwali — live concert",
+     when:"Sat 12 Sep · 6:00 PM", where:"Courtyard, Phoenix Market City, Whitefield",
+     note:"An open courtyard set, which suits qawwali's build far better than a closed club. Whitefield on a Saturday evening is the trade-off — leave early or make a day of that side of town.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/sukoon-wali-qawwali-live-concert-experience/3900030389572950", added:"2026-07-27"},
+
+    {date:"2026-08-07", a:"white", cat:"music", name:"Strings & Stillness — Vikram Hazra",
+     when:"Fri 7 Aug · 6:30 PM", where:"MLR Convention Centre, Whitefield",
+     note:"Devotional and meditative music from an Art of Living-associated performer — the calm end of live music rather than a gig. A Friday that ends settled instead of wired.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/strings-and-stillness-by-vikram-hazra/3900030408974400", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"multi", cat:"music", name:"Bhakti Sangama — devotional music evening",
+     when:"Sat 1 Aug · 6:00 PM", where:"Venue on the listing",
+     note:"Free, and devotional music is the one genre where a mixed-age Bangalore crowd actually shows up together. Worth it for the room as much as the music.",
+     cost:"Free", free:true, url:"https://allevents.in/bangalore/bhakti-sangama-a-divine-evening-of-devotional-music-tickets/80003607047395", added:"2026-07-27"},
+
+    /* ================= ARTISTS ON TOUR ================= */
+    {date:"2026-11-14", a:"south", cat:"music", name:"Guns N' Roses — India 2026",
+     when:"Sat 14 Nov · 5:00 PM", where:"NICE Grounds",
+     note:"7,700+ interested and the largest booking in the city this year. NICE Grounds means a long haul both ways, so treat it as the whole evening — but this is the one people will ask if you went to.",
+     cost:"Ticketed", ts:"50–65 min", tm:"45–60 min",
+     url:"https://allevents.in/bangalore/guns-n-roses-india-2026-bengaluru/3900030235630234", added:"2026-07-27"},
+
+    {date:"2026-12-13", a:"south", cat:"music", name:"Fred again.. in Bengaluru",
+     when:"Sun 13 Dec · 3:00 PM", where:"NICE Grounds",
+     note:"The most talked-about live electronic act to tour India in years, and a Sunday afternoon start makes it survivable before a work week. Book early — this one moves fast.",
+     cost:"Ticketed", ts:"50–65 min", tm:"45–60 min",
+     url:"https://allevents.in/bangalore/fred-again-in-bengaluru/3300030339910215", added:"2026-07-27"},
+
+    {date:"2026-12-20", a:"multi", cat:"music", name:"Sunburn Arena ft. The Chainsmokers",
+     when:"Sun 20 Dec · 4:00 PM", where:"Venue to be announced",
+     note:"1,700+ interested already and the venue is still unannounced, which is normal for Sunburn. Worth registering interest now so you get the announcement rather than the resale price.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/sunburn-arena-ft-the-chainsmokers/3900030261460359", added:"2026-07-27"},
+
+    {date:"2026-10-24", a:"multi", cat:"music", name:"Sonu Nigam — The Revolution India Tour",
+     when:"Sat 24 Oct · 7:00 PM", where:"Venue to be announced",
+     note:"A full-scale playback tour, which in practice means three hours and a crowd that sings every word. Venue is unannounced, so the ₹1,499 floor price is the useful number for now.",
+     cost:"₹1,499+", url:"https://www.district.in/events/the-revolution-india-tour-bengaluru-2026-buy-tickets", added:"2026-07-27"},
+
+    {date:"2026-11-14", a:"multi", cat:"music", name:"Papon Live in Concert",
+     when:"Sat 14 Nov · 7:00 PM", where:"Venue to be announced",
+     note:"Papon live leans on the folk and ghazal end of his catalogue rather than the film hits, which is the better half. Clashes with Guns N' Roses on the same night — pick one.",
+     cost:"₹999+", url:"https://www.district.in/events/papon-live-in-concert-bengaluru-2026-buy-tickets", added:"2026-07-27"},
+
+    {date:"2026-08-29", a:"indira", cat:"music", name:"The Yellow Diary — ICWF Tour",
+     when:"Sat 29 Aug · 6:15 PM", where:"The Humming Tree, Indiranagar",
+     note:"One of the better Hindi indie bands in a venue that holds a few hundred, which is the right scale for them. The Humming Tree is walkable from Indiranagar dinner, so it extends easily.",
+     cost:"₹899", url:"https://www.district.in/events/in-case-we-forget-bangalore-aug29-2026-buy-tickets", added:"2026-07-27"},
+
+    {date:"2026-08-08", a:"cbd", cat:"music", name:"Marcin — Art of Guitar Tour",
+     when:"Sat 8 Aug · 7:00 PM", where:"Prestige Centre for Performing Arts",
+     note:"Percussive solo acoustic guitar — technically absurd and best heard in a seated hall like this one. Pricey at ₹2,750, but it is a proper concert venue rather than a brewery stage.",
+     cost:"₹2,750+", url:"https://www.district.in/events/jameson-ginger-ale-marcin-art-of-guitar-tour-bengaluru-2026-buy-tickets", added:"2026-07-27"},
+
+    {date:"2027-01-23", a:"multi", cat:"music", name:"Gorillaz — The Mountain Tour",
+     when:"Sat 23 Jan 2027 · 6:00 PM", where:"District Arena @ Terraform",
+     note:"Far out, but Gorillaz have never toured India before and tickets for this kind of first will not sit around. Worth diarising now even though it is months away.",
+     cost:"₹4,000+", url:"https://allevents.in/bangalore/gorillaz-the-mountain-tour-2027/4100029945653844", added:"2026-07-27"},
+
+    {date:"2027-01-29", a:"multi", cat:"music", name:"Foo Fighters — India Tour 2027",
+     when:"Fri 29 Jan 2027 · 3:00 PM", where:"Bengaluru LIVE",
+     note:"3,300+ interested. A Friday afternoon start means taking half a day, which is worth knowing before you commit rather than after.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/foo-fighters-india-tour-2027-bengaluru/3900030261468316", added:"2026-07-27"},
+
+    {date:"2026-12-05", a:"south", cat:"music", name:"Yuvan Shankar Raja in Bengaluru",
+     when:"Sat 5 Dec · 6:00 PM", where:"NICE Grounds",
+     note:"A Tamil film-music arena show, which is a genuinely different crowd from the indie and EDM circuits. Go if you want an evening where you are the one being introduced to something.",
+     cost:"Ticketed", ts:"50–65 min", tm:"45–60 min",
+     url:"https://allevents.in/bangalore/yuvan-shankar-raja-in-bengaluru/3300030390255539", added:"2026-07-27"},
+
+    {date:"2026-07-31", a:"sarjapur", cat:"music", name:"DND ft. Swarathma Live",
+     when:"Fri 31 Jul · 8:00 PM", where:"DND, Bellandur",
+     note:"Swarathma at ₹499, ten minutes from home — the best value on this board by some distance. Bellandur means you can go on a whim after work instead of planning around traffic.",
+     cost:"₹499", url:"https://allevents.in/bangalore/dnd-ft-swarathma-live/4100030413520922", added:"2026-07-27"},
+
+    {date:"2026-08-09", a:"sarjapur", cat:"music", name:"DND ft. Vasuki Vaibhav Live",
+     when:"Sun 9 Aug · 8:00 PM", where:"DND, Bellandur",
+     note:"Kannada indie from one of the scene's most recognisable voices, again at the venue nearest home. A Sunday 8 PM start is late, but the drive back is nothing.",
+     cost:"₹799+", url:"https://www.district.in/events", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"indira", cat:"music", name:"Pineapple Express Live",
+     when:"Sat 1 Aug · 8:00 PM", where:"The Humming Tree, Indiranagar",
+     note:"Bangalore's own jazz-funk outfit, playing the venue they effectively grew up in. The kind of gig where the band knows half the room.",
+     cost:"₹1,000", url:"https://allevents.in/bangalore/pineapple-express-live/4100030406942907", added:"2026-07-27"},
+
+    {date:"2026-08-14", a:"north", cat:"music", name:"Sudha Ragunathan in Bengaluru",
+     when:"Fri 14 Aug · 6:30 PM", where:"Chowdiah Memorial Hall, Malleswaram",
+     note:"Front-rank Carnatic vocalist in the hall built for exactly this. Chowdiah is a long run from either anchor, but a Carnatic concert there is a Bangalore institution worth doing once.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/sudha-ragunathan-in-bengaluru/3300030431873206", added:"2026-07-27"},
+
+    {date:"2026-08-22", a:"south", cat:"music", name:"MG Sreekumar — Malluminati Onam edition",
+     when:"Sat 22 Aug · 5:00 PM", where:"Forum South Bengaluru",
+     note:"An Onam-timed Malayalam music evening at ₹599, and the diaspora turnout is the actual draw. Easy entry point into a community that is otherwise hard to meet cold.",
+     cost:"₹599", url:"https://allevents.in/bangalore/mg-sreekumar-live-in-bangalore-malluminati-onam-edition/4100030249463329", added:"2026-07-27"},
+
+    {date:"2026-08-29", a:"multi", cat:"music", name:"Usha Uthup in Bengaluru",
+     when:"Sat 29 Aug · 8:00 PM", where:"ICB Indian Craft Brewery — check which branch",
+     note:"A second Usha Uthup date after the 22 Aug one, so if that clashes this is the backup. Confirm the branch before booking — there is more than one.",
+     cost:"Ticketed", ts:"depends on branch", tm:"depends on branch",
+     url:"https://allevents.in/bangalore/usha-uthup-in-bengaluru/3300030435423409", added:"2026-07-27"},
+
+    {date:"2026-08-23", a:"cbd", cat:"music", name:"Bhoomija's Jackfruit — Musicking into the Future",
+     when:"Sun 23 Aug · 6:30 PM", where:"Prestige Centre for Performing Arts",
+     note:"Bhoomija curate the more adventurous end of Indian classical and cross-genre work. Their programming is reliably the thing you would not have found yourself.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/ghazal", added:"2026-07-27"},
+
+    /* ================= YOGA, SOUND & STILLNESS ================= */
+    {dow:0, a:"north", cat:"wellness", name:"Sushumna Kriya Yoga — Vidyaranyapura",
+     when:"Every Sunday · 3:00 PM", where:"Vidyaranyapura, North Bengaluru",
+     note:"A weekly kriya yoga and meditation sitting, rated 4.7 across a long run of sessions. Far north, so this is a deliberate trip rather than a drop-in — but it is genuinely every week.",
+     cost:"Free", free:true, ts:"70–90 min", tm:"45–60 min",
+     url:"https://www.meetup.com/find/?keywords=yoga&location=in--Bangalore&source=EVENTS", added:"2026-07-27"},
+
+    {dow:6, a:"white", cat:"wellness", name:"Sushumna Kriya Yoga — Whitefield meditation",
+     when:"Alternate Saturdays · 10:30 AM", where:"Whitefield",
+     note:"The same group's fortnightly Whitefield sitting, which is a far easier reach than Vidyaranyapura. Morning slot, so it does not eat the rest of Saturday.",
+     cost:"Free", free:true,
+     url:"https://www.meetup.com/find/?keywords=yoga&location=in--Bangalore&source=EVENTS", added:"2026-07-27"},
+
+    {dow:0, a:"multi", cat:"wellness", name:"Satsang & Group Meditation — Ananda Sangha",
+     when:"Every Sunday · 10:00 AM", where:"Ananda Sangha — venue on the listing",
+     note:"Chanting, meditation and a talk, run weekly by an established Kriya lineage. A Sunday morning that starts quiet and still leaves the whole day free.",
+     cost:"Free", free:true,
+     url:"https://www.meetup.com/find/?keywords=sound%20healing&location=in--Bangalore&source=EVENTS", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"south", cat:"wellness", name:"Burnout to Balance — drum circle",
+     when:"Sat 1 Aug · 11:00 AM", where:"Nritya Darpan, JP Nagar 7th Phase",
+     note:"The closest thing on the board to sound therapy — a facilitated rhythm circle, no musical training expected. Drum circles break the ice faster than any mixer because nobody is performing.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/burnout-to-balance-drum-circle/80001140433686", added:"2026-07-27"},
+
+    {date:"2026-09-19", a:"white", cat:"wellness", name:"Bhajjan Therapy — Mantras, Beats & Bliss",
+     when:"Sat 19 Sep · 7:00 PM", where:"Phoenix Market City, Whitefield",
+     note:"Sound-and-mantra session pitched as therapy rather than performance, so participation is the point. Sits squarely between the music and wellness halves of this board.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/yoga", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"kora", cat:"wellness", name:"Puppy Yoga + journaling circle",
+     when:"Sat 1 Aug · 12:30 PM", where:"Good Move Studios, Koramangala",
+     note:"Exactly what it sounds like, and the journaling half makes it more than a novelty. ₹1,200 is steep for an hour, but it is the least intimidating room on this list.",
+     cost:"₹1,200", url:"https://allevents.in/bangalore/pawgas-puppy-yoga-journaling-circle-at-good-move-studios/4100030413643617", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"kora", cat:"wellness", name:"Inner Gold Circle — the art of deep listening",
+     when:"Sat 1 Aug · 4:00 PM", where:"Dialogues Cafe, Koramangala",
+     note:"A structured listening circle — you talk, and people actually listen, which is rarer than it sounds. Small by design, so it fills quickly.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/inner-gold-circle-the-art-of-deep-listening/3900030418006951", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"sarjapur", cat:"wellness", name:"Kalaripayattu for beginners — 2-day",
+     when:"Sat 1 – Sun 2 Aug · 7:00 AM", where:"Kadubeesanahalli",
+     note:"Free, beginner-level, and fifteen minutes from home — a two-day intro to Kerala's martial art. Free plus local plus genuinely unusual is a rare combination on this board.",
+     cost:"Free", free:true, url:"https://allevents.in/bangalore/kalaripayattu-for-beginners-2-day-workshop-in-bangalore-tickets/80009918174343", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"south", cat:"wellness", name:"Yoga workshop by Priti",
+     when:"Sat 1 Aug · 8:00 AM · repeats", where:"Bloom Creative Zone, Akshaya Nagar",
+     note:"A taught workshop rather than a drop-in class, and it runs on more than one date so a clash is not fatal. Early start clears the whole of Saturday.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/yoga-workshop-by-priti/3900030036254425", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"white", cat:"wellness", name:"Align Within",
+     when:"Sat 1 Aug · 8:00 AM · repeats", where:"Bloom Creative Zone, Whitefield",
+     note:"Movement-and-breathwork morning from the same studio network, on the Whitefield side. Runs on several dates, which makes it the easiest of these to actually attend.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/align-within/3900030134020127", added:"2026-07-27"},
+
+    {date:"2026-08-01", a:"multi", cat:"wellness", name:"Laughter Therapy",
+     when:"Sat 1 Aug · 2:00 PM · repeats", where:"Brik Oven — check branch",
+     note:"569+ interested and it runs on eight-plus dates, so it is clearly working for people. Absurd on paper, effective in practice, and impossible to attend without talking to someone.",
+     cost:"Ticketed", ts:"depends on branch", tm:"depends on branch",
+     url:"https://allevents.in/bangalore/laughter-therapy/3900030046316252", added:"2026-07-27"},
+
+    {date:"2026-07-30", a:"south", cat:"wellness", name:"The Awakening Youth Fest 2026",
+     when:"Thu 30 Jul · 5:00 PM", where:"Pyramid Valley International, Kanakapura Road",
+     note:"Pyramid Valley is a meditation campus rather than a venue, and worth seeing once regardless of the programme. A long way out on a Thursday — go only if you can leave early.",
+     cost:"Ticketed", ts:"60–75 min", tm:"70–90 min",
+     url:"https://allevents.in/bangalore/the-awakening-youth-fest-2026/80009865332799", added:"2026-07-27"},
+
+    /* ================= WEEKNIGHTS & WEEKEND ADDITIONS ================= */
+    {dow:2, a:"cbd", cat:"social", name:"Tease Tuesday ft. DJ Harsh",
+     when:"Every Tuesday · evening", where:"No Limmits Lounge, Brigade Road",
+     note:"Free entry on the emptiest night of the week, five minutes from the office. Low commitment by design — go for an hour and leave without it having cost anything.",
+     cost:"Free", free:true, url:"https://www.district.in/events", added:"2026-07-27"},
+
+    {date:"2026-08-04", a:"south", cat:"craft", name:"Make your own protein bar",
+     when:"Tue 4 Aug · 8:00 PM · repeats", where:"Fabrizo Creative Activity Hub, BTM Layout",
+     note:"A hands-on Tuesday-evening workshop, which is a rare thing — most weekday slots are talks. Small group and you leave with what you made.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/make-your-own-protein-bar/3900030322251521", added:"2026-07-27"},
+
+    {dow:0, a:"white", cat:"social", name:"Brunch Ka Scene — North Indian food gathering",
+     when:"Every Sunday · 12:00–4:00 PM", where:"Jollygunj, Whitefield",
+     note:"A four-hour communal brunch built around shared tables rather than a fixed programme. Long window, so arriving at two is fine.",
+     cost:"₹499+", url:"https://www.district.in/events/brunch-ka-scene-the-grand-north-indian-food-gathering-jollygunj-whitefield-jul5-2026-buy-tickets", added:"2026-07-27"},
+
+    {date:"2026-08-15", a:"cbd", cat:"craft", name:"The Mango Tree — art market",
+     when:"Sat 15 – Sun 16 Aug · 11:00 AM", where:"Sabha, Bengaluru",
+     note:"An independent makers' market at ₹199 entry, and the stallholders are the point — this is how you find studios and classes that never reach the listing platforms.",
+     cost:"₹199+", url:"https://www.district.in/events/the-mango-tree-art-market-aug15-2026-buy-tickets", added:"2026-07-27"},
+
+    {date:"2026-08-08", a:"cbd", cat:"outdoors", name:"Johnson Market heritage walk",
+     when:"Sat 8 Aug · 8:00 AM", where:"Johnson Market, Richmond Town",
+     note:"A guided morning walk through one of the oldest market quarters in the city, ending around breakfast. Walking tours are the easiest format for talking to strangers — you are all already moving.",
+     cost:"₹750", url:"https://allevents.in/bangalore/johnson-market-heritage-walk-tickets/80002089786145", added:"2026-07-27"},
+
+    {date:"2026-08-14", a:"multi", cat:"books", name:"Book Brahma Literature Festival 2026",
+     when:"Fri 14 Aug · 9:00 AM", where:"Venue on the listing",
+     note:"Free, and the largest Kannada-and-English literature gathering on the calendar. A full day, but you can drop in for two sessions and still have got the value.",
+     cost:"Free", free:true, url:"https://allevents.in/bangalore/book-brahma-literature-festival-2026-tickets/80002240246439", added:"2026-07-27"},
+
+    {date:"2026-09-12", a:"cbd", cat:"stage", name:"Mere Krishn — live theatrical",
+     when:"Sat 12 – Sun 13 Sep · multiple slots", where:"Prestige Centre for Performing Arts",
+     note:"A full-scale staged production rather than a stand-up set, which this board is otherwise short of. ₹5,000 floor price makes it a deliberate choice, not a casual one.",
+     cost:"₹5,000+", url:"https://www.district.in/events/mere-krishn-a-live-theatrical-experience-of-shree-krishns-life-bengaluru-02-2026-buy-tickets", added:"2026-07-27"},
+
+    {date:"2026-08-23", a:"kora", cat:"stage", name:"Pyar N' Stuff — Bengaluru show",
+     when:"Sun 23 Aug · 7:30 PM", where:"Koramangala Social",
+     note:"A storytelling-and-comedy hybrid in a room small enough that the front row is part of it. Koramangala Social on a Sunday is an easy, low-stakes night out.",
+     cost:"₹799", url:"https://www.district.in/events/pyar-n-stuff-bengaluru-show-aug23-2026-buy-tickets", added:"2026-07-27"},
+
+    {date:"2026-09-27", a:"cbd", cat:"outdoors", name:"Wipro Bengaluru Marathon 2026",
+     when:"Sun 27 Sep · 5:30 AM", where:"Sree Kanteerava Stadium",
+     note:"The city's flagship road race, with shorter distances alongside the full. Training for it from August is a better reason to join a running club than the run itself.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/wipro-bengaluru-marathon-2026/200030097378427", added:"2026-07-27"}
   ];
 
   var CLASSES = [
@@ -1157,6 +1400,9 @@
       String(dt.getDate()).padStart(2,"0");
   }
   function daysBetween(a,b){ return Math.round((d(b) - d(a)) / 86400000); }
+  function addDays(s, n){ var x = d(s); x.setDate(x.getDate() + n); return iso(x); }
+  /* Sunday-start week containing TODAY, so "this week" means the week you are in */
+  function weekStart(s){ var x = d(s); x.setDate(x.getDate() - x.getDay()); return iso(x); }
   function isNew(e){
     if (e.added <= BASELINE) return false;   // baseline load is not "new"
     var age = daysBetween(e.added, TODAY);
@@ -1174,8 +1420,12 @@
     return set;
   }
 
+  /* the default window follows TODAY, so it never goes stale between refreshes */
+  var WEEK_FROM = weekStart(TODAY), WEEK_TO = addDays(WEEK_FROM, 6);
+  var AHEAD_TO  = addDays(TODAY, 550);   // far enough for arena bookings months out
+
   var state = {area:"all", cat:"all", free:false, onlyNew:false, wknd:false, q:"",
-               from:"2026-08-03", to:"2026-08-09"};
+               from:WEEK_FROM, to:WEEK_TO};
 
   function inRange(e, dows){
     if (e.date) return e.date >= state.from && e.date <= state.to;
@@ -1349,11 +1599,16 @@
   from.addEventListener("change", onDate);
   to.addEventListener("change", onDate);
 
+  from.value = state.from; to.value = state.to;   // keep the inputs in step with the live default
+
   document.getElementById("wkBtn").addEventListener("click", function(){
-    from.value = "2026-08-03"; to.value = "2026-08-09"; onDate();
+    from.value = WEEK_FROM; to.value = WEEK_TO; onDate();
   });
   document.getElementById("monthBtn").addEventListener("click", function(){
-    from.value = "2026-08-03"; to.value = "2026-08-31"; onDate();
+    from.value = TODAY; to.value = addDays(TODAY, 30); onDate();
+  });
+  document.getElementById("aheadBtn").addEventListener("click", function(){
+    from.value = TODAY; to.value = AHEAD_TO; onDate();
   });
 
   var q = document.getElementById("q");
