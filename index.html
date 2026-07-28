@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260727-075120-7086">
+<meta name="build" content="20260728-131829-1316">
 </head>
 <body><title>Bangalore Circle</title>
 
@@ -344,6 +344,22 @@
   .go::after{content:" →"}
   .tel{font-size:12.5px; color:var(--ink-3); text-decoration:none}
   .tel:hover{text-decoration:underline; text-underline-offset:3px}
+  /* a pill, so it reads as a control rather than another line of card metadata.
+     Filled-when-on mirrors .tag.isnew, which is the board's existing "this is on" idiom. */
+  .save{
+    font-family:var(--sans); font-size:11.5px; font-weight:700; cursor:pointer;
+    background:none; color:var(--ink-3);
+    border:1.5px solid var(--line); border-radius:999px;
+    padding:3px 11px; line-height:1.4; margin:0;
+    transition:border-color .12s, color .12s, background .12s;
+  }
+  .save:hover{border-color:var(--accent); color:var(--accent)}
+  .save[aria-pressed="true"]{
+    background:var(--accent); border-color:var(--accent); color:#fff;
+  }
+  @media (prefers-color-scheme:dark){ .save[aria-pressed="true"]{color:#17130f} }
+  :root[data-theme="dark"] .save[aria-pressed="true"]{color:#17130f}
+  :root[data-theme="light"] .save[aria-pressed="true"]{color:#fff}
   .added{
     margin-left:auto; font-size:11.5px; color:var(--ink-4);
     font-variant-numeric:tabular-nums;
@@ -442,11 +458,13 @@
     <p class="subline">Where to be, every day of the week.</p>
     <p class="tally"><b id="tCount">—</b> things in range<i>·</i><b id="tFree">—</b> free<i>·</i><b
       id="tWknd">—</b> on Sat &amp; Sun<i>·</i><b id="tCat">—</b> categories<i>·</i><b
-      id="tNew" class="hot">—</b> added recently</p>
-    <p class="byline">Managed by <b>Amitoje Singh Bakshi</b><i>·</i><a href="tel:+918287028821">+91 82870 28821</a></p>
+      id="tNew" class="hot">—</b> added recently<span id="tSavedWrap" style="display:none"><i>·</i><b
+      id="tSaved" class="hot">—</b> saved</span></p>
+    <p class="byline">Managed by <b>Amitoje Singh Bakshi</b><i>·</i><a href="tel:+918287028821">+91 82870 28821</a><i>·</i><span id="swept"></span></p>
     <div class="perf"></div>
     <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
       <button class="tab" type="button" role="tab" data-view="week"        aria-selected="true">The week</button>
+      <button class="tab" type="button" role="tab" data-view="saved"       aria-selected="false">Saved<span class="n" id="tabSavedN"></span></button>
       <button class="tab" type="button" role="tab" data-view="classes"     aria-selected="false">Classes</button>
       <button class="tab" type="button" role="tab" data-view="communities" aria-selected="false">Communities to join</button>
       <button class="tab" type="button" role="tab" data-view="follow"      aria-selected="false">Follow &amp; connect</button>
@@ -495,6 +513,7 @@
         </button>
         <div class="dd-menu">
           <div class="dd-note">Combine as many as you like</div>
+          <button class="dd-item" type="button" id="savedBtn" aria-pressed="false">Only things I saved<span class="tick">✓</span></button>
           <button class="dd-item" type="button" id="newBtn" aria-pressed="false">Only new finds<span class="tick">✓</span></button>
           <button class="dd-item" type="button" id="freeBtn" aria-pressed="false">Only free things<span class="tick">✓</span></button>
           <button class="dd-item" type="button" id="wkndBtn" aria-pressed="false">Only Sat &amp; Sun<span class="tick">✓</span></button>
@@ -513,6 +532,21 @@
       <b>Nothing in this range.</b>
       Widen the dates, or clear a filter.
     </div>
+  </div>
+
+  <!-- ============ SAVED ============ -->
+  <div class="view" data-view="saved">
+  <section id="savedSec">
+    <div class="sechead">
+      <h2>Things you saved<span class="rule"></span></h2>
+      <p>Everything you've kept, whatever the date — this list ignores the filters on the week board. Stored in this browser on this device, and shared with nobody.</p>
+    </div>
+    <div class="grid" id="savedGrid"></div>
+    <div class="empty" id="savedEmpty">
+      <b>Nothing saved yet.</b>
+      Hit <b style="font-style:normal;display:inline;font-size:15px">Save</b> on any card and it will be waiting here.
+    </div>
+  </section>
   </div>
 
   <!-- ============ CLASSES & COURSES ============ -->
@@ -709,6 +743,8 @@
 
   <footer>
     <p>Every card carries two travel estimates: <b>home</b> is Amblipura on Sarjapur Road, <b>office</b> is Trinity Circle at the east end of MG Road. They are rough times in typical evening traffic, not measured routes — a sanity check rather than a plan. Note that Church Street and Brigade Road sit at the far end of MG Road, so “MG Road” venues are a 15–20 minute walk or one metro stop, not a doorstep. Confirm price and timing on the linked page before you travel; small venues change schedules often.</p>
+    <p>Anything you <b style="font-style:normal;color:var(--ink-2)">Save</b> is stored in this browser on this device only. There is no account and no server behind this page, so your saved list is yours alone — it is not visible to whoever shared this link with you, and it will not follow you to another phone or laptop. Clearing your browser data clears it.</p>
+    <p>Put together and kept current by <b style="font-style:normal;color:var(--ink-2)">Amitoje Singh Bakshi</b> — <a href="tel:+918287028821" style="font-style:normal;font-weight:700;white-space:nowrap">+91 82870 28821</a>. If something here has moved, closed or is worth adding, tell me and it goes in on the next refresh.</p>
   </footer>
 </div>
 
@@ -1393,8 +1429,35 @@
   }
   function daysBetween(a,b){ return Math.round((d(b) - d(a)) / 86400000); }
   function addDays(s, n){ var x = d(s); x.setDate(x.getDate() + n); return iso(x); }
-  /* Sunday-start week containing TODAY, so "this week" means the week you are in */
-  function weekStart(s){ var x = d(s); x.setDate(x.getDate() - x.getDay()); return iso(x); }
+
+  /* The reader's REAL date, read from their browser at load — deliberately separate from
+     TODAY, which is only the date of the last sweep. Every date window anchors on NOW, so
+     a dated event drops off by itself once it has passed and a link shared today still
+     tells the truth in September. Weekly recurring entries are unaffected. */
+  var NOW = iso(new Date());
+  /* far end of "Everything ahead" — ~18 months, relative so it never goes stale */
+  var HORIZON = addDays(NOW, 550);
+
+  /* ---------------- saved events ----------------
+     Saves live in this browser's localStorage and nowhere else. There is no account and
+     no server behind this page, so a save physically cannot travel to anyone else's copy
+     of the board — including the person who shared the link. */
+  var SAVE_KEY = "bangaloreCircle.saved.v1";
+  var saved = (function(){
+    try { return JSON.parse(localStorage.getItem(SAVE_KEY) || "[]"); }
+    catch (err) { return []; }        // private mode / storage disabled
+  })();
+  function keyOf(e){ return e.name + "|" + (e.date || ("d" + e.dow)); }
+  function isSaved(e){ return saved.indexOf(keyOf(e)) !== -1; }
+  function toggleSaved(k){
+    var i = saved.indexOf(k);
+    if (i === -1) saved.push(k); else saved.splice(i, 1);
+    try { localStorage.setItem(SAVE_KEY, JSON.stringify(saved)); } catch (err) {}
+  }
+  /* keys carry & and quotes, so they must be escaped before going in an attribute */
+  function attr(s){
+    return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+  }
   function isNew(e){
     if (e.added <= BASELINE) return false;   // baseline load is not "new"
     var age = daysBetween(e.added, TODAY);
@@ -1405,19 +1468,29 @@
     var m = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     return +p[2] + " " + m[+p[1]-1];
   }
-  /* which weekdays occur between two dates (inclusive) */
+  /* which weekdays occur between two dates (inclusive).
+     Stops as soon as all seven are seen — ranges now run 550 days, and walking that
+     one day at a time to learn "yes, all of them" is pointless. */
   function dowsInRange(from, to){
-    var set = {}, cur = d(from), end = d(to), n = 0;
-    while (cur <= end && n < 400){ set[cur.getDay()] = true; cur.setDate(cur.getDate()+1); n++; }
+    var set = {}, cur = d(from), end = d(to), n = 0, found = 0;
+    while (cur <= end && n < 400){
+      if (!set[cur.getDay()]){ set[cur.getDay()] = true; if (++found === 7) break; }
+      cur.setDate(cur.getDate()+1); n++;
+    }
     return set;
   }
+  /* the When label: carry the year only when the range straddles two of them */
+  function fmtWhen(a, b){
+    var ya = a.slice(0,4), yb = b.slice(0,4), span = ya !== yb;
+    return fmtAdded(a) + (span ? " " + ya : "") + " – " + fmtAdded(b) + (span ? " " + yb : "");
+  }
 
-  /* the default window follows TODAY, so it never goes stale between refreshes */
-  var WEEK_FROM = weekStart(TODAY), WEEK_TO = addDays(WEEK_FROM, 6);
-  var AHEAD_TO  = addDays(TODAY, 550);   // far enough for arena bookings months out
-
-  var state = {area:"all", cat:"all", free:false, onlyNew:false, wknd:false, q:"",
-               from:WEEK_FROM, to:WEEK_TO};
+  /* Opens on the coming week. A 550-day default would pile every Saturday between now and
+     2028 into one column, which is not what this view is shaped for. Anchored on NOW, not
+     TODAY, so past events fall away on their own. */
+  var DEF_FROM = NOW, DEF_TO = addDays(NOW, 6);
+  var state = {area:"all", cat:"all", free:false, onlyNew:false, wknd:false,
+               onlySaved:false, q:"", from:DEF_FROM, to:DEF_TO};
 
   function inRange(e, dows){
     if (e.date) return e.date >= state.from && e.date <= state.to;
@@ -1428,6 +1501,7 @@
     if (state.cat !== "all" && e.cat !== state.cat) return false;
     if (state.free && !e.free) return false;
     if (state.onlyNew && !isNew(e)) return false;
+    if (state.onlySaved && !isSaved(e)) return false;
     if (state.wknd){
       var day = e.date ? d(e.date).getDay() : e.dow;
       if (day !== 0 && day !== 6) return false;
@@ -1441,6 +1515,7 @@
 
   function cardHTML(e){
     var c = CATMAP[e.cat] || {label:e.cat, tone:"--c-social"};
+    var sv = isSaved(e);
     var area = AREAMAP[e.a]
       ? '<span class="tag">' + AREAMAP[e.a].label + '</span>' : '';
     var t = TRAVEL[e.a] || {s:"—", m:"—"};
@@ -1467,6 +1542,9 @@
       +     '<span class="cost' + (e.free ? ' is-free' : '') + '">' + e.cost + '</span>'
       +     (e.url ? '<a class="go" href="' + e.url + '">Open</a>' : '')
       +     (e.tel ? '<a class="tel" href="tel:' + e.tel + '">' + e.tel.replace("+91","") + '</a>' : '')
+      +     '<button class="save" type="button" data-k="' + attr(keyOf(e)) + '"'
+      +       ' aria-pressed="' + (sv ? 'true' : 'false') + '">'
+      +       (sv ? '★ Saved' : 'Save') + '</button>'
       +     '<span class="added">Added ' + fmtAdded(e.added) + '</span>'
       +   '</div>'
       + '</article>';
@@ -1513,8 +1591,40 @@
     document.getElementById("tCat").textContent =
       Object.keys(shown.reduce(function(a,e){ a[e.cat]=1; return a; }, {})).length;
 
+    /* the saved count only earns a place in the tally once there is one */
+    var nSaved = shown.filter(isSaved).length;
+    document.getElementById("tSaved").textContent = nSaved;
+    document.getElementById("tSavedWrap").style.display = nSaved ? "" : "none";
+
+    renderSaved();
     syncLabels();
+    writeHash();
   }
+
+  /* The saved list deliberately ignores the date range and every filter. A saved thing
+     you cannot find because the week moved on would defeat the point of saving it. */
+  function renderSaved(){
+    var items = E.filter(isSaved).sort(function(a, b){
+      var ad = a.date || "", bd = b.date || "";
+      if (ad && bd) return ad < bd ? -1 : (ad > bd ? 1 : 0);
+      if (ad) return -1;                       // dated things first, soonest first
+      if (bd) return 1;
+      var ao = (a.dow === 0 ? 7 : a.dow), bo = (b.dow === 0 ? 7 : b.dow);
+      return ao - bo;                          // then weekly ones, Mon through Sun
+    });
+    document.getElementById("savedGrid").innerHTML = items.map(cardHTML).join("");
+    document.getElementById("savedEmpty").style.display = items.length ? "none" : "block";
+    document.getElementById("tabSavedN").textContent = items.length ? items.length : "";
+  }
+
+  /* Delegated on document, not on #days — the same buttons appear in the Saved tab, and
+     cards are rebuilt as HTML on every render so per-button listeners would not survive. */
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest && ev.target.closest(".save");
+    if (!btn) return;
+    toggleSaved(btn.getAttribute("data-k"));
+    render();
+  });
 
   /* ---------------- build the What menu ---------------- */
   var catRow = document.getElementById("catRow");
@@ -1580,6 +1690,7 @@
   toggle("freeBtn","free");
   toggle("newBtn","onlyNew");
   toggle("wkndBtn","wknd");
+  toggle("savedBtn","onlySaved");
 
   var from = document.getElementById("from"), to = document.getElementById("to");
   function onDate(){
@@ -1591,16 +1702,16 @@
   from.addEventListener("change", onDate);
   to.addEventListener("change", onDate);
 
-  from.value = state.from; to.value = state.to;   // keep the inputs in step with the live default
-
+  /* every preset anchors on NOW, never on the sweep date */
+  function setRange(a, b){ from.value = a; to.value = b; onDate(); }
   document.getElementById("wkBtn").addEventListener("click", function(){
-    from.value = WEEK_FROM; to.value = WEEK_TO; onDate();
+    setRange(NOW, addDays(NOW, 6));
   });
   document.getElementById("monthBtn").addEventListener("click", function(){
-    from.value = TODAY; to.value = addDays(TODAY, 30); onDate();
+    setRange(NOW, addDays(NOW, 30));
   });
   document.getElementById("aheadBtn").addEventListener("click", function(){
-    from.value = TODAY; to.value = AHEAD_TO; onDate();
+    setRange(NOW, HORIZON);
   });
 
   var q = document.getElementById("q");
@@ -1667,7 +1778,7 @@
   }
 
   function syncLabels(){
-    setVal("valWhen", fmtAdded(state.from) + " – " + fmtAdded(state.to), false);
+    setVal("valWhen", fmtWhen(state.from, state.to), false);
     setVal("valWhere",
       state.area === "all" ? "Anywhere" : ((AREAMAP[state.area] || {}).label || state.area),
       state.area !== "all");
@@ -1676,20 +1787,23 @@
       state.cat !== "all");
 
     var on = [];
-    if (state.onlyNew) on.push("New");
-    if (state.free)    on.push("Free");
-    if (state.wknd)    on.push("Sat & Sun");
+    if (state.onlySaved) on.push("Saved");
+    if (state.onlyNew)   on.push("New");
+    if (state.free)      on.push("Free");
+    if (state.wknd)      on.push("Sat & Sun");
     setVal("valShow", on.length ? on.join(", ") : "All events", on.length > 0);
 
     var dirty = state.area !== "all" || state.cat !== "all"
-             || state.free || state.onlyNew || state.wknd || state.q;
+             || state.free || state.onlyNew || state.wknd || state.onlySaved || state.q;
     document.getElementById("clearBtn").classList.toggle("show", !!dirty);
   }
 
   /* ---------------- clear all ---------------- */
   document.getElementById("clearBtn").addEventListener("click", function(){
+    /* clears the filters only — it must never wipe what you have saved */
     state.area = "all"; state.cat = "all";
-    state.free = false; state.onlyNew = false; state.wknd = false; state.q = "";
+    state.free = false; state.onlyNew = false; state.wknd = false;
+    state.onlySaved = false; state.q = "";
     q.value = "";
     Array.prototype.slice.call(document.querySelectorAll("[data-area]")).forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-area") === "all"));
@@ -1697,11 +1811,92 @@
     Array.prototype.slice.call(document.querySelectorAll("[data-cat]")).forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-cat") === "all"));
     });
-    ["newBtn","freeBtn","wkndBtn"].forEach(function(id){
+    ["newBtn","freeBtn","wkndBtn","savedBtn"].forEach(function(id){
       document.getElementById(id).setAttribute("aria-pressed","false");
     });
     closeAll(null);
     render();
+  });
+
+  /* ---------------- shareable filter state ----------------
+     The filters live in the URL hash, so "the board, filtered to HSR board games" is a
+     link you can send rather than three dropdowns you have to describe. Only non-default
+     values are written, so an untouched board keeps a clean URL. */
+  function writeHash(){
+    var p = [], show = [];
+    if (state.area !== "all") p.push("area=" + state.area);
+    if (state.cat  !== "all") p.push("cat="  + state.cat);
+    if (state.onlySaved) show.push("saved");
+    if (state.onlyNew)   show.push("new");
+    if (state.free)      show.push("free");
+    if (state.wknd)      show.push("wknd");
+    if (show.length) p.push("show=" + show.join(","));
+    if (state.q)     p.push("q=" + encodeURIComponent(state.q));
+    if (state.from !== DEF_FROM) p.push("from=" + state.from);
+    if (state.to   !== DEF_TO)   p.push("to="   + state.to);
+    var h = p.length ? "#" + p.join("&") : "";
+    if (h !== location.hash) {
+      /* replaceState, not a hash assignment: every filter click should not become a
+         separate back-button step, and replaceState does not re-fire hashchange */
+      history.replaceState(null, "", location.pathname + location.search + h);
+    }
+  }
+
+  var ISO_RE = /^\d{4}-\d{2}-\d{2}$/;
+  function readHash(){
+    var h = location.hash.replace(/^#/, "");
+    /* A hash describes the WHOLE view, not a patch on the current one. Reset first, or
+       following one shared link after another silently keeps the earlier filters — and
+       an unrecognised key would leave the reader looking at someone else's board. */
+    state.area = "all"; state.cat = "all";
+    state.free = false; state.onlyNew = false; state.wknd = false; state.onlySaved = false;
+    state.q = ""; state.from = DEF_FROM; state.to = DEF_TO;
+    if (!h) return false;
+    var got = false;
+    h.split("&").forEach(function(kv){
+      var i = kv.indexOf("="); if (i < 0) return;
+      var k = kv.slice(0, i), v = decodeURIComponent(kv.slice(i + 1));
+      /* validate against the real maps — a stale or mistyped link should fall back to the
+         normal board, never render an empty one with no explanation */
+      if      (k === "area" && (v === "all" || AREAMAP[v])) { state.area = v; got = true; }
+      else if (k === "cat"  && (v === "all" || CATMAP[v]))  { state.cat  = v; got = true; }
+      else if (k === "show"){
+        v.split(",").forEach(function(s){
+          if (s === "saved") state.onlySaved = true;
+          if (s === "new")   state.onlyNew   = true;
+          if (s === "free")  state.free      = true;
+          if (s === "wknd")  state.wknd      = true;
+        });
+        got = true;
+      }
+      else if (k === "q") { state.q = v.trim().toLowerCase(); got = true; }
+      else if (k === "from" && ISO_RE.test(v)) { state.from = v; got = true; }
+      else if (k === "to"   && ISO_RE.test(v)) { state.to   = v; got = true; }
+    });
+    if (state.to < state.from) state.to = state.from;
+    return got;
+  }
+
+  /* push whatever state we ended up with back onto the controls */
+  function applyStateToUI(){
+    Array.prototype.slice.call(document.querySelectorAll("[data-area]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-area") === state.area));
+    });
+    Array.prototype.slice.call(document.querySelectorAll("[data-cat]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-cat") === state.cat));
+    });
+    document.getElementById("savedBtn").setAttribute("aria-pressed", String(state.onlySaved));
+    document.getElementById("newBtn").setAttribute("aria-pressed",   String(state.onlyNew));
+    document.getElementById("freeBtn").setAttribute("aria-pressed",  String(state.free));
+    document.getElementById("wkndBtn").setAttribute("aria-pressed",  String(state.wknd));
+    q.value    = state.q;
+    from.value = state.from;
+    to.value   = state.to;
+  }
+
+  /* someone pasting a different hash, or arriving from an external link */
+  window.addEventListener("hashchange", function(){
+    readHash(); applyStateToUI(); render();
   });
 
   /* ---------------- section tabs ---------------- */
@@ -1721,6 +1916,18 @@
     });
   });
 
+  /* ---------------- boot ---------------- */
+  /* How fresh is this board? Says so plainly, and admits it when it has been a while —
+     a shared link with no date on it gives a reader no way to judge it. */
+  (function(){
+    var age = daysBetween(TODAY, NOW);
+    var txt = "last swept " + fmtAdded(TODAY);
+    if (age >= 14) txt += " — " + Math.floor(age / 7) + " weeks ago";
+    document.getElementById("swept").textContent = txt;
+  })();
+
+  readHash();          // a shared link wins over the defaults
+  applyStateToUI();    // then the controls are made to match whatever we ended up with
   render();
 })();
 </script>
