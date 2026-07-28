@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260728-201444-6474">
+<meta name="build" content="20260728-201816-1178">
 </head>
 <body><title>Bangalore Circle</title>
 
@@ -482,7 +482,7 @@
         <div class="dd-menu">
           <button class="dd-item" type="button" id="wkBtn">This week<span class="tick">✓</span></button>
           <button class="dd-item" type="button" id="monthBtn">Next 30 days<span class="tick">✓</span></button>
-          <button class="dd-item" type="button" id="thisMonBtn">Rest of this month<span class="tick">✓</span></button>
+          <button class="dd-item" type="button" id="thisMonBtn">This month<span class="tick">✓</span></button>
           <button class="dd-item" type="button" id="nextMonBtn">Next month<span class="tick">✓</span></button>
           <button class="dd-item" type="button" id="aheadBtn">Everything ahead<span class="tick">✓</span></button>
           <div class="dd-sep"></div>
@@ -1498,10 +1498,6 @@
   }
   function daysBetween(a,b){ return Math.round((d(b) - d(a)) / 86400000); }
   function addDays(s, n){ var x = d(s); x.setDate(x.getDate() + n); return iso(x); }
-  /* day 0 of the following month is the last day of this one — no leap-year special case */
-  function monthEnd(s){ var p = s.split("-"); return iso(new Date(+p[0], +p[1], 0)); }
-  /* the 1st, n months on. Rolls the year over on its own, so Dec -> Jan is free */
-  function monthsOn(s, n){ var p = s.split("-"); return iso(new Date(+p[0], +p[1]-1+n, 1)); }
 
   /* The reader's REAL date, read from their browser at load — deliberately separate from
      TODAY, which is only the date of the last sweep. Every date window anchors on NOW, so
@@ -1810,17 +1806,35 @@
   document.getElementById("monthBtn").addEventListener("click", function(){
     setRange(NOW, addDays(NOW, 30));
   });
-  /* "Rest of this month" starts at NOW, not the 1st — the earlier part has already gone */
-  document.getElementById("thisMonBtn").addEventListener("click", function(){
-    setRange(NOW, monthEnd(NOW));
-  });
-  /* next month means the whole calendar month: in July that is 1–31 Aug */
-  document.getElementById("nextMonBtn").addEventListener("click", function(){
-    var first = monthsOn(NOW, 1);
-    setRange(first, monthEnd(first));
-  });
   document.getElementById("aheadBtn").addEventListener("click", function(){
     setRange(NOW, HORIZON);
+  });
+
+  /* Calendar months, which is how people actually think about "August".
+     offset 0 = the month we are in, 1 = the one after it, and so on.
+     "This month" starts at NOW, never at the 1st — the part of the month that has already
+     happened is not something anyone wants back on the board. */
+  function monthWindow(offset){
+    var d0 = d(NOW);
+    var first = new Date(d0.getFullYear(), d0.getMonth() + offset, 1);
+    var last  = new Date(d0.getFullYear(), d0.getMonth() + offset + 1, 0); // day 0 = last of prev
+    return [(offset === 0) ? NOW : iso(first), iso(last)];
+  }
+  function monthShort(offset){
+    var d0 = d(NOW);
+    var m = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return m[new Date(d0.getFullYear(), d0.getMonth() + offset, 1).getMonth()];
+  }
+  /* name the months on the buttons, so "Next month" is unambiguous in August */
+  document.getElementById("thisMonBtn").innerHTML =
+    "This month · " + monthShort(0) + '<span class="tick">✓</span>';
+  document.getElementById("nextMonBtn").innerHTML =
+    "Next month · " + monthShort(1) + '<span class="tick">✓</span>';
+  document.getElementById("thisMonBtn").addEventListener("click", function(){
+    var r = monthWindow(0); setRange(r[0], r[1]);
+  });
+  document.getElementById("nextMonBtn").addEventListener("click", function(){
+    var r = monthWindow(1); setRange(r[0], r[1]);
   });
 
   var q = document.getElementById("q");
@@ -1900,7 +1914,7 @@
     if (state.cats.length === 1) catTxt = (CATMAP[state.cats[0]] || {}).label || state.cats[0];
     else if (state.cats.length === 2) catTxt = state.cats.map(function(k){
       return (CATMAP[k] || {}).label || k;
-    }).join(" + ");
+    }).join(", ");
     else if (state.cats.length > 2) catTxt = state.cats.length + " types";
     setVal("valWhat", catTxt, state.cats.length > 0);
 
