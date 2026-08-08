@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260808-073856-9447">
+<meta name="build" content="20260808-185756-5611">
 </head>
 <body><title>Bangalore Circle</title>
 
@@ -31,6 +31,7 @@
     --c-social:#26647f;
     --c-outdoors:#2e6b45;
     --c-wellness:#4a7c6f;
+    --c-sport:#a03d2f;
 
     --d0:#c2410c; --d1:#3f5f86; --d2:#1f6f62; --d3:#9c3f6b;
     --d4:#a8621b; --d5:#63459b; --d6:#b23a58;
@@ -52,6 +53,7 @@
       --c-product:#5fbfab; --c-ai:#b09ae2; --c-craft:#e0a05c;
       --c-music:#d19ad1; --c-stage:#e8899e; --c-books:#a9c065; --c-speak:#dcb75a;
       --c-social:#6fb2cf; --c-outdoors:#72bd90; --c-wellness:#7bc4b0;
+      --c-sport:#e5866f;
       --d0:#f2874f; --d1:#8fb0d8; --d2:#5fbfab; --d3:#dd8fb4;
       --d4:#e0a05c; --d5:#b09ae2; --d6:#e8899e;
       --new:#f2874f; --link:#f2874f;
@@ -67,6 +69,7 @@
     --c-product:#5fbfab; --c-ai:#b09ae2; --c-craft:#e0a05c;
     --c-music:#d19ad1; --c-stage:#e8899e; --c-books:#a9c065; --c-speak:#dcb75a;
     --c-social:#6fb2cf; --c-outdoors:#72bd90; --c-wellness:#7bc4b0;
+    --c-sport:#e5866f;
     --d0:#f2874f; --d1:#8fb0d8; --d2:#5fbfab; --d3:#dd8fb4;
     --d4:#e0a05c; --d5:#b09ae2; --d6:#e8899e;
     --new:#f2874f; --link:#f2874f;
@@ -81,6 +84,7 @@
     --c-product:#1f6f62; --c-ai:#63459b; --c-craft:#a8621b;
     --c-music:#8c3a8c; --c-stage:#b23a58; --c-books:#54711f; --c-speak:#8a6512;
     --c-social:#26647f; --c-outdoors:#2e6b45; --c-wellness:#4a7c6f;
+    --c-sport:#a03d2f;
     --d0:#c2410c; --d1:#3f5f86; --d2:#1f6f62; --d3:#9c3f6b;
     --d4:#a8621b; --d5:#63459b; --d6:#b23a58;
     --new:#c2410c; --link:#a8360a;
@@ -502,6 +506,13 @@
         <div class="dd-menu" id="areaRow"></div>
       </div>
 
+      <div class="dd" id="ddNear">
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+          <span class="lbl">Near</span><span class="val" id="valNear">Any distance</span><span class="chev"></span>
+        </button>
+        <div class="dd-menu" id="nearRow"></div>
+      </div>
+
       <div class="dd" id="ddWhat">
         <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
           <span class="lbl">What</span><span class="val" id="valWhat">Any type</span><span class="chev"></span>
@@ -771,7 +782,8 @@
     {k:"speak",    label:"Speaking",      tone:"--c-speak"},
     {k:"social",   label:"Social",        tone:"--c-social"},
     {k:"outdoors", label:"Outdoors",      tone:"--c-outdoors"},
-    {k:"wellness", label:"Yoga & sound",  tone:"--c-wellness"}
+    {k:"wellness", label:"Yoga & sound",  tone:"--c-wellness"},
+    {k:"sport",    label:"Sport & racquet", tone:"--c-sport"}
   ];
   var CATMAP = {}; CATS.forEach(function(c){ CATMAP[c.k] = c; });
 
@@ -1631,7 +1643,35 @@
     {date:"2026-09-04", a:"white", cat:"social", name:"Sri Krishna Janmashtami Ananda Mahotsava",
      when:"Fri 4 – Sat 5 Sep · from 10:00 AM", where:"KTPO, Whitefield",
      note:"The Jhulan swing festival, running two full days at the same venue as the Jamfest — go once and you catch both. The Mahabhog thali ticket is free; everything beyond that is optional sponsorship.",
-     cost:"Free entry", free:true, url:"https://allevents.in/bangalore/sri-krishna-janmashtami-ananda-mahotsava-2026-tickets/80004839300332", added:"2026-08-08"}
+     cost:"Free entry", free:true, url:"https://allevents.in/bangalore/sri-krishna-janmashtami-ananda-mahotsava-2026-tickets/80004839300332", added:"2026-08-08"},
+
+    /* ================= SPORT & RACQUET =================
+       A weekly court booking is one of the better circle-builders going: same faces, same
+       night, and nobody has to make conversation to take part. These are venues and
+       academies rather than dated events — ring ahead and ask about adult batches. */
+    {dow:2, a:"sarjapur", cat:"sport", name:"PaddleX Bellandur — pickleball",
+     when:"Daily · 6:00 AM–11:00 PM", where:"Bhoganahalli Road, Bellandur — near Ecoworld",
+     note:"Six proper nine-layer courts with a certified coach in house, paddles for hire, and showers. Pickleball is the easiest racquet sport to start cold, and this is the closest serious venue to home.",
+     cost:"Book via Hudle", tel:"+919144744747",
+     url:"https://www.paddlex.in/courts.html", added:"2026-08-08"},
+
+    {dow:3, a:"sarjapur", cat:"sport", name:"Sol Sports Tennis Academy",
+     when:"Check batches — ring ahead", where:"Mana Pristine, Doddakannelli, off Sarjapur Road",
+     note:"The nearest tennis academy to home by some distance, with a real competitive record behind it. Their site does not publish adult batches, so ask specifically for one rather than assuming.",
+     cost:"Ask", tel:"+917026511330",
+     url:"https://www.solsports.in/", added:"2026-08-08"},
+
+    {dow:4, a:"south", cat:"sport", name:"Bangalore Tennis Academy — weekend adult programme",
+     when:"Weekends · adult batch", where:"Kothnaur–Arekere Main Road, JP Nagar 7th Phase",
+     note:"The only place found so far with a named adult programme rather than a kids' academy that tolerates grown-ups — an hour of group training plus fitness. ₹5,000 a month, or ₹31,000 for the year.",
+     cost:"₹5,000/month", tel:"+919945157271",
+     url:"https://www.bangaloretennisacademy.com/", added:"2026-08-08"},
+
+    {dow:1, a:"white", cat:"sport", name:"Gopalan Sports Centre — lawn tennis",
+     when:"Tue–Sun · batches by level", where:"Seetharampalya, Hoodi, Whitefield",
+     note:"Three synthetic courts and a graded ladder from beginner through to tournament prep, so there is somewhere to go after the first month. Closed Mondays; ₹4,500–7,000 a month depending on frequency.",
+     cost:"₹4,500–7,000/month", tel:"+916364896510",
+     url:"https://www.gopalansportscenter.com/lawn-tennis.html", added:"2026-08-08"}
   ];
 
   var CLASSES = [
@@ -1754,7 +1794,34 @@
      board twice. Empty means no category filter at all, which is why "Any type" is the
      empty array rather than a magic "all" string. */
   var state = {area:"all", cats:[], free:false, onlyNew:false, wknd:false,
-               onlySaved:false, q:"", from:DEF_FROM, to:DEF_TO};
+               onlySaved:false, q:"", near:"", from:DEF_FROM, to:DEF_TO};
+
+  /* ---------------- travel-time filter ----------------
+     Every card already carries two estimates — from home (s) and from the office (m) —
+     so this needs no new data, only a way to read them as numbers. The estimates are
+     human ranges ("12–15 min", "15–20 min walk", "90 min+"), so take the TOP of the
+     range: "within 20 minutes" should mean the slow end still lands under 20, not the
+     optimistic end. Anything without a number in it — "varies", "overnight trip",
+     "depends on branch" — is genuinely unknown and is filtered OUT rather than assumed
+     near, because the honest answer to "is this within 20 minutes" is "cannot say". */
+  var NEAR_OPTS = [
+    {k:"s15", anchor:"s", cap:15, label:"Within 15 min of home"},
+    {k:"s20", anchor:"s", cap:20, label:"Within 20 min of home"},
+    {k:"s30", anchor:"s", cap:30, label:"Within 30 min of home"},
+    {k:"m20", anchor:"m", cap:20, label:"Within 20 min of the office"},
+    {k:"m30", anchor:"m", cap:30, label:"Within 30 min of the office"}
+  ];
+  var NEARMAP = {}; NEAR_OPTS.forEach(function(o){ NEARMAP[o.k] = o; });
+
+  function travelMins(str){
+    var nums = String(str == null ? "" : str).match(/\d+/g);
+    if (!nums) return null;
+    return Math.max.apply(null, nums.map(Number));
+  }
+  function travelFor(e, anchor){
+    var t = TRAVEL[e.a] || {};
+    return anchor === "s" ? (e.ts || t.s) : (e.tm || t.m);
+  }
 
   function inRange(e, dows){
     if (e.date) return e.date >= state.from && e.date <= state.to;
@@ -1769,6 +1836,13 @@
     if (state.wknd){
       var day = e.date ? d(e.date).getDay() : e.dow;
       if (day !== 0 && day !== 6) return false;
+    }
+    if (state.near){
+      var opt = NEARMAP[state.near];
+      if (opt){
+        var mins = travelMins(travelFor(e, opt.anchor));
+        if (mins === null || mins > opt.cap) return false;
+      }
     }
     if (state.q){
       var hay = (e.name+" "+e.where+" "+e.note+" "+e.when+" "+(CATMAP[e.cat]||{}).label).toLowerCase();
@@ -1929,6 +2003,52 @@
       + '<span class="tick">✓</span>';
     areaRow.appendChild(b);
   });
+
+  /* ---------------- build the Near menu ----------------
+     Each option shows how many entries survive it, because "Within 15 min of home" is
+     only useful if you can see at a glance whether that leaves you three things or forty. */
+  var nearRow = document.getElementById("nearRow");
+  var anyNear = document.createElement("button");
+  anyNear.className = "dd-item"; anyNear.type = "button";
+  anyNear.setAttribute("data-near","");
+  anyNear.setAttribute("aria-pressed","true");
+  anyNear.innerHTML = 'Any distance<span class="tick">✓</span>';
+  nearRow.appendChild(anyNear);
+  nearRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
+  NEAR_OPTS.forEach(function(o){
+    /* count only what a reader could still go to — a one-off that has already happened is
+       filtered out of the board, so counting it here would promise more than the click gives */
+    var n = E.filter(function(e){
+      if (e.date && e.date < NOW) return false;
+      var m = travelMins(travelFor(e, o.anchor));
+      return m !== null && m <= o.cap;
+    }).length;
+    var b = document.createElement("button");
+    b.className = "dd-item"; b.type = "button";
+    b.setAttribute("data-near", o.k);
+    b.setAttribute("aria-pressed","false");
+    b.innerHTML = o.label
+      + '<span class="ddmeta">' + n + '</span>'
+      + '<span class="tick">✓</span>';
+    nearRow.appendChild(b);
+  });
+  nearRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
+  nearRow.appendChild(Object.assign(document.createElement("div"), {
+    className:"dd-note",
+    textContent:"Rough evening-traffic estimates, not routed times. Anything whose travel is “varies” or an overnight trip is left out — it cannot honestly be called near."
+  }));
+
+  /* Single-choice, like Where — two distance caps at once is not a question anyone asks. */
+  (function bindNear(){
+    var btns = Array.prototype.slice.call(document.querySelectorAll("[data-near]"));
+    btns.forEach(function(b){
+      b.addEventListener("click", function(){
+        state.near = b.getAttribute("data-near");
+        btns.forEach(function(o){ o.setAttribute("aria-pressed", String(o === b)); });
+        render();
+      });
+    });
+  })();
 
   /* Where stays single-choice: you are in one place at a time. */
   (function bindArea(){
@@ -2117,8 +2237,15 @@
     if (state.wknd)      on.push("Sat & Sun");
     setVal("valShow", on.length ? on.join(", ") : "All events", on.length > 0);
 
+    var nearOpt = NEARMAP[state.near];
+    setVal("valNear",
+      nearOpt ? (nearOpt.cap + " min · " + (nearOpt.anchor === "s" ? "home" : "office"))
+              : "Any distance",
+      !!nearOpt);
+
     var dirty = state.area !== "all" || state.cats.length
-             || state.free || state.onlyNew || state.wknd || state.onlySaved || state.q;
+             || state.free || state.onlyNew || state.wknd || state.onlySaved
+             || state.near || state.q;
     document.getElementById("clearBtn").classList.toggle("show", !!dirty);
   }
 
@@ -2127,8 +2254,11 @@
     /* clears the filters only — it must never wipe what you have saved */
     state.area = "all"; state.cats = [];
     state.free = false; state.onlyNew = false; state.wknd = false;
-    state.onlySaved = false; state.q = "";
+    state.onlySaved = false; state.q = ""; state.near = "";
     q.value = "";
+    Array.prototype.slice.call(document.querySelectorAll("[data-near]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-near") === ""));
+    });
     Array.prototype.slice.call(document.querySelectorAll("[data-area]")).forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-area") === "all"));
     });
@@ -2153,6 +2283,7 @@
     if (state.free)      show.push("free");
     if (state.wknd)      show.push("wknd");
     if (show.length) p.push("show=" + show.join(","));
+    if (state.near)  p.push("near=" + state.near);
     if (state.q)     p.push("q=" + encodeURIComponent(state.q));
     if (state.from !== DEF_FROM) p.push("from=" + state.from);
     if (state.to   !== DEF_TO)   p.push("to="   + state.to);
@@ -2172,7 +2303,7 @@
        an unrecognised key would leave the reader looking at someone else's board. */
     state.area = "all"; state.cats = [];
     state.free = false; state.onlyNew = false; state.wknd = false; state.onlySaved = false;
-    state.q = ""; state.from = DEF_FROM; state.to = DEF_TO;
+    state.q = ""; state.near = ""; state.from = DEF_FROM; state.to = DEF_TO;
     if (!h) return false;
     var got = false;
     h.split("&").forEach(function(kv){
@@ -2196,6 +2327,7 @@
         });
         got = true;
       }
+      else if (k === "near" && NEARMAP[v]) { state.near = v; got = true; }
       else if (k === "q") { state.q = v.trim().toLowerCase(); got = true; }
       else if (k === "from" && ISO_RE.test(v)) { state.from = v; got = true; }
       else if (k === "to"   && ISO_RE.test(v)) { state.to   = v; got = true; }
@@ -2210,6 +2342,9 @@
       b.setAttribute("aria-pressed", String(b.getAttribute("data-area") === state.area));
     });
     syncCatButtons();
+    Array.prototype.slice.call(document.querySelectorAll("[data-near]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-near") === state.near));
+    });
     document.getElementById("savedBtn").setAttribute("aria-pressed", String(state.onlySaved));
     document.getElementById("newBtn").setAttribute("aria-pressed",   String(state.onlyNew));
     document.getElementById("freeBtn").setAttribute("aria-pressed",  String(state.free));
