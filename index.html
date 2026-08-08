@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260808-185756-5611">
+<meta name="build" content="20260808-190825-2288">
 </head>
 <body><title>Bangalore Circle</title>
 
@@ -518,6 +518,13 @@
           <span class="lbl">What</span><span class="val" id="valWhat">Any type</span><span class="chev"></span>
         </button>
         <div class="dd-menu" id="catRow"></div>
+      </div>
+
+      <div class="dd" id="ddPrice">
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+          <span class="lbl">Price</span><span class="val" id="valPrice">Any price</span><span class="chev"></span>
+        </button>
+        <div class="dd-menu" id="priceRow"></div>
       </div>
 
       <div class="dd" id="ddShow">
@@ -1794,7 +1801,53 @@
      board twice. Empty means no category filter at all, which is why "Any type" is the
      empty array rather than a magic "all" string. */
   var state = {area:"all", cats:[], free:false, onlyNew:false, wknd:false,
-               onlySaved:false, q:"", near:"", from:DEF_FROM, to:DEF_TO};
+               onlySaved:false, q:"", near:"", price:"", from:DEF_FROM, to:DEF_TO};
+
+  /* ---------------- price bands ----------------
+     Costs are written for a human ("₹349+", "₹199–1,099", "₹250 + ₹99 cover"), so reading
+     them as numbers needs three rules, each learned from a real string on this board:
+
+       1. STRIP COMMAS FIRST. "₹1,499" naively yields [1, 499] — both wrong, and the second
+          silently lands a ₹1,499 gig in the "under ₹500" band.
+       2. A RANGE OR A "+" MEANS THE FLOOR. "₹349+" and "₹299–399" both answer "can I get
+          in for under X?" with their lowest number — that is the entry price.
+       3. "A + B" IS ADDITIVE, NOT A RANGE. "₹250 + ₹99 cover" is ₹349 to walk in, not ₹99.
+          Taking the floor there would be a lie in the reader's favour, which is the worst
+          direction for it to be wrong.
+
+     Bands are cumulative — "Under ₹500" includes the free things, because that is what
+     someone asking the question means. Anything unpriced ("Ticketed", "Check listing",
+     "Ask") is filtered OUT rather than assumed cheap: 53 entries carry no number, mostly
+     concerts, and quietly showing them under "Under ₹300" would be the same lie as rule 3. */
+  var PRICE_OPTS = [
+    {k:"free",  cap:0,    label:"Free only"},
+    {k:"u300",  cap:300,  label:"Under ₹300"},
+    {k:"u500",  cap:500,  label:"Under ₹500"},
+    {k:"u1000", cap:1000, label:"Under ₹1,000"},
+    {k:"o1000", cap:null, label:"₹1,000 and over"}
+  ];
+  var PRICEMAP = {}; PRICE_OPTS.forEach(function(o){ PRICEMAP[o.k] = o; });
+
+  function costOf(e){
+    if (e.free) return 0;
+    var s = String(e.cost == null ? "" : e.cost);
+    if (/^\s*free/i.test(s)) return 0;
+    s = s.replace(/,/g, "");                       // rule 1
+    var nums = s.match(/\d+/g);
+    if (!nums) return null;                        // "Ticketed", "Ask", "Varies"
+    nums = nums.map(Number);
+    if (/\d\s*\+\s*₹?\s*\d/.test(s)) {             // rule 3 — "₹250 + ₹99 cover"
+      return nums.reduce(function(a, b){ return a + b; }, 0);
+    }
+    return Math.min.apply(null, nums);             // rule 2
+  }
+  function inPriceBand(e, key){
+    var opt = PRICEMAP[key];
+    if (!opt) return true;
+    var c = costOf(e);
+    if (c === null) return false;                  // unpriced never claims a band
+    return opt.cap === null ? c >= 1000 : c <= opt.cap;
+  }
 
   /* ---------------- travel-time filter ----------------
      Every card already carries two estimates — from home (s) and from the office (m) —
@@ -1844,6 +1897,7 @@
         if (mins === null || mins > opt.cap) return false;
       }
     }
+    if (state.price && !inPriceBand(e, state.price)) return false;
     if (state.q){
       var hay = (e.name+" "+e.where+" "+e.note+" "+e.when+" "+(CATMAP[e.cat]||{}).label).toLowerCase();
       if (hay.indexOf(state.q) === -1) return false;
@@ -2050,6 +2104,51 @@
     });
   })();
 
+  /* ---------------- build the Price menu ---------------- */
+  var priceRow = document.getElementById("priceRow");
+  var anyPrice = document.createElement("button");
+  anyPrice.className = "dd-item"; anyPrice.type = "button";
+  anyPrice.setAttribute("data-price","");
+  anyPrice.setAttribute("aria-pressed","true");
+  anyPrice.innerHTML = 'Any price<span class="tick">✓</span>';
+  priceRow.appendChild(anyPrice);
+  priceRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
+  PRICE_OPTS.forEach(function(o){
+    var n = E.filter(function(e){
+      if (e.date && e.date < NOW) return false;
+      return inPriceBand(e, o.k);
+    }).length;
+    var b = document.createElement("button");
+    b.className = "dd-item"; b.type = "button";
+    b.setAttribute("data-price", o.k);
+    b.setAttribute("aria-pressed","false");
+    b.innerHTML = o.label + '<span class="ddmeta">' + n + '</span><span class="tick">✓</span>';
+    priceRow.appendChild(b);
+  });
+  priceRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
+  (function(){
+    var unpriced = E.filter(function(e){
+      return !(e.date && e.date < NOW) && costOf(e) === null;
+    }).length;
+    priceRow.appendChild(Object.assign(document.createElement("div"), {
+      className:"dd-note",
+      textContent:"Where a range is listed, the lowest price is used. " + unpriced +
+        " things say only “Ticketed” or “Check listing” — with no number to go on they are left"
+        + " out of every band rather than assumed cheap."
+    }));
+  })();
+
+  (function bindPrice(){
+    var btns = Array.prototype.slice.call(document.querySelectorAll("[data-price]"));
+    btns.forEach(function(b){
+      b.addEventListener("click", function(){
+        state.price = b.getAttribute("data-price");
+        btns.forEach(function(o){ o.setAttribute("aria-pressed", String(o === b)); });
+        render();
+      });
+    });
+  })();
+
   /* Where stays single-choice: you are in one place at a time. */
   (function bindArea(){
     var btns = Array.prototype.slice.call(document.querySelectorAll("[data-area]"));
@@ -2243,9 +2342,12 @@
               : "Any distance",
       !!nearOpt);
 
+    var priceOpt = PRICEMAP[state.price];
+    setVal("valPrice", priceOpt ? priceOpt.label : "Any price", !!priceOpt);
+
     var dirty = state.area !== "all" || state.cats.length
              || state.free || state.onlyNew || state.wknd || state.onlySaved
-             || state.near || state.q;
+             || state.near || state.price || state.q;
     document.getElementById("clearBtn").classList.toggle("show", !!dirty);
   }
 
@@ -2254,10 +2356,13 @@
     /* clears the filters only — it must never wipe what you have saved */
     state.area = "all"; state.cats = [];
     state.free = false; state.onlyNew = false; state.wknd = false;
-    state.onlySaved = false; state.q = ""; state.near = "";
+    state.onlySaved = false; state.q = ""; state.near = ""; state.price = "";
     q.value = "";
     Array.prototype.slice.call(document.querySelectorAll("[data-near]")).forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-near") === ""));
+    });
+    Array.prototype.slice.call(document.querySelectorAll("[data-price]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-price") === ""));
     });
     Array.prototype.slice.call(document.querySelectorAll("[data-area]")).forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-area") === "all"));
@@ -2284,6 +2389,7 @@
     if (state.wknd)      show.push("wknd");
     if (show.length) p.push("show=" + show.join(","));
     if (state.near)  p.push("near=" + state.near);
+    if (state.price) p.push("price=" + state.price);
     if (state.q)     p.push("q=" + encodeURIComponent(state.q));
     if (state.from !== DEF_FROM) p.push("from=" + state.from);
     if (state.to   !== DEF_TO)   p.push("to="   + state.to);
@@ -2303,7 +2409,7 @@
        an unrecognised key would leave the reader looking at someone else's board. */
     state.area = "all"; state.cats = [];
     state.free = false; state.onlyNew = false; state.wknd = false; state.onlySaved = false;
-    state.q = ""; state.near = ""; state.from = DEF_FROM; state.to = DEF_TO;
+    state.q = ""; state.near = ""; state.price = ""; state.from = DEF_FROM; state.to = DEF_TO;
     if (!h) return false;
     var got = false;
     h.split("&").forEach(function(kv){
@@ -2327,7 +2433,8 @@
         });
         got = true;
       }
-      else if (k === "near" && NEARMAP[v]) { state.near = v; got = true; }
+      else if (k === "near"  && NEARMAP[v])  { state.near  = v; got = true; }
+      else if (k === "price" && PRICEMAP[v]) { state.price = v; got = true; }
       else if (k === "q") { state.q = v.trim().toLowerCase(); got = true; }
       else if (k === "from" && ISO_RE.test(v)) { state.from = v; got = true; }
       else if (k === "to"   && ISO_RE.test(v)) { state.to   = v; got = true; }
@@ -2344,6 +2451,9 @@
     syncCatButtons();
     Array.prototype.slice.call(document.querySelectorAll("[data-near]")).forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-near") === state.near));
+    });
+    Array.prototype.slice.call(document.querySelectorAll("[data-price]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-price") === state.price));
     });
     document.getElementById("savedBtn").setAttribute("aria-pressed", String(state.onlySaved));
     document.getElementById("newBtn").setAttribute("aria-pressed",   String(state.onlyNew));
