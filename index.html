@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260814-193615-2882">
+<meta name="build" content="20260814-200435-9883">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -353,6 +353,8 @@
   }
   .go:hover{text-decoration:underline; text-underline-offset:3px}
   .go::after{content:" →"}
+  .map{font-size:12.5px; font-weight:600; color:var(--ink-3); text-decoration:none}
+  .map:hover{color:var(--accent); text-decoration:underline; text-underline-offset:3px}
   .tel{font-size:12.5px; color:var(--ink-3); text-decoration:none}
   .tel:hover{text-decoration:underline; text-underline-offset:3px}
   /* a pill, so it reads as a control rather than another line of card metadata.
@@ -2165,8 +2167,38 @@
     return true;
   }
 
+  /* ---------------- Google Maps directions ----------------
+     Ported from the Delhi board's mapQuery() rather than reinvented — same split rule,
+     same reasoning, only the city words and the unroutable list are Bangalore's own.
+
+     Some `where` values list several venues ("Rotates: Indiranagar · Koramangala · HSR")
+     or trail off with a qualifier the venue name doesn't need ("Big Bean Cafe — check
+     branch, Koramangala"). Splitting on the first "·", "/" or "—" and keeping only what
+     comes before it turns both into a single searchable venue name. */
+  var UNROUTABLE = /^bengaluru$|^bangalore$|^(south|north|west|east|central)\s+(bangalore|bengaluru)$|venue on|to be announced|rotat|varies|across the city/i;
+  /* Some `where` values are not a place you can be routed to at all: a bare city name, a
+     Meetup/WhatsApp group whose venue is only disclosed on the listing, or "Rotating
+     venues". Sending those to Maps would drop the reader at the centre of Bangalore and
+     quietly pretend that is the venue — worse than showing no Directions link. */
+  function venueFragment(e){
+    var q = String(e.where || "").split(/\s+[\/·]\s+|\s+—\s+/)[0].trim();
+    return (!q || UNROUTABLE.test(q)) ? "" : q;
+  }
+  /* Bangalore-only venue names ("Whitefield", "Bloom Creative Zone, Indiranagar") need the
+     city appended so Maps doesn't wander off to a same-named place elsewhere in India;
+     skip it when the fragment already names the city, so "Sabha, Bengaluru" doesn't become
+     "Sabha, Bengaluru, Bangalore". */
+  var CITY_WORDS = /bangalore|bengaluru/i;
+  function mapQuery(e){
+    var q = venueFragment(e);
+    if (!q) return "";
+    if (!CITY_WORDS.test(q)) q += ", Bangalore";
+    return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(q);
+  }
+
   function cardHTML(e){
     var c = CATMAP[e.cat] || {label:e.cat, tone:"--c-social"};
+    var dir = mapQuery(e);
     var sv = isSaved(e);
     var area = AREAMAP[e.a]
       ? '<span class="tag">' + AREAMAP[e.a].label + '</span>' : '';
@@ -2193,6 +2225,7 @@
       +   '<div class="foot">'
       +     '<span class="cost' + (e.free ? ' is-free' : '') + '">' + e.cost + '</span>'
       +     (e.url ? '<a class="go" href="' + e.url + '">Open</a>' : '')
+      +     (dir ? '<a class="map" href="' + attr(dir) + '" target="_blank" rel="noopener">Directions</a>' : '')
       +     (e.tel ? '<a class="tel" href="tel:' + e.tel + '">' + e.tel.replace("+91","") + '</a>' : '')
       +     '<button class="save" type="button" data-k="' + attr(keyOf(e)) + '"'
       +       ' aria-pressed="' + (sv ? 'true' : 'false') + '">'
