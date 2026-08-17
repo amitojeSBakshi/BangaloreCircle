@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260816-201628-2991">
+<meta name="build" content="20260817-034707-8510">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -374,6 +374,13 @@
   }
   .info-panel.open{display:block}
   .where{font-size:12.5px; color:var(--ink-3); line-height:1.45}
+  .dist{
+    display:flex; flex-wrap:wrap; gap:3px 14px; margin:2px 0 0;
+    font-size:12.5px; color:var(--ink-3);
+  }
+  .dist span{display:inline-flex; align-items:baseline; gap:5px}
+  .dist i{font-family:var(--serif); font-style:italic; color:var(--ink-4)}
+  .dist b{font-weight:700; color:var(--ink-2)}
   .travel{
     display:flex; flex-wrap:wrap; gap:3px 14px; margin:2px 0 0;
     font-size:12.5px; color:var(--ink-3);
@@ -647,7 +654,11 @@
         <button class="dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">
           <span class="lbl">Near</span><span class="val" id="valNear">Any distance</span><span class="chev"></span>
         </button>
-        <div class="dd-menu" id="nearRow"></div>
+        <div class="dd-menu" id="nearRow">
+          <div class="dd-note" id="nearNote">Set where you are, and every card shows how far it is.</div>
+          <button class="dd-item" type="button" id="locBtn">Use my current location<span class="tick">✓</span></button>
+          <button class="dd-item" type="button" id="locClearBtn" hidden>Forget my location<span class="tick">✓</span></button>
+        </div>
       </div>
 
       <div class="dd" id="ddWhat">
@@ -965,6 +976,125 @@
     south:    {s:"40–55 min", m:"30–45 min"},
     multi:    {s:"varies",    m:"varies"}
   };
+
+  /* Venue coordinates for the "Near" filter and per-card distances.
+     GENERATED — do not hand-edit. Run tools\geocode.ps1 to resolve venues against
+     OpenStreetMap, then tools\inject-venues.ps1 to write the result in here.
+
+     Keyed by the same venue fragment venueFragment() builds, so the two stay in step.
+     Each value is [lat, lon, tier]:
+       tier 1  the venue itself resolved   — good to roughly 50 m
+       tier 2  only the locality resolved  — good to roughly 1 km
+     A venue that resolved to neither is absent, and its card shows no distance at all.
+     Nothing is guessed: a wrong distance stated confidently is worse than no distance. */
+  /* VENUES:BEGIN */
+  var VENUES = {
+    "1 MG — Lido Mall":[12.97358,77.62038,1],
+    "Agara Lake":[12.92017,77.64182,1],
+    "Agara Lake, HSR":[12.92017,77.64182,1],
+    "Alliance Française de Bangalore, Vasanth Nagar":[12.99140,77.59688,1],
+    "Art of Living International Centre, Kanakapura Road":[12.90631,77.57336,2],
+    "Atal Bihari Vajpayee Stadium, HSR Layout":[12.91162,77.63886,2],
+    "Babylonia, 7th Block Koramangala":[12.92501,77.63150,2],
+    "Bangalore International Centre, Domlur":[12.96677,77.63529,1],
+    "Bhoganahalli Road, Bellandur — near Ecoworld":[12.93072,77.70283,1],
+    "BIC auditorium, Domlur II Stage":[12.96709,77.63519,1],
+    "BIC seminar halls, Domlur II Stage":[12.96060,77.64012,2],
+    "BIC, 7 4th Main Road, Domlur II Stage":[12.96677,77.63529,1],
+    "Big Bean Cafe — check branch, Koramangala":[12.93574,77.62408,2],
+    "Big Bean Cafe, 19th Main, 1st Sector, HSR":[12.91162,77.63886,2],
+    "Big Bean Cafe, HSR Layout":[12.91162,77.63886,2],
+    "Bloom Creative Zone, Indiranagar":[12.97329,77.64047,2],
+    "Bloom Creative Zone, Whitefield":[12.99574,77.75795,2],
+    "Bohemians, Indiranagar":[12.96991,77.63949,1],
+    "Booking Holdings, RMZ Ecoworld, Bellandur":[12.93205,77.68429,2],
+    "Brik Oven, Ecoworld, Bellandur":[12.92053,77.68719,1],
+    "Cafe De Verde, Koramangala":[12.94086,77.62342,1],
+    "Cafe du L\u0027Amour, Koramangala":[12.93574,77.62408,2],
+    "CBD — Central Bar District, MG Road":[12.97422,77.60671,1],
+    "CBD Central Bar District, MG Road":[12.97422,77.60671,1],
+    "Chin Lung Brewery, Kadubeesanahalli":[12.93661,77.70473,2],
+    "Chowdiah Memorial Hall, Malleswaram":[13.00654,77.57561,1],
+    "Clay Station studio, Koramangala":[12.93574,77.62408,2],
+    "Courtyard, Phoenix Market City, Whitefield":[12.99574,77.75795,2],
+    "Cubbon Park":[12.97425,77.59219,1],
+    "Cubbon Park, by the metro gate":[12.97425,77.59219,1],
+    "Dialogues Cafe, Koramangala":[12.93255,77.63186,1],
+    "DND The Venue, HSR Layout":[12.91162,77.63886,2],
+    "DND, Bellandur":[12.93205,77.68429,2],
+    "Dr B.R. Ambedkar Bhavan, Millers Road":[12.99520,77.60300,2],
+    "Eden Event Area, Phoenix Mall of Asia":[13.07095,77.59026,2],
+    "Embassy Tech Village, Kadubeesanahalli":[12.93069,77.69142,1],
+    "Equal Experts, Residency Road":[12.96927,77.60222,2],
+    "Euphoria Cafe, Koramangala":[12.93574,77.62408,2],
+    "Euphoria Cafe, Koramangala 6th Block":[12.93903,77.62385,2],
+    "Fabrizo Creative Activity Hub, BTM Layout":[12.91400,77.61028,2],
+    "FLO, Church Street":[12.97491,77.60526,2],
+    "Forum South Bengaluru":[12.88797,77.56289,1],
+    "Forum South Bengaluru, Konanakunte":[12.88797,77.56289,1],
+    "Founder Startup House, 7th Block Koramangala":[12.92501,77.63150,2],
+    "Founder Startup House, Koramangala":[12.93574,77.62408,2],
+    "Gate 9, Palace Grounds":[13.00222,77.58608,2],
+    "Good Move Studios, Koramangala":[12.93574,77.62408,2],
+    "Good Shepherd Auditorium":[12.97043,77.60466,1],
+    "GoRally Pickleball, Indiranagar":[12.97329,77.64047,2],
+    "Hustlehub Tech Park, Sector 2, HSR":[12.90108,77.65097,1],
+    "IKP EDEN, Tavarekere Main Road":[12.93411,77.60992,1],
+    "Indian Institute of Science":[13.02223,77.56718,1],
+    "Indiranagar Social":[12.97076,77.64758,1],
+    "IvyRossa 4 Seasons, Sarjapur Road — Carmelaram":[12.90722,77.71603,2],
+    "Johnson Market, Richmond Town":[12.96418,77.60616,1],
+    "Jollygunj, Whitefield":[12.96653,77.74896,1],
+    "Kadubeesanahalli":[12.93661,77.70473,1],
+    "KICO Community, Church Street":[12.97491,77.60526,2],
+    "Koramangala Social":[12.93560,77.61418,1],
+    "Kothnaur–Arekere Main Road, JP Nagar 7th Phase":[12.91184,77.58707,2],
+    "KTPO, Whitefield":[12.97687,77.72125,1],
+    "Loyola Hall, Ashirvad, St Marks Road":[12.97277,77.60131,2],
+    "Mana Pristine, Doddakannelli, off Sarjapur Road":[12.90418,77.69235,1],
+    "Meesho office, Helios Business Park, Kadubeesanahalli":[12.93661,77.70473,2],
+    "MIDAS School of Entrepreneurship, Seshadripuram":[12.99466,77.57472,2],
+    "Ministry Of Comedy, Koramangala":[12.93039,77.63322,1],
+    "MLR Convention Centre, Whitefield":[12.99574,77.75795,2],
+    "Monsoon, The Park, MG Road":[12.97553,77.60679,2],
+    "Nritya Darpan, JP Nagar 7th Phase":[12.91184,77.58707,2],
+    "Phoenix Market City, Whitefield":[12.99770,77.69669,1],
+    "Phoenix Market City, Whitefield Road":[12.99682,77.69662,1],
+    "Pinball, Koramangala":[12.93574,77.62408,2],
+    "PlayHouse, Koramangala":[12.93574,77.62408,2],
+    "Prestige Centre for Performing Arts, Konanakunte":[12.87929,77.56975,2],
+    "Pyramid Valley International, Kanakapura Road":[12.90631,77.57336,2],
+    "Sabha, Bengaluru":[12.98344,77.61115,1],
+    "Seetharampalya, Hoodi, Whitefield":[12.98053,77.70890,1],
+    "South India Angel Network, Trinity Circle":[12.97264,77.61975,2],
+    "Sree Kanteerava Stadium":[12.96935,77.59266,1],
+    "Sri Dakshinamukha Nandi Tirtha, Malleshwaram":[13.00274,77.57033,2],
+    "St Joseph\u0027s School, Bengaluru":[12.96274,77.56994,1],
+    "St Joseph\u0027s University Auditorium":[12.96255,77.59553,1],
+    "Taj Yeshwantpur":[13.02916,77.54093,1],
+    "The Chancery Pavilion, Ashok Nagar":[12.96944,77.60923,2],
+    "The Comedy Theatre, Indiranagar":[12.97329,77.64047,2],
+    "THE HUB, Bellandur":[12.92988,77.68347,1],
+    "The Humming Tree, Indiranagar":[12.97132,77.64103,1],
+    "The Leela Bhartiya City":[13.08432,77.64286,1],
+    "The Studs Sports Bar \u0026 Grill, Sahakara Nagar":[13.06215,77.58006,2],
+    "The Underground Comedy Club, 5th Block Koramangala":[12.93546,77.61630,2],
+    "Third Wave Coffee, Lavelle Road":[12.97145,77.59785,1],
+    "Tim Hortons, HSR Layout":[12.91202,77.64776,1],
+    "Toffee And Talk, Jayanagar":[12.92927,77.58242,2],
+    "TreeHouse, Indiranagar":[12.97891,77.64167,1],
+    "TreeHouse, Shri Krishna Temple Rd, Indiranagar":[12.97891,77.64167,1],
+    "Underline Center, near MG Road":[12.96725,77.63674,1],
+    "Urban Vault, 477 HSR Layout":[12.91185,77.63900,1],
+    "Urban Vault, HSR Layout":[12.91185,77.63900,1],
+    "URU, Brookefield":[12.96137,77.73201,1],
+    "URU, Whitefield":[12.96137,77.73201,1],
+    "VIBE PUB, 5th Block Koramangala":[12.93546,77.61630,2],
+    "Vidyaranyapura, North Bengaluru":[13.07664,77.55773,1],
+    "Whitefield":[12.99574,77.75795,1],
+    "Wild Rabbit Cafe and Bakehouse, Kundalahalli":[12.97759,77.71556,2]
+  };
+  /* VENUES:END */
 
   var DAYNAMES = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   var DAYNOTE = {
@@ -2205,7 +2335,7 @@
      board twice. Empty means no category filter at all, which is why "Any type" is the
      empty array rather than a magic "all" string. */
   var state = {area:"all", cats:[], free:false, onlyNew:false, wknd:false,
-               onlySaved:false, q:"", near:"", price:"", from:DEF_FROM, to:DEF_TO};
+               onlySaved:false, q:"", near:0, price:"", from:DEF_FROM, to:DEF_TO};
 
   /* ---------------- price bands ----------------
      Costs are written for a human ("₹349+", "₹199–1,099", "₹250 + ₹99 cover"), so reading
@@ -2253,32 +2383,15 @@
     return opt.cap === null ? c >= 1000 : c <= opt.cap;
   }
 
-  /* ---------------- travel-time filter ----------------
-     Every card already carries two estimates — from home (s) and from the office (m) —
-     so this needs no new data, only a way to read them as numbers. The estimates are
-     human ranges ("12–15 min", "15–20 min walk", "90 min+"), so take the TOP of the
-     range: "within 20 minutes" should mean the slow end still lands under 20, not the
-     optimistic end. Anything without a number in it — "varies", "overnight trip",
-     "depends on branch" — is genuinely unknown and is filtered OUT rather than assumed
-     near, because the honest answer to "is this within 20 minutes" is "cannot say". */
+  /* Radii, not travel times. 3 km is "walk or one short auto", 20 km is "most of
+     Bangalore". The reader's own position is asked for once and kept only in this
+     browser — the board has no server to send it to. */
   var NEAR_OPTS = [
-    {k:"s15", anchor:"s", cap:15, label:"Within 15 min of home"},
-    {k:"s20", anchor:"s", cap:20, label:"Within 20 min of home"},
-    {k:"s30", anchor:"s", cap:30, label:"Within 30 min of home"},
-    {k:"m20", anchor:"m", cap:20, label:"Within 20 min of the office"},
-    {k:"m30", anchor:"m", cap:30, label:"Within 30 min of the office"}
+    {km:3,  label:"Within 3 km"},
+    {km:5,  label:"Within 5 km"},
+    {km:10, label:"Within 10 km"},
+    {km:20, label:"Within 20 km"}
   ];
-  var NEARMAP = {}; NEAR_OPTS.forEach(function(o){ NEARMAP[o.k] = o; });
-
-  function travelMins(str){
-    var nums = String(str == null ? "" : str).match(/\d+/g);
-    if (!nums) return null;
-    return Math.max.apply(null, nums.map(Number));
-  }
-  function travelFor(e, anchor){
-    var t = TRAVEL[e.a] || {};
-    return anchor === "s" ? (e.ts || t.s) : (e.tm || t.m);
-  }
 
   function inRange(e, dows){
     if (e.date) return e.date >= state.from && e.date <= state.to;
@@ -2294,12 +2407,11 @@
       var day = e.date ? d(e.date).getDay() : e.dow;
       if (day !== 0 && day !== 6) return false;
     }
-    if (state.near){
-      var opt = NEARMAP[state.near];
-      if (opt){
-        var mins = travelMins(travelFor(e, opt.anchor));
-        if (mins === null || mins > opt.cap) return false;
-      }
+    if (state.near && origin){
+      var km = distanceKm(e);
+      /* A venue with no coordinates cannot honestly claim to be within the radius, so
+         it drops out rather than being assumed near. */
+      if (km === null || km > state.near) return false;
     }
     if (state.price && !inPriceBand(e, state.price)) return false;
     if (state.q){
@@ -2338,17 +2450,70 @@
     return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(q);
   }
 
+  /* ---------------- how far away it is ----------------
+     Straight-line distance from wherever the reader says they are. This is NOT drive
+     time: Bangalore roads run roughly 1.3–1.5x the crow-flies distance, and traffic does
+     the rest. It is shown as an approximation and never dressed up as a travel time —
+     the Directions link exists for the real answer.
+
+     The reader's position is asked for once, kept in this browser's localStorage and
+     sent nowhere. There is no server to send it to. */
+  var ORIGIN_KEY = "bangaloreCircle.origin.v1";
+  var origin = null;                    // {lat, lon, label}
+
+  function readOrigin(){
+    try {
+      var o = JSON.parse(localStorage.getItem(ORIGIN_KEY) || "null");
+      return (o && isFinite(o.lat) && isFinite(o.lon)) ? o : null;
+    } catch (err) { return null; }
+  }
+  function writeOrigin(o){
+    try {
+      if (o) localStorage.setItem(ORIGIN_KEY, JSON.stringify(o));
+      else localStorage.removeItem(ORIGIN_KEY);
+    } catch (err) {}
+  }
+
+  function haversine(aLat, aLon, bLat, bLon){
+    var R = 6371, rad = Math.PI / 180;
+    var dLat = (bLat - aLat) * rad, dLon = (bLon - aLon) * rad;
+    var s = Math.sin(dLat/2) * Math.sin(dLat/2)
+          + Math.cos(aLat*rad) * Math.cos(bLat*rad) * Math.sin(dLon/2) * Math.sin(dLon/2);
+    return 2 * R * Math.asin(Math.min(1, Math.sqrt(s)));
+  }
+
+  /* km from the reader, or null when either end is unknown */
+  function distanceKm(e){
+    if (!origin) return null;
+    var v = VENUES[venueFragment(e)];
+    if (!v) return null;
+    return haversine(origin.lat, origin.lon, v[0], v[1]);
+  }
+  /* Tier 2 venues are only located to their neighbourhood, so a tenth of a kilometre
+     would be false precision — those round to whole kilometres and keep the "about". */
+  function distanceLabel(e){
+    var km = distanceKm(e);
+    if (km === null) return "";
+    var tier = (VENUES[venueFragment(e)] || [])[2];
+    if (tier === 1) return (km < 10 ? km.toFixed(1) : Math.round(km)) + " km away";
+    return "about " + Math.max(1, Math.round(km)) + " km away";
+  }
+
   function cardHTML(e){
     var c = CATMAP[e.cat] || {label:e.cat, tone:"--c-social"};
     var dir = mapQuery(e);
     var sv = isSaved(e);
     var area = AREAMAP[e.a]
       ? '<span class="tag">' + AREAMAP[e.a].label + '</span>' : '';
+    var far = distanceLabel(e);
     var upcoming = '';
     if (e.date == null && e.dow != null) {
       var ds = upcomingDowDates(e.dow, 3);
       upcoming = '<div class="when-next">' + ds.map(fmtShortDate).join(' · ') + '</div>';
     }
+    var dist = far
+      ? '<div class="dist"><span><i>distance</i> <b>' + far + '</b></span></div>'
+      : '';
     return ''
       + '<article class="card" style="--tone:var(' + c.tone + ')">'
       +   '<div class="cbar"></div>'
@@ -2361,6 +2526,7 @@
       +     '<div class="when">' + e.when + '</div>'
       +     upcoming
       +     '<div class="where">' + e.where + '</div>'
+      +     dist
       +     '<p class="note">' + e.note + '</p>'
       +   '</div>'
       +   '<div class="foot">'
@@ -2497,62 +2663,75 @@
   areaRow.appendChild(anyArea);
   areaRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
   AREAS.forEach(function(a){
-    var t = TRAVEL[a.k] || {s:"—", m:"—"};
     var b = document.createElement("button");
     b.className = "dd-item"; b.type = "button";
     b.setAttribute("data-area", a.k);
     b.setAttribute("aria-pressed","false");
     b.innerHTML = a.label
-      + '<span class="ddmeta">' + t.s + ' / ' + t.m + '</span>'
       + '<span class="tick">✓</span>';
     areaRow.appendChild(b);
   });
 
-  /* ---------------- build the Near menu ----------------
-     Each option shows how many entries survive it, because "Within 15 min of home" is
-     only useful if you can see at a glance whether that leaves you three things or forty. */
-  var nearRow = document.getElementById("nearRow");
-  var anyNear = document.createElement("button");
-  anyNear.className = "dd-item"; anyNear.type = "button";
-  anyNear.setAttribute("data-near","");
-  anyNear.setAttribute("aria-pressed","true");
-  anyNear.innerHTML = 'Any distance<span class="tick">✓</span>';
-  nearRow.appendChild(anyNear);
-  nearRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
+  /* ---------------- near me ----------------
+     The radius buttons only appear once there is a location to measure from, because
+     "Within 5 km" of nothing is a control that cannot do anything. */
+  var nearRow     = document.getElementById("nearRow");
+  var nearNote    = document.getElementById("nearNote");
+  var locBtn      = document.getElementById("locBtn");
+  var locClearBtn = document.getElementById("locClearBtn");
+
   NEAR_OPTS.forEach(function(o){
-    /* count only what a reader could still go to — a one-off that has already happened is
-       filtered out of the board, so counting it here would promise more than the click gives */
-    var n = E.filter(function(e){
-      if (e.date && e.date < NOW) return false;
-      var m = travelMins(travelFor(e, o.anchor));
-      return m !== null && m <= o.cap;
-    }).length;
     var b = document.createElement("button");
     b.className = "dd-item"; b.type = "button";
-    b.setAttribute("data-near", o.k);
-    b.setAttribute("aria-pressed","false");
-    b.innerHTML = o.label
-      + '<span class="ddmeta">' + n + '</span>'
-      + '<span class="tick">✓</span>';
-    nearRow.appendChild(b);
-  });
-  nearRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
-  nearRow.appendChild(Object.assign(document.createElement("div"), {
-    className:"dd-note",
-    textContent:"Rough evening-traffic estimates, not routed times. Anything whose travel is “varies” or an overnight trip is left out — it cannot honestly be called near."
-  }));
-
-  /* Single-choice, like Where — two distance caps at once is not a question anyone asks. */
-  (function bindNear(){
-    var btns = Array.prototype.slice.call(document.querySelectorAll("[data-near]"));
-    btns.forEach(function(b){
-      b.addEventListener("click", function(){
-        state.near = b.getAttribute("data-near");
-        btns.forEach(function(o){ o.setAttribute("aria-pressed", String(o === b)); });
-        render();
-      });
+    b.setAttribute("data-km", String(o.km));
+    b.setAttribute("aria-pressed", "false");
+    b.innerHTML = o.label + '<span class="tick">✓</span>';
+    b.addEventListener("click", function(){
+      state.near = (state.near === o.km) ? 0 : o.km;   // clicking the lit one clears it
+      syncNear(); render();
     });
-  })();
+    nearRow.insertBefore(b, locBtn);
+  });
+
+  function syncNear(){
+    var have = !!origin;
+    Array.prototype.slice.call(nearRow.querySelectorAll("[data-km]")).forEach(function(b){
+      b.hidden = !have;
+      b.setAttribute("aria-pressed", String(have && state.near === Number(b.getAttribute("data-km"))));
+    });
+    locBtn.hidden = have;
+    locClearBtn.hidden = !have;
+    nearNote.textContent = have
+      ? "Straight-line distance from where you are — not drive time. Tap Directions for that."
+      : "Set where you are, and every card shows how far it is.";
+  }
+
+  locBtn.addEventListener("click", function(){
+    if (!navigator.geolocation){
+      nearNote.textContent = "This browser will not share a location.";
+      return;
+    }
+    nearNote.textContent = "Asking your browser…";
+    navigator.geolocation.getCurrentPosition(function(pos){
+      origin = {lat:pos.coords.latitude, lon:pos.coords.longitude, label:"current location"};
+      writeOrigin(origin);
+      syncNear(); render();
+    }, function(err){
+      /* denial is a legitimate answer, so say what happened and leave the board alone */
+      nearNote.textContent = (err && err.code === 1)
+        ? "Location permission was declined. The board works fine without it."
+        : "Could not get a location just now.";
+    }, {enableHighAccuracy:false, timeout:12000, maximumAge:600000});
+  });
+
+  locClearBtn.addEventListener("click", function(){
+    origin = null; state.near = 0;
+    writeOrigin(null);
+    syncNear(); render();
+  });
+
+  origin = readOrigin();
+  syncNear();
 
   /* ---------------- build the Price menu ---------------- */
   var priceRow = document.getElementById("priceRow");
@@ -2786,11 +2965,11 @@
     if (state.wknd)      on.push("Sat & Sun");
     setVal("valShow", on.length ? on.join(", ") : "All events", on.length > 0);
 
-    var nearOpt = NEARMAP[state.near];
-    setVal("valNear",
-      nearOpt ? (nearOpt.cap + " min · " + (nearOpt.anchor === "s" ? "home" : "office"))
-              : "Any distance",
-      !!nearOpt);
+    var nearTxt = "Any distance";
+    if (!origin) nearTxt = "Any distance";
+    else if (state.near) nearTxt = "Within " + state.near + " km";
+    else nearTxt = "Location set";
+    setVal("valNear", nearTxt, !!state.near);
 
     var priceOpt = PRICEMAP[state.price];
     setVal("valPrice", priceOpt ? priceOpt.label : "Any price", !!priceOpt);
@@ -2806,10 +2985,10 @@
     /* clears the filters only — it must never wipe what you have saved */
     state.area = "all"; state.cats = [];
     state.free = false; state.onlyNew = false; state.wknd = false;
-    state.onlySaved = false; state.q = ""; state.near = ""; state.price = "";
+    state.onlySaved = false; state.q = ""; state.near = 0; state.price = "";
     q.value = "";
-    Array.prototype.slice.call(document.querySelectorAll("[data-near]")).forEach(function(b){
-      b.setAttribute("aria-pressed", String(b.getAttribute("data-near") === ""));
+    Array.prototype.slice.call(document.querySelectorAll("[data-km]")).forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-km") === "0"));
     });
     Array.prototype.slice.call(document.querySelectorAll("[data-price]")).forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-price") === ""));
@@ -2821,6 +3000,7 @@
     ["newBtn","freeBtn","wkndBtn","savedBtn"].forEach(function(id){
       document.getElementById(id).setAttribute("aria-pressed","false");
     });
+    syncNear();
     closeAll(null);
     render();
   });
@@ -2859,7 +3039,7 @@
        an unrecognised key would leave the reader looking at someone else's board. */
     state.area = "all"; state.cats = [];
     state.free = false; state.onlyNew = false; state.wknd = false; state.onlySaved = false;
-    state.q = ""; state.near = ""; state.price = ""; state.from = DEF_FROM; state.to = DEF_TO;
+    state.q = ""; state.near = 0; state.price = ""; state.from = DEF_FROM; state.to = DEF_TO;
     if (!h) return false;
     var got = false;
     h.split("&").forEach(function(kv){
@@ -2883,7 +3063,7 @@
         });
         got = true;
       }
-      else if (k === "near"  && NEARMAP[v])  { state.near  = v; got = true; }
+      else if (k === "near" && /^[0-9]+$/.test(v)) { state.near = Number(v); got = true; }
       else if (k === "price" && PRICEMAP[v]) { state.price = v; got = true; }
       else if (k === "q") { state.q = v.trim().toLowerCase(); got = true; }
       else if (k === "from" && ISO_RE.test(v)) { state.from = v; got = true; }
@@ -2899,9 +3079,7 @@
       b.setAttribute("aria-pressed", String(b.getAttribute("data-area") === state.area));
     });
     syncCatButtons();
-    Array.prototype.slice.call(document.querySelectorAll("[data-near]")).forEach(function(b){
-      b.setAttribute("aria-pressed", String(b.getAttribute("data-near") === state.near));
-    });
+    syncNear();
     Array.prototype.slice.call(document.querySelectorAll("[data-price]")).forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-price") === state.price));
     });
