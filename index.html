@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260819-180121-1449">
+<meta name="build" content="20260819-182328-2407">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -970,7 +970,7 @@
 (function(){
   "use strict";
 
-  var TODAY = "2026-08-17";      // refresh marker — bump on every update
+  var TODAY = "2026-08-19";      // refresh marker — bump on every update
   var BASELINE = "2026-07-25";   // initial load; entries from this date are not "new"
   var NEW_WINDOW_DAYS = 3;       // "NEW" badge lifetime after that
 
@@ -1034,6 +1034,7 @@
   /* VENUES:BEGIN */
   var VENUES = {
     "1 MG — Lido Mall":[12.97358,77.62038,1],
+    "43 Workspace and Events, Kalyan Nagar":[13.02214,77.64034,2],
     "Agara Lake":[12.92017,77.64182,1],
     "Agara Lake, HSR":[12.92017,77.64182,1],
     "Alliance Française de Bangalore, Vasanth Nagar":[12.99140,77.59688,1],
@@ -1045,6 +1046,7 @@
     "BIC auditorium, Domlur II Stage":[12.96709,77.63519,1],
     "BIC seminar halls, Domlur II Stage":[12.96060,77.64012,2],
     "BIC, 7 4th Main Road, Domlur II Stage":[12.96677,77.63529,1],
+    "BIC, Domlur II Stage":[12.96677,77.63529,1],
     "Big Bean Cafe — check branch, Koramangala":[12.93574,77.62408,2],
     "Big Bean Cafe, 19th Main, 1st Sector, HSR":[12.91162,77.63886,2],
     "Big Bean Cafe, HSR Layout":[12.91162,77.63886,2],
@@ -1053,6 +1055,7 @@
     "Bohemians, Indiranagar":[12.96991,77.63949,1],
     "Booking Holdings, RMZ Ecoworld, Bellandur":[12.93205,77.68429,2],
     "Brik Oven, Ecoworld, Bellandur":[12.92053,77.68719,1],
+    "Buddiezz Cafe, Koramangala 6th Block":[12.93903,77.62385,2],
     "Cafe De Verde, Koramangala":[12.94086,77.62342,1],
     "Cafe du L\u0027Amour, Koramangala":[12.93574,77.62408,2],
     "CBD — Central Bar District, MG Road":[12.97422,77.60671,1],
@@ -1060,6 +1063,7 @@
     "Chin Lung Brewery, Kadubeesanahalli":[12.93661,77.70473,2],
     "Chowdiah Memorial Hall, Malleswaram":[13.00654,77.57561,1],
     "Clay Station studio, Koramangala":[12.93574,77.62408,2],
+    "Cortis Medtech, North Bengaluru":[13.02223,77.56718,2],
     "Courtyard, Phoenix Market City, Whitefield":[12.99574,77.75795,2],
     "Cubbon Park":[12.97425,77.59219,1],
     "Cubbon Park, by the metro gate":[12.97425,77.59219,1],
@@ -1078,6 +1082,7 @@
     "Forum South Bengaluru, Konanakunte":[12.88797,77.56289,1],
     "Founder Startup House, 7th Block Koramangala":[12.92501,77.63150,2],
     "Founder Startup House, Koramangala":[12.93574,77.62408,2],
+    "Freshworks, RMZ Eco World, Bellandur":[12.92122,77.68411,1],
     "Gate 9, Palace Grounds":[13.00222,77.58608,2],
     "Good Move Studios, Koramangala":[12.93574,77.62408,2],
     "Good Shepherd Auditorium":[12.97043,77.60466,1],
@@ -1086,9 +1091,13 @@
     "IKP EDEN, Tavarekere Main Road":[12.93411,77.60992,1],
     "Indian Institute of Science":[13.02223,77.56718,1],
     "Indiranagar Social":[12.97076,77.64758,1],
+    "Indiranagar Social, Indiranagar":[12.97076,77.64758,1],
     "IvyRossa 4 Seasons, Sarjapur Road — Carmelaram":[12.90722,77.71603,2],
+    "Jagriti Theatre, Varthur Road, Whitefield":[12.95757,77.74082,1],
     "Johnson Market, Richmond Town":[12.96418,77.60616,1],
     "Jollygunj, Whitefield":[12.96653,77.74896,1],
+    "JW Marriott lobby, Vittal Mallya Road":[12.96954,77.59448,2],
+    "Kaarya Shared Workspaces, JP Nagar":[12.90969,77.58661,2],
     "Kadubeesanahalli":[12.93661,77.70473,1],
     "KICO Community, Church Street":[12.97491,77.60526,2],
     "Koramangala Social":[12.93560,77.61418,1],
@@ -1108,6 +1117,7 @@
     "PlayHouse, Koramangala":[12.93574,77.62408,2],
     "Prestige Centre for Performing Arts, Konanakunte":[12.87929,77.56975,2],
     "Pyramid Valley International, Kanakapura Road":[12.90631,77.57336,2],
+    "Quad AI School of Tech, 1st Sector, HSR":[12.91162,77.63886,2],
     "Sabha, Bengaluru":[12.98344,77.61115,1],
     "Seetharampalya, Hoodi, Whitefield":[12.98053,77.70890,1],
     "South India Angel Network, Trinity Circle":[12.97264,77.61975,2],
@@ -1131,7 +1141,9 @@
     "Underline Center, near MG Road":[12.96725,77.63674,1],
     "Urban Vault, 477 HSR Layout":[12.91185,77.63900,1],
     "Urban Vault, HSR Layout":[12.91185,77.63900,1],
+    "UrbanVault, 477 HSR Layout":[12.91035,77.64485,1],
     "URU, Brookefield":[12.96137,77.73201,1],
+    "URU, JP Nagar":[12.90969,77.58661,2],
     "URU, Whitefield":[12.96137,77.73201,1],
     "VIBE PUB, 5th Block Koramangala":[12.93546,77.61630,2],
     "Vidyaranyapura, North Bengaluru":[13.07664,77.55773,1],
@@ -1183,23 +1195,7 @@
      note:"Runs until 10, so an 8 PM arrival still leaves two hours. One of very few weeknight socials that does not require leaving work early.",
      cost:"₹249+", url:"https://www.district.in/events/after-hours-with-eleven-am-club-buy-tickets", added:"2026-07-25"},
 
-    {date:"2026-08-03", a:"white", cat:"stage", name:"Standing Up — Kunal Kamra",
-     when:"Mon 3 – Wed 5 Aug · 8:00 PM", where:"URU, Whitefield",
-     note:"1,205+ interested, and it runs three nights rather than one, so a midweek slot is actually reachable. New material, in a room small enough to be worth the Whitefield trip.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/standing-up-by-kunal-kamra/3900030398257041", added:"2026-07-25"},
-
-    {date:"2026-08-09", a:"kora", cat:"stage", name:"Standing Up — Kunal Kamra at The Underground",
-     when:"Sun 9 Aug · from 2:00 PM", where:"The Underground Comedy Club",
-     note:"A second, separate run at a dedicated comedy club rather than a convention venue — closer in, and multiple slots across the day. Take this one if the Whitefield nights do not work.",
-     cost:"₹1,499", url:"https://www.district.in/events/standing-up-by-kunal-kamra-jul31-2026-buy-tickets", added:"2026-07-29"},
-
-    {date:"2026-08-05", a:"north", cat:"ai", name:"DataHack Summit 2026",
-     when:"Wed 5 Aug · 9:00 AM", where:"The Leela Bhartiya City",
-     note:"7th edition, billed as India's largest AI conference, on reasoning and agentic systems. A weekday daytime event, so it costs a day of leave.",
-     cost:"Ticketed", ts:"80–95 min", tm:"55–70 min",
-     url:"https://allevents.in/bangalore/datahack-summit-2026/3900030270573546", added:"2026-07-25"},
-
-    /* ================= THURSDAY ================= */
+                /* ================= THURSDAY ================= */
     {dow:4, a:"multi", cat:"social", name:"BLR Events Hub — Thursday Hangout",
      when:"Every Thursday · 8:00–10:00 PM", where:"Rotates: Indiranagar · Koramangala · HSR",
      note:"An 8 PM start makes this one of the most schedule-friendly weeknight socials going. Check which edition is running before you set off.",
@@ -1241,12 +1237,7 @@
      note:"Free entry, and a straight 15-minute walk west down MG Road from Trinity. The default answer to “where now” once a Friday meetup winds up.",
      cost:"Free", free:true, url:"https://highape.com/bangalore/events/friday-switch-flo-church-street-h9st4k984m", added:"2026-07-25"},
 
-    {date:"2026-08-07", a:"north", cat:"social", name:"Bongo Utsav 3.0",
-     when:"Fri 7 Aug · from 10:00 AM", where:"Gate 9, Palace Grounds",
-     note:"602+ interested. A large cultural festival that runs across the weekend, so a Saturday drop-in is easier than the Friday opening.",
-     cost:"Varies", url:"https://allevents.in/bangalore/bongo-utsav-30/200030082574953", added:"2026-07-25"},
-
-    /* ================= SATURDAY ================= */
+        /* ================= SATURDAY ================= */
     {dow:6, a:"hsr", cat:"startup", name:"eChai Bengaluru Startup Meetup",
      when:"Every Saturday · 6:00–8:00 PM", where:"Urban Vault, HSR Layout",
      note:"Free, weekly, a 24,000-strong network, and the building houses five AI startups across five floors. The single most valuable recurring slot here.",
@@ -1393,35 +1384,7 @@
      cost:"₹2,099", ts:"overnight trip", tm:"overnight trip",
      url:"https://highape.com/bangalore/events/netravathi-trek-namma-trip-sgh4shytt9", added:"2026-07-25"},
 
-    {date:"2026-08-08", a:"south", cat:"startup", name:"Startup World Cup 2026",
-     when:"Sat 8 Aug · 10:00 AM", where:"RV Institute of Technology",
-     note:"Pegasus Tech Ventures with CEDAT, 48+ interested. Free and legitimately large, but a spectator pitch format rather than a networking room.",
-     cost:"Free", free:true, ts:"60–75 min", tm:"45–60 min",
-     url:"https://allevents.in/bangalore/startup-world-cup-2026-tickets/80003556635353", added:"2026-07-25"},
-
-    {date:"2026-08-08", a:"north", cat:"ai", name:"Generative & Agentic AI",
-     when:"Sat 8 Aug · 10:00 AM", where:"Indian Institute of Science",
-     note:"26+ interested. A serious technical day at IISc rather than a meetup — go for depth on agents, not for the networking.",
-     cost:"₹2,200", ts:"65–80 min", tm:"35–45 min",
-     url:"https://allevents.in/bangalore/generative-and-agentic-ai/4100030129855703", added:"2026-07-25"},
-
-    {date:"2026-08-08", a:"white", cat:"stage", name:"Love, Death & Ketchup — Varun Grover",
-     when:"Sat 8 Aug · 4:30 PM", where:"MLR Convention Centre, Whitefield",
-     note:"66+ interested. Grover writes as well as he performs — one of the better standup bookings this month.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/love-death-and-ketchup-by-varun-grover/3900030021430427", added:"2026-07-25"},
-
-    {date:"2026-08-08", a:"north", cat:"music", name:"25 Years of The Raghu Dixit Project",
-     when:"Sat 8 Aug · 7:00 PM", where:"Eden Event Area, Phoenix Mall of Asia",
-     note:"267+ interested. A landmark anniversary gig for one of Bangalore's own bands — the kind of night the city turns out for.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/25-years-of-the-raghu-dixit-project/3900030213645229", added:"2026-07-25"},
-
-    {date:"2026-08-08", a:"cbd", cat:"social", name:"The Edge of Nutrition 2026",
-     when:"Sat 8 Aug · 9:00 AM–2:00 PM", where:"The Chancery Pavilion, Ashok Nagar",
-     note:"A morning summit that frees the rest of the Saturday, and a professional crowd well outside the startup circuit. Useful precisely because it is a different room.",
-     cost:"₹1,299", ts:"40–50 min", tm:"15–20 min",
-     url:"https://allevents.in/bangalore/the-edge-of-nutrition-2026-tickets/80003694098114", added:"2026-07-29"},
-
-    /* ================= SUNDAY ================= */
+                        /* ================= SUNDAY ================= */
     {dow:0, a:"sarjapur", cat:"games", name:"VIPO — Impromptu Sunday Meetup",
      when:"Every Sunday · 3:00 PM", where:"Board Game Inc, Sarjapur Road — 2nd floor, above Subway",
      note:"Age 14+, crowd mostly 22–45, and you can join at any point in the session. The closest recurring event of any kind to home.",
@@ -1458,29 +1421,8 @@
      cost:"₹189", ts:"90 min+", tm:"75 min+",
      url:"https://highape.com/bangalore/events/nandi-hills-namma-trip-65wkbr87iy", added:"2026-07-25"},
 
-    {date:"2026-08-02", a:"cbd", cat:"books", name:"The Clueless Crossword — Quiz Pro Quo",
-     when:"Sun 2 Aug · 11:00 AM", where:"Underline Center, near MG Road",
-     note:"A cryptic crossword run as a team event, which draws a sharper and smaller crowd than a pub quiz. Same venue as the Wednesday and Thursday nights.",
-     cost:"₹399", url:"https://www.district.in/events/the-clueless-crossword-by-quiz-pro-quo-may17-2026-buy-tickets", added:"2026-07-25"},
-
-    {date:"2026-08-09", a:"cbd", cat:"social", name:"The Great Indian Spirit Festival",
-     when:"Sun 9 Aug · 12:00–10:00 PM", where:"1 MG — Lido Mall",
-     note:"A ten-hour festival you can drop into and leave, central enough to reach easily. From ₹199, and a low-effort way to close the week.",
-     cost:"₹199–1,099", url:"https://allevents.in/bangalore/the-great-indian-spirit-festival-gisf/4100030323795900", added:"2026-07-25"},
-
-    /* ---- later in August ---- */
-    {date:"2026-08-11", a:"south", cat:"startup", name:"South Bengaluru Startups Meetup — CEDAT",
-     when:"Tue 11 Aug · 6:00 PM", where:"South Bengaluru — venue on the listing",
-     note:"CEDAT split their meetups by zone and this is the south edition. The 6 PM start is the catch coming straight from the office.",
-     cost:"Free", free:true, url:"https://www.meetup.com/startups-entrepreneurs-network-senex-by-cedat/events/315542627/", added:"2026-07-25"},
-
-    {date:"2026-08-15", a:"cbd", cat:"stage", name:"Allow Me! — Rahul Dua",
-     when:"Sat 15 – Sun 16 Aug · 8:00 PM", where:"St Joseph's University Auditorium",
-     note:"A full solo hour from one of the more dependable touring comics, now running two nights rather than one. Unusually central for a big booking — no Whitefield round trip.",
-     cost:"Ticketed", ts:"40–50 min", tm:"20–25 min",
-     url:"https://allevents.in/bangalore/allow-me-a-standup-comedy-show-by-rahul-dua/3900030300972154", added:"2026-07-25"},
-
-    {date:"2026-08-21", a:"white", cat:"stage", name:"Harsh'O'Ullas ft. Harsh Gujral",
+            /* ---- later in August ---- */
+            {date:"2026-08-21", a:"white", cat:"stage", name:"Harsh'O'Ullas ft. Harsh Gujral",
      when:"Fri 21 Aug · 8:00 PM", where:"MLR Convention Centre, Whitefield",
      note:"Friday plus Whitefield is a rough traffic pairing unless you are already east. The 8 PM start does forgive a normal finish to the workday.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/harshoullas-ft-harsh-gujral/3900030387698359", added:"2026-07-25"},
@@ -1492,12 +1434,7 @@
      url:"https://allevents.in/bangalore/saturday-night-special-live-singer-ft-usha-uthup/3900030234989958", added:"2026-07-25"},
 
     /* ================= SUFI, QAWWALI & GHAZAL ================= */
-    {date:"2026-08-08", a:"indira", cat:"music", name:"Dil-e-Sukoon — Ghazal & Sufi Night",
-     when:"Sat 8 Aug · 7:30 PM", where:"Bloom Creative Zone, Indiranagar",
-     note:"578+ interested for a room that seats a fraction of that, so book rather than walk in. Small-venue Sufi is the version worth hearing — close enough to catch the harmonium breathing between lines.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/dil-e-sukoon-ghazal-and-sufi-night-eve/3900030311703257", added:"2026-07-27"},
-
-    {date:"2026-09-19", a:"cbd", cat:"music", name:"Chitti Ayee Hai — Qawwali & Sufi Music",
+        {date:"2026-09-19", a:"cbd", cat:"music", name:"Chitti Ayee Hai — Qawwali & Sufi Music",
      when:"Sat 19 Sep · 6:00 PM", where:"Dr B.R. Ambedkar Bhavan, Millers Road",
      note:"1,200+ interested and the biggest qawwali billing on the calendar right now. A proper auditorium rather than a bar, so the sound holds and the crowd is there to listen.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/chitti-ayee-hai-qawwali-and-sufi-music-bengaluru/3900030456495457", added:"2026-07-27"},
@@ -1507,17 +1444,7 @@
      note:"An open courtyard set, which suits qawwali's build far better than a closed club. Whitefield on a Saturday evening is the trade-off — leave early or make a day of that side of town.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/sukoon-wali-qawwali-live-concert-experience/3900030389572950", added:"2026-07-27"},
 
-    {date:"2026-08-07", a:"white", cat:"music", name:"Strings & Stillness — Vikram Hazra",
-     when:"Fri 7 Aug · 6:30 PM", where:"MLR Convention Centre, Whitefield",
-     note:"Devotional and meditative music from an Art of Living-associated performer — the calm end of live music rather than a gig. A Friday that ends settled instead of wired.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/strings-and-stillness-by-vikram-hazra/3900030408974400", added:"2026-07-27"},
-
-    {date:"2026-08-01", a:"multi", cat:"music", name:"Bhakti Sangama — devotional music evening",
-     when:"Sat 1 Aug · 6:00 PM", where:"Venue on the listing",
-     note:"Free, and devotional music is the one genre where a mixed-age Bangalore crowd actually shows up together. Worth it for the room as much as the music.",
-     cost:"Free", free:true, url:"https://allevents.in/bangalore/bhakti-sangama-a-divine-evening-of-devotional-music-tickets/80003607047395", added:"2026-07-27"},
-
-    /* ================= ARTISTS ON TOUR ================= */
+            /* ================= ARTISTS ON TOUR ================= */
     {date:"2026-11-14", a:"south", cat:"music", name:"Guns N' Roses — India 2026",
      when:"Sat 14 Nov · 5:00 PM", where:"NICE Grounds",
      note:"7,700+ interested and the largest booking in the city this year. NICE Grounds means a long haul both ways, so treat it as the whole evening — but this is the one people will ask if you went to.",
@@ -1550,12 +1477,7 @@
      note:"One of the better Hindi indie bands in a venue that holds a few hundred, which is the right scale for them. The Humming Tree is walkable from Indiranagar dinner, so it extends easily.",
      cost:"₹899", url:"https://www.district.in/events/in-case-we-forget-bangalore-aug29-2026-buy-tickets", added:"2026-07-27"},
 
-    {date:"2026-08-08", a:"cbd", cat:"music", name:"Marcin — Art of Guitar Tour",
-     when:"Sat 8 Aug · 7:00 PM", where:"Prestige Centre for Performing Arts",
-     note:"Percussive solo acoustic guitar — technically absurd and best heard in a seated hall like this one. Pricey at ₹2,750, but it is a proper concert venue rather than a brewery stage.",
-     cost:"₹2,750+", url:"https://www.district.in/events/jameson-ginger-ale-marcin-art-of-guitar-tour-bengaluru-2026-buy-tickets", added:"2026-07-27"},
-
-    {date:"2027-01-23", a:"multi", cat:"music", name:"Gorillaz — The Mountain Tour",
+        {date:"2027-01-23", a:"multi", cat:"music", name:"Gorillaz — The Mountain Tour",
      when:"Sat 23 Jan 2027 · 6:00 PM", where:"District Arena @ Terraform",
      note:"Far out, but Gorillaz have never toured India before and tickets for this kind of first will not sit around. Worth diarising now even though it is months away.",
      cost:"₹4,000+", url:"https://allevents.in/bangalore/gorillaz-the-mountain-tour-2027/4100029945653844", added:"2026-07-27"},
@@ -1571,11 +1493,6 @@
      cost:"Ticketed", ts:"50–65 min", tm:"45–60 min",
      url:"https://allevents.in/bangalore/yuvan-shankar-raja-in-bengaluru/3300030390255539", added:"2026-07-27"},
 
-    {date:"2026-07-31", a:"sarjapur", cat:"music", name:"DND ft. Swarathma Live",
-     when:"Fri 31 Jul · 8:00 PM", where:"DND, Bellandur",
-     note:"Swarathma at ₹499, ten minutes from home — the best value on this board by some distance. Bellandur means you can go on a whim after work instead of planning around traffic.",
-     cost:"₹499", url:"https://allevents.in/bangalore/dnd-ft-swarathma-live/4100030413520922", added:"2026-07-27"},
-
     {date:"2026-08-30", a:"sarjapur", cat:"music", name:"DND Unplugged ft. Mehram",
      when:"Sun 30 Aug · 8:00 PM – 1:00 AM", where:"DND — The Venue, Haralur Main Road, Amblipura",
      note:"An unplugged set at the venue on your own road — Amblipura, not merely nearby. Runs past midnight, and getting home costs you nothing, which no other late gig on this board can say.",
@@ -1587,12 +1504,7 @@
      note:"Bangalore's own jazz-funk outfit, playing the venue they effectively grew up in. The kind of gig where the band knows half the room.",
      cost:"₹1,000", url:"https://allevents.in/bangalore/pineapple-express-live/4100030406942907", added:"2026-07-27"},
 
-    {date:"2026-08-14", a:"north", cat:"music", name:"Sudha Ragunathan in Bengaluru",
-     when:"Fri 14 Aug · 6:30 PM", where:"Chowdiah Memorial Hall, Malleswaram",
-     note:"Front-rank Carnatic vocalist in the hall built for exactly this. Chowdiah is a long run from either anchor, but a Carnatic concert there is a Bangalore institution worth doing once.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/sudha-ragunathan-in-bengaluru/3300030431873206", added:"2026-07-27"},
-
-    {date:"2026-08-22", a:"south", cat:"music", name:"MG Sreekumar — Malluminati Onam edition",
+        {date:"2026-08-22", a:"south", cat:"music", name:"MG Sreekumar — Malluminati Onam edition",
      when:"Sat 22 Aug · 5:00 PM", where:"Forum South Bengaluru",
      note:"An Onam-timed Malayalam music evening at ₹599, and the diaspora turnout is the actual draw. Easy entry point into a community that is otherwise hard to meet cold.",
      cost:"₹599", url:"https://allevents.in/bangalore/mg-sreekumar-live-in-bangalore-malluminati-onam-edition/4100030249463329", added:"2026-07-27"},
@@ -1627,80 +1539,18 @@
      cost:"Free", free:true,
      url:"https://www.meetup.com/Ananda-Sangha", added:"2026-07-27"},
 
-    {date:"2026-08-01", a:"south", cat:"wellness", name:"Burnout to Balance — drum circle",
-     when:"Sat 1 Aug · 11:00 AM", where:"Nritya Darpan, JP Nagar 7th Phase",
-     note:"The closest thing on the board to sound therapy — a facilitated rhythm circle, no musical training expected. Drum circles break the ice faster than any mixer because nobody is performing.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/burnout-to-balance-drum-circle/80001140433686", added:"2026-07-27"},
-
-    {date:"2026-09-19", a:"white", cat:"wellness", name:"Bhajjan Therapy — Mantras, Beats & Bliss",
+        {date:"2026-09-19", a:"white", cat:"wellness", name:"Bhajjan Therapy — Mantras, Beats & Bliss",
      when:"Sat 19 Sep · 7:00 PM", where:"Phoenix Market City, Whitefield",
      note:"Sound-and-mantra session pitched as therapy rather than performance, so participation is the point. Sits squarely between the music and wellness halves of this board.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/bhajjan-therapy-mantrasbeats-and-bliss/3900030397308605", added:"2026-07-27"},
 
-    {date:"2026-08-01", a:"kora", cat:"wellness", name:"Puppy Yoga + journaling circle",
-     when:"Sat 1 Aug · 12:30 PM", where:"Good Move Studios, Koramangala",
-     note:"Exactly what it sounds like, and the journaling half makes it more than a novelty. ₹1,200 is steep for an hour, but it is the least intimidating room on this list.",
-     cost:"₹1,200", url:"https://allevents.in/bangalore/pawgas-puppy-yoga-journaling-circle-at-good-move-studios/4100030413643617", added:"2026-07-27"},
-
-    {date:"2026-08-01", a:"kora", cat:"wellness", name:"Inner Gold Circle — the art of deep listening",
-     when:"Sat 1 Aug · 4:00 PM", where:"Dialogues Cafe, Koramangala",
-     note:"A structured listening circle — you talk, and people actually listen, which is rarer than it sounds. Small by design, so it fills quickly.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/inner-gold-circle-the-art-of-deep-listening/3900030418006951", added:"2026-07-27"},
-
-    {date:"2026-08-01", a:"sarjapur", cat:"wellness", name:"Kalaripayattu for beginners — 2-day",
-     when:"Sat 1 – Sun 2 Aug · 7:00 AM", where:"Kadubeesanahalli",
-     note:"Free, beginner-level, and fifteen minutes from home — a two-day intro to Kerala's martial art. Free plus local plus genuinely unusual is a rare combination on this board.",
-     cost:"Free", free:true, url:"https://allevents.in/bangalore/kalaripayattu-for-beginners-2-day-workshop-in-bangalore-tickets/80009918174343", added:"2026-07-27"},
-
-    {date:"2026-08-01", a:"south", cat:"wellness", name:"Yoga workshop by Priti",
-     when:"Sat 1 Aug · 8:00 AM · repeats", where:"Bloom Creative Zone, Akshaya Nagar",
-     note:"A taught workshop rather than a drop-in class, and it runs on more than one date so a clash is not fatal. Early start clears the whole of Saturday.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/yoga-workshop-by-priti/3900030036254425", added:"2026-07-27"},
-
-    {date:"2026-08-01", a:"white", cat:"wellness", name:"Align Within",
-     when:"Sat 1 Aug · 8:00 AM · repeats", where:"Bloom Creative Zone, Whitefield",
-     note:"Movement-and-breathwork morning from the same studio network, on the Whitefield side. Runs on several dates, which makes it the easiest of these to actually attend.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/align-within/3900030134020127", added:"2026-07-27"},
-
-    {date:"2026-08-01", a:"multi", cat:"wellness", name:"Laughter Therapy",
-     when:"Sat 1 Aug · 2:00 PM · repeats", where:"Brik Oven — check branch",
-     note:"569+ interested and it runs on eight-plus dates, so it is clearly working for people. Absurd on paper, effective in practice, and impossible to attend without talking to someone.",
-     cost:"Ticketed", ts:"depends on branch", tm:"depends on branch",
-     url:"https://allevents.in/bangalore/laughter-therapy/3900030046316252", added:"2026-07-27"},
-
-    {date:"2026-07-30", a:"south", cat:"wellness", name:"The Awakening Youth Fest 2026",
-     when:"Thu 30 Jul · 5:00 PM", where:"Pyramid Valley International, Kanakapura Road",
-     note:"Pyramid Valley is a meditation campus rather than a venue, and worth seeing once regardless of the programme. A long way out on a Thursday — go only if you can leave early.",
-     cost:"Ticketed", ts:"60–75 min", tm:"70–90 min",
-     url:"https://allevents.in/bangalore/the-awakening-youth-fest-2026/80009865332799", added:"2026-07-27"},
-
     /* ================= WEEKNIGHTS & WEEKEND ADDITIONS ================= */
-    {date:"2026-08-04", a:"south", cat:"craft", name:"Make your own protein bar",
-     when:"Tue 4 Aug · 8:00 PM · repeats", where:"Fabrizo Creative Activity Hub, BTM Layout",
-     note:"A hands-on Tuesday-evening workshop, which is a rare thing — most weekday slots are talks. Small group and you leave with what you made.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/make-your-own-protein-bar/3900030322251521", added:"2026-07-27"},
-
-    {dow:0, a:"white", cat:"social", name:"Brunch Ka Scene — North Indian food gathering",
+        {dow:0, a:"white", cat:"social", name:"Brunch Ka Scene — North Indian food gathering",
      when:"Every Sunday · 12:00–4:00 PM", where:"Jollygunj, Whitefield",
      note:"A four-hour communal brunch built around shared tables rather than a fixed programme. Long window, so arriving at two is fine.",
      cost:"₹499+", url:"https://www.district.in/events/brunch-ka-scene-the-grand-north-indian-food-gathering-jollygunj-whitefield-jul5-2026-buy-tickets", added:"2026-07-27"},
 
-    {date:"2026-08-15", a:"cbd", cat:"craft", name:"The Mango Tree — art market",
-     when:"Sat 15 – Sun 16 Aug · 11:00 AM", where:"Sabha, Bengaluru",
-     note:"An independent makers' market at ₹199 entry, and the stallholders are the point — this is how you find studios and classes that never reach the listing platforms.",
-     cost:"₹199+", url:"https://www.district.in/events/the-mango-tree-art-market-aug15-2026-buy-tickets", added:"2026-07-27"},
-
-    {date:"2026-08-08", a:"cbd", cat:"outdoors", name:"Johnson Market heritage walk",
-     when:"Sat 8 Aug · 8:00 AM", where:"Johnson Market, Richmond Town",
-     note:"A guided morning walk through one of the oldest market quarters in the city, ending around breakfast. Walking tours are the easiest format for talking to strangers — you are all already moving.",
-     cost:"₹750", url:"https://allevents.in/bangalore/johnson-market-heritage-walk-tickets/80002089786145", added:"2026-07-27"},
-
-    {date:"2026-08-14", a:"multi", cat:"books", name:"Book Brahma Literature Festival 2026",
-     when:"Fri 14 Aug · 9:00 AM", where:"Venue on the listing",
-     note:"Free, and the largest Kannada-and-English literature gathering on the calendar. A full day, but you can drop in for two sessions and still have got the value.",
-     cost:"Free", free:true, url:"https://allevents.in/bangalore/book-brahma-literature-festival-2026-tickets/80002240246439", added:"2026-07-27"},
-
-    {date:"2026-09-12", a:"cbd", cat:"stage", name:"Mere Krishn — live theatrical",
+                {date:"2026-09-12", a:"cbd", cat:"stage", name:"Mere Krishn — live theatrical",
      when:"Sat 12 – Sun 13 Sep · multiple slots", where:"Prestige Centre for Performing Arts",
      note:"A full-scale staged production rather than a stand-up set, which this board is otherwise short of. ₹5,000 floor price makes it a deliberate choice, not a casual one.",
      cost:"₹5,000+", url:"https://www.district.in/events/mere-krishn-a-live-theatrical-experience-of-shree-krishns-life-bengaluru-02-2026-buy-tickets", added:"2026-07-27"},
@@ -1711,13 +1561,7 @@
      cost:"₹799", url:"https://www.district.in/events/pyar-n-stuff-bengaluru-show-aug23-2026-buy-tickets", added:"2026-07-27"},
 
     /* ===== added 29 Jul ===== */
-    {date:"2026-08-08", a:"south", cat:"music", name:"Harris Jayaraj in Bengaluru",
-     when:"Sat 8 Aug · 7:00 PM", where:"NICE Grounds",
-     note:"An arena night of Tamil film music from one of its most-played composers. Clashes with Raghu Dixit and Marcin the same evening — three good options, pick one.",
-     cost:"Ticketed", ts:"50–65 min", tm:"45–60 min",
-     url:"https://allevents.in/bangalore/harris-jayaraj-in-bengaluru/3300030148514458", added:"2026-07-29"},
-
-    {date:"2026-10-10", a:"multi", cat:"music", name:"Bangalore Open Air 2026",
+        {date:"2026-10-10", a:"multi", cat:"music", name:"Bangalore Open Air 2026",
      when:"Sat 10 Oct · 1:00 PM", where:"Venue to be announced",
      note:"India's longest-running metal festival, and an all-day one, so it is a crowd you spend real time with rather than pass in a foyer. Venue lands closer to the date.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/bangalore-open-air-2026/3900030036214659", added:"2026-07-29"},
@@ -1727,47 +1571,12 @@
      note:"Rekha Bhardwaj's live register is closer to ghazal than playback, which puts this near the Sufi end of the board rather than the film-hits end. The venue has now been confirmed as Phoenix Market City.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/rekha-bhardwaj-vishal-bhardwaj-in-bengaluru/3300030140149012", added:"2026-07-29"},
 
-    {date:"2026-08-05", a:"north", cat:"music", name:"Samatva Sambhrama 2026",
-     when:"Wed 5 Aug · 5:15 PM", where:"Chowdiah Memorial Hall, Malleswaram",
-     note:"A two-day classical and cultural programme at Chowdiah, starting on a Wednesday — the emptiest night on this board. Early start, so leave work on time or catch the second half.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/samatva-sambhrama-2026/3900030234774837", added:"2026-07-29"},
-
-    {date:"2026-08-01", a:"white", cat:"stage", name:"Kisi Ko Batana Mat — Anubhav Singh Bassi",
-     when:"Sat 1 Aug · 7:00 PM", where:"MLR Convention Centre, Whitefield",
-     note:"The single biggest draw on this board by interest count. A Saturday evening slot, so the Whitefield run is the only real cost.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/kisi-ko-batana-mat-ft-anubhav-singh-bassi/3900030385643025", added:"2026-07-29"},
-
-    {date:"2026-09-11", a:"cbd", cat:"stage", name:"Vir Das — Sounds of India",
+            {date:"2026-09-11", a:"cbd", cat:"stage", name:"Vir Das — Sounds of India",
      when:"Fri 11 Sep · 7:30 PM", where:"Good Shepherd Auditorium",
      note:"A touring show built around music as much as stand-up, in a central auditorium rather than out east. One of the few big comedy bookings you can reach from the office without a plan.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/vir-das-sounds-of-india-bengaluru/3900030423975240", added:"2026-07-29"},
 
-    {date:"2026-08-08", a:"multi", cat:"stage", name:"One & a Half Men — improv",
-     when:"Sat 8 Aug · multiple slots", where:"Venue on the listing",
-     note:"Fully unscripted, and the audience calls the scenes — which makes it one of the few comedy nights where you are not just a spectator. Two hours, Hinglish, 18+.",
-     cost:"Ticketed", url:"https://www.district.in/events/one-a-half-men-improv-unscripted-comedy-show-dec27-2025-buy-tickets", added:"2026-07-29"},
-
-    {date:"2026-08-01", a:"north", cat:"stage", name:"Maa Bhavani",
-     when:"Sat 1 Aug · 6:00 PM", where:"Chowdiah Memorial Hall, Malleswaram",
-     note:"A staged production at Chowdiah, which is the hall to see this kind of work in. Malleswaram is a long run from either anchor, so make an evening of that side of town.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/maa-bhavani/80007656789353", added:"2026-07-29"},
-
-    {date:"2026-08-01", a:"indira", cat:"social", name:"One Night in Toki-O",
-     when:"Sat 1 Aug · 8:00 PM", where:"GoRally Pickleball, Indiranagar",
-     note:"A themed night at a pickleball venue rather than a bar, so there is something to do besides stand and talk. That format does more for meeting people than a straight mixer.",
-     cost:"₹999+", url:"https://www.district.in/events/one-night-in-tokio-aug1-2026-buy-tickets", added:"2026-07-29"},
-
-    {date:"2026-08-08", a:"kora", cat:"startup", name:"Fundraising for Startups — founders & investors panel",
-     when:"Sat 8 Aug · 6:00–8:00 PM", where:"Founder Startup House, Koramangala",
-     note:"An eChai panel with investors actually in the room, at the venue their Bengaluru events keep returning to. Narrower and more useful than a general startup mixer.",
-     cost:"Free", free:true, url:"https://echai.ventures/events/fundraising-for-startups-panel-conversation-with-founders-investors-aug-08-2026", added:"2026-07-29"},
-
-    {date:"2026-08-16", a:"cbd", cat:"outdoors", name:"Green BLR 2.0 — Cubbon Park",
-     when:"Sun 16 Aug · 6:00 AM", where:"Cubbon Park",
-     note:"166+ signed up for an early-morning environmental drive in Cubbon Park. Volunteering beats mixers for meeting people — you are working alongside them, not introducing yourself.",
-     cost:"Free", free:true, url:"https://allevents.in/bangalore/green-blr-20/3900030139099437", added:"2026-07-29"},
-
-    {date:"2026-10-11", a:"cbd", cat:"outdoors", name:"Namma Run Bengaluru 2026",
+                        {date:"2026-10-11", a:"cbd", cat:"outdoors", name:"Namma Run Bengaluru 2026",
      when:"Sun 11 Oct · 5:30 AM", where:"St Joseph's School, Bengaluru",
      note:"A shorter, friendlier city run than the Wipro marathon two weeks earlier, and a reasonable first target if you start with the Saturday running groups now.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/namma-run-bengaluru-2026/3900030139121715", added:"2026-07-29"},
@@ -1796,17 +1605,7 @@
      cost:"Free", free:true, url:"https://www.meetup.com/Bangalore-UX", added:"2026-08-01"},
 
     /* ---- AI & TECH ---- */
-    {date:"2026-08-06", a:"kora", cat:"ai", name:"How Founders & Operators Use AI",
-     when:"Thu 6 Aug · 6:00–8:00 PM", where:"Founder Startup House, Koramangala",
-     note:"eChai's practitioner session — people describing what they actually run in production rather than a keynote about the future. Free, and a Thursday slot that clears a normal workday.",
-     cost:"Free", free:true, url:"https://echai.ventures/events/how-founders-operators-use-ai-bengaluru-edition-aug-06-2026", added:"2026-08-01"},
-
-    {date:"2026-08-08", a:"sarjapur", cat:"ai", name:"Grafana & Friends × Meesho",
-     when:"Sat 8 Aug · 11:00 AM–2:00 PM", where:"Meesho office, Helios Business Park, Kadubeesanahalli",
-     note:"550 signed up, hosted inside Meesho's office — the largest in-person tech meetup on this board and one of the closest to home. Observability and infrastructure, so a genuinely engineering-heavy room.",
-     cost:"Free", free:true, url:"https://www.meetup.com/grafana-and-friends-bengaluru/events/315632167/", added:"2026-08-01"},
-
-    {date:"2026-08-22", a:"cbd", cat:"ai", name:"The power of AI in the palm of my hand — ExpertTalks",
+            {date:"2026-08-22", a:"cbd", cat:"ai", name:"The power of AI in the palm of my hand — ExpertTalks",
      when:"Sat 22 Aug · 10:30 AM", where:"Equal Experts, Residency Road",
      note:"ExpertTalks runs at 4.8 across a long history, which is rare for a technical meetup. Residency Road is a short hop from the office, so this is one of the easiest tech talks to reach.",
      cost:"Check listing", url:"https://www.meetup.com/experttalks-bengaluru/events/315788048/", added:"2026-08-01"},
@@ -1818,50 +1617,15 @@
      url:"https://allevents.in/bangalore/agentic-ai-automation-and-multi-agent-systems/4100030408431543", added:"2026-08-01"},
 
     /* ---- MARKETING & GROWTH ---- */
-    {date:"2026-08-07", a:"hsr", cat:"growth", name:"GTM and distribution for startups",
-     when:"Fri 7 Aug · 6:00–8:00 PM", where:"Urban Vault, 477 HSR Layout",
-     note:"Go-to-market and distribution is the closest thing on this board to what you do for a living, and it is free. Urban Vault HSR is the same building as the weekly eChai meetup.",
-     cost:"Free", free:true, url:"https://echai.ventures/events/gtm-and-distribution-for-startups-bengaluru-edition-aug-07-2026", added:"2026-08-01"},
-
-    {date:"2026-08-09", a:"kora", cat:"growth", name:"Building Consumer and D2C Brands",
-     when:"Sun 9 Aug · 11:00 AM–1:00 PM", where:"Founder Startup House, Koramangala",
-     note:"Brand and consumer marketing rather than fundraising, which is the half of startup events usually missing. A Sunday late-morning slot that leaves the rest of the day.",
-     cost:"Free", free:true, url:"https://echai.ventures/events/building-consumer-and-d2c-brands-bengaluru-edition-aug-09-2026", added:"2026-08-01"},
-
-    /* ---- BOOKS & QUIZ ---- */
-    {date:"2026-08-08", a:"cbd", cat:"books", name:"Weekend Book Club — Cubbon Park meet",
-     when:"Sat 8 Aug · 8:00–9:30 AM", where:"Cubbon Park, by the metro gate",
-     note:"26 people reading under a canopy in Cubbon Park on a Saturday morning, free and outdoors. Done by 9:30, so it costs you nothing else in the day.",
-     cost:"Free", free:true, url:"https://www.meetup.com/weekend-book-club/events/315638965/", added:"2026-08-01"},
-
-    {date:"2026-08-08", a:"cbd", cat:"books", name:"Bollywood Quiz with Calm Your Wits",
-     when:"Sat 8 Aug · multiple slots", where:"Underline Center, near MG Road",
-     note:"A team quiz where knowing the answers is not really the point — you get put with strangers and have to argue it out. Same venue as the Wednesday and Thursday nights.",
-     cost:"₹299+", url:"https://www.district.in/events/bollywood-quiz-with-calm-your-wits-jul31-2026-buy-tickets", added:"2026-08-01"},
-
-    {dow:6, a:"multi", cat:"books", name:"Write Club Bangalore",
+            /* ---- BOOKS & QUIZ ---- */
+            {dow:6, a:"multi", cat:"books", name:"Write Club Bangalore",
      when:"Every Saturday · 2:00 PM", where:"Rotating venues — check the listing",
      note:"Writing rather than reading — you turn up, write to a prompt, and read it out. Small by design, and the only thing on this board where you make something out of words.",
      cost:"Free", free:true, url:"https://www.meetup.com/write-club-bangalore", added:"2026-08-01"},
 
-    {date:"2026-08-02", a:"north", cat:"books", name:"Friends Trivia Night — Friendship Day special",
-     when:"Sun 2 Aug · 8:00 PM", where:"The Studs Sports Bar & Grill, Sahakara Nagar",
-     note:"A themed pub quiz at ₹199, which is about as low-stakes as a Sunday night gets. North Bengaluru, so this one only makes sense if you are already that side.",
-     cost:"₹199", url:"https://www.district.in/events/friends-trivia-night-friendship-day-special-at-the-studs-sahakarnagar-aug2-2026-buy-tickets", added:"2026-08-01"},
-
-    /* ---- SPEAKING ---- */
-    {date:"2026-08-02", a:"cbd", cat:"speak", name:"Make Friends with the Stage — Improv Lore",
-     when:"Sun 2 Aug · 4:00 PM", where:"Underline Center, near MG Road",
-     note:"An open improv jam where you are put on stage with no script and no preparation. Nothing else on this board builds the same nerve, and it is only 75 minutes.",
-     cost:"₹499+", url:"https://www.district.in/events/make-friends-with-the-stage-open-stage-jam-by-improv-lore-may1-2026-buy-tickets", added:"2026-08-01"},
-
-    /* ---- STARTUP ---- */
-    {date:"2026-08-09", a:"kora", cat:"startup", name:"FailCode Bengaluru — failure lessons",
-     when:"Sun 9 Aug · 6:00–8:00 PM", where:"Founder Startup House, Koramangala",
-     note:"Founders and operators talking about what went wrong, which is the conversation every other startup event avoids. Free, and far easier to walk into than a room of people pitching wins.",
-     cost:"Free", free:true, url:"https://echai.ventures/events/failcode-bengaluru-failure-lessons-from-startups-and-operators-aug-09-2026", added:"2026-08-01"},
-
-    /* ---- BOARD GAMES — including the Wednesday slot the board was short of ---- */
+        /* ---- SPEAKING ---- */
+        /* ---- STARTUP ---- */
+        /* ---- BOARD GAMES — including the Wednesday slot the board was short of ---- */
     {dow:3, a:"kora", cat:"games", name:"Midweek Board Games — Euphoria Cafe",
      when:"Every Wednesday · multiple slots", where:"Euphoria Cafe, Koramangala",
      note:"The same room as the Saturday session but on the emptiest night of the week, which is exactly where this board was thinnest. From ₹299, and midweek means it is never full.",
@@ -1882,24 +1646,28 @@
      note:"From ₹99, which puts it among the cheapest anywhere, and URU runs craft workshops in the same building. Worth pairing with anything else that takes you east.",
      cost:"₹99+", url:"https://www.district.in/events/board-games-in-uru-whitefield-jun13-2026-buy-tickets", added:"2026-08-01"},
 
+    {dow:4, a:"hsr", cat:"games", name:"Board Game Night in HSR Layout",
+     when:"Every Thursday, multiple dates", where:"Tim Hortons, HSR Layout",
+     note:"A genuine weeknight board-games room in HSR rather than another Saturday listing — worth it just for filling a Thursday.",
+     cost:"₹349+", url:"https://www.district.in/events/board-game-night-in-hsr-layout-jan17-2026-buy-tickets", added:"2026-08-19"},
+
+    {dow:6, a:"kora", cat:"games", name:"The Fun Boardgames Meetup",
+     when:"Every Saturday, multiple dates", where:"Buddiezz Cafe, Koramangala 6th Block",
+     note:"A different Koramangala room from Euphoria's Mafia nights — worth trying if that one's already a regular fixture for you.",
+     cost:"₹249+", url:"https://www.district.in/events/the-fun-board-games-meetup-may2-2026-buy-tickets", added:"2026-08-19"},
+
+    {dow:0, a:"indira", cat:"games", name:"Trivia Night — Bengaluru",
+     when:"Every Sunday", where:"Indiranagar Social, Indiranagar",
+     note:"A standing Sunday trivia night at one of Indiranagar's busiest social spots.",
+     cost:"₹199+", url:"https://www.district.in/events/trivia-night-bengaluru-apr19-2026-buy-tickets", added:"2026-08-19"},
+
     {dow:6, a:"cbd", cat:"games", name:"Magic: The Gathering with ReRoll",
      when:"Every Saturday · 6:00 PM", where:"Underline Center, near MG Road",
      note:"A proper deck game rather than a party game, so the regulars come back weekly and you get to know them. ReRoll teach newcomers and lend decks.",
      cost:"₹399", url:"https://www.district.in/events/magic-the-gathering-with-reroll-board-games-buy-tickets", added:"2026-08-01"},
 
     /* ---- MUSIC ---- */
-    {date:"2026-08-09", a:"sarjapur", cat:"music", name:"Live at Social — Sarjapur",
-     when:"Sun 9 Aug · 6:00–9:00 PM", where:"Sarjapur Social",
-     note:"Live music on your own side of town on a Sunday evening, which almost nothing else here manages. Ten minutes from home means you can go on a whim.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/live-at-social-tickets/80007624691386", added:"2026-08-01"},
-
-    {date:"2026-08-02", a:"multi", cat:"music", name:"BFF 3.0 — Sachet Parampara live",
-     when:"Sun 2 Aug · 5:00–10:00 PM", where:"J K Grand Arena",
-     note:"A five-hour Sunday concert from one of the most-streamed playback duos going. Long window, so arriving at seven still gets you three hours.",
-     cost:"Ticketed", ts:"varies", tm:"varies",
-     url:"https://allevents.in/bangalore/bff-30-sachet-parampara-tickets/80003759233513", added:"2026-08-01"},
-
-    {date:"2026-10-31", a:"multi", cat:"stage", name:"Quick Style — India Tour",
+            {date:"2026-10-31", a:"multi", cat:"stage", name:"Quick Style — India Tour",
      when:"Sat 31 Oct · 8:00 PM", where:"Venue to be announced",
      note:"The Norwegian dance crew whose wedding routines went round the world. A show rather than a gig, and the kind of thing that is easy to bring someone else along to.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/quick-style-india-tour-bangalore/3900030022936242", added:"2026-08-01"},
@@ -1910,24 +1678,8 @@
      note:"Free, which no other craft workshop on this board is. Rotating formats every weekend, so it is worth checking what is on rather than booking blind.",
      cost:"Free", free:true, url:"https://www.district.in/events/art-workshops-by-kinjal-uru-brookefield-jun13-2026-buy-tickets", added:"2026-08-01"},
 
-    {date:"2026-08-02", a:"multi", cat:"social", name:"Friendship Day Fiesta",
-     when:"Sun 2 Aug · 11:00 AM–1:00 PM", where:"Skylime — Happy Minds",
-     note:"A short, structured Sunday-morning social built around meeting people rather than a programme. Two hours is a low bar for a first visit somewhere new.",
-     cost:"Ticketed", ts:"varies", tm:"varies",
-     url:"https://allevents.in/bangalore/friendship-day-fiesta-tickets/80002318595179", added:"2026-08-01"},
-
-    /* ===== added 3 Aug ===== */
-    {date:"2026-08-08", a:"hsr", cat:"growth", name:"Product Growth Playbook — eChai",
-     when:"Sat 8 Aug · 6:00–8:00 PM", where:"Urban Vault, 477 HSR Layout",
-     note:"Growth tactics specifically for product people rather than a general marketing room — narrower than the Tuesday Sales & Business fixture and closer to what you actually do. Same building as the weekly eChai meetup.",
-     cost:"Free", free:true, url:"https://echai.ventures/events/product-growth-playbook-bengaluru-edition-aug-08-2026", added:"2026-08-03"},
-
-    {date:"2026-08-08", a:"hsr", cat:"ai", name:"AI Founders Meetup — eChai",
-     when:"Sat 8 Aug · 11:00 AM–1:00 PM", where:"Urban Vault, 477 HSR Layout",
-     note:"Founders building with AI rather than talking about it, in a daytime slot that clears the evening. Merged with the Manufacturing Startups meetup and moved from BHIVE Bellandur to Urban Vault HSR — 48 registered.",
-     cost:"Free", free:true, url:"https://echai.ventures/events/ai-founders-meetup-bengaluru-edition-aug-08-2026", added:"2026-08-03"},
-
-    {dow:2, a:"cbd", cat:"games", name:"Mahjong at KICO",
+        /* ===== added 3 Aug ===== */
+            {dow:2, a:"cbd", cat:"games", name:"Mahjong at KICO",
      when:"Tue–Sat · multiple slots", where:"KICO Community, Church Street",
      note:"Mahjong rather than another Werewolf or Catan night — a genuinely different format from everything else on this board's game nights, and Church Street is a straight walk from the office.",
      cost:"₹525", url:"https://www.district.in/events/mahjong-at-kico-may11-2026-buy-tickets", added:"2026-08-03"},
@@ -2008,27 +1760,7 @@
      note:"Abi Sampa and Rushil Ranjan's India debut, setting qawwali against a Western orchestra and choir — they have sold out halls abroad on this. Clashes with the Ambedkar Bhavan qawwali the same night, so pick one.",
      cost:"₹1,999+", url:"https://allevents.in/bangalore/ruhbaru-orchestral-qawwali-project/4100030237798533", added:"2026-08-13"},
 
-    {date:"2026-08-15", a:"kora", cat:"startup", name:"Bengaluru Startup Meetup — eChai",
-     when:"Sat 15 Aug · 6:00–8:00 PM", where:"Founder Startup House, 7th Block Koramangala",
-     note:"39 already going, free, and no booking needed — you can simply turn up. The flagship eChai evening rather than one of their narrower vertical sessions.",
-     cost:"Free", free:true, url:"https://echai.ventures/events/bengaluru-startup-meetup-aug-15-2026", added:"2026-08-13"},
-
-    {date:"2026-08-15", a:"kora", cat:"stage", name:"Trial Show — Danish Sait",
-     when:"Sat 15 Aug · 12:00–1:15 PM", where:"The Underground Comedy Club, 5th Block Koramangala",
-     note:"Bangalore's own, working out new material in a small room — trial shows are rougher and far more fun than a polished tour set. A midday slot, so it costs you almost nothing.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/trial-show-by-danish-sait/3900030397871620", added:"2026-08-13"},
-
-    {date:"2026-08-16", a:"kora", cat:"stage", name:"Out Of ORDER ft. Shashi Dhiman",
-     when:"Sun 16 Aug · 4:00–5:30 PM", where:"The Underground Comedy Club, 5th Block Koramangala",
-     note:"A Sunday-afternoon set at the same club as the Danish Sait trial — pair the two across the weekend and one venue gets you two very different rooms.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/out-of-order-ft-shashi-dhiman/3900030500734549", added:"2026-08-13"},
-
-    {date:"2026-08-16", a:"south", cat:"music", name:"Sanjog Sangeet Mahotsav",
-     when:"Sun 16 Aug · 6:30–8:30 PM", where:"Prestige Centre for Performing Arts, Konanakunte",
-     note:"Pravin Godkhindi's Krishna Fusion Band with vocalist Vijay Prakash — classical fusion in a proper seated hall. From ₹500, which is cheap for this billing.",
-     cost:"₹500–1,000", url:"https://allevents.in/bangalore/sanjog-sangeet-mahotsav-16th-august/3900030373897210", added:"2026-08-13"},
-
-    {date:"2026-08-22", a:"multi", cat:"music", name:"Chandan Shetty in Bengaluru",
+                    {date:"2026-08-22", a:"multi", cat:"music", name:"Chandan Shetty in Bengaluru",
      when:"Sat 22 Aug · 6:00 PM", where:"ZOZO The Club",
      note:"Kannada rap and film music from one of the state's biggest current names — a younger, local crowd than most of the touring acts on this board. Clashes with three other things on 22 Aug.",
      cost:"Ticketed", ts:"varies", tm:"varies",
@@ -2055,46 +1787,16 @@
      cost:"Free on RSVP", free:true,
      url:"https://bangaloreinternationalcentre.org/events/", added:"2026-08-13"},
 
-    {date:"2026-08-17", a:"indira", cat:"books", name:"Crystal & Ash — the Buddha at Piprahwa",
-     when:"Mon 17 Aug · 6:30 PM", where:"BIC auditorium, Domlur II Stage",
-     note:"The archaeology of the Piprahwa relics, told as a story rather than a lecture. Free, and it lands on a Monday — the emptiest night in the city by a distance.",
-     cost:"Free on RSVP", free:true,
-     url:"https://bangaloreinternationalcentre.org/event/crystal-ash/", added:"2026-08-13"},
-
-    {date:"2026-08-18", a:"indira", cat:"books", name:"Decoding Behavioural Insights",
-     when:"Tue 18 Aug · 6:30–8:00 PM", where:"BIC auditorium, Domlur II Stage",
-     note:"How behavioural tools actually shift outcomes in practice — close enough to how you think about buyers to be useful, not just interesting. Free, RSVP first come first served.",
-     cost:"Free on RSVP", free:true,
-     url:"https://bangaloreinternationalcentre.org/event/decoding-behavioural-insights/", added:"2026-08-13"},
-
-    {date:"2026-08-19", a:"indira", cat:"books", name:"Working Girls — women's invisible labour",
+            {date:"2026-08-19", a:"indira", cat:"books", name:"Working Girls — women's invisible labour",
      when:"Wed 19 Aug · 6:30 PM", where:"BIC auditorium, Domlur II Stage",
      note:"A sharp look at the work that never shows up in the numbers, across India. Free, and a Wednesday — the night this board has always been thinnest on.",
      cost:"Free on RSVP", free:true,
      url:"https://bangaloreinternationalcentre.org/event/working-girls/", added:"2026-08-13"},
 
-    {date:"2026-08-14", a:"indira", cat:"books", name:"How the Partition Reshaped Indian Politics",
-     when:"Fri 14 Aug · 6:30 PM", where:"BIC auditorium, Domlur II Stage",
-     note:"On the architecture of hate and the rise of majoritarianism, the evening before Independence Day. Free, serious, and the kind of room where people stay to argue afterwards.",
-     cost:"Free on RSVP", free:true,
-     url:"https://bangaloreinternationalcentre.org/event/how-the-partition-reshaped-indian-politics/", added:"2026-08-13"},
-
-    {date:"2026-08-15", a:"indira", cat:"books", name:"Development — Mysore and a modern obsession",
-     when:"Sat 15 Aug · 6:30 PM", where:"BIC auditorium, Domlur II Stage",
-     note:"Where the idea of “development” came from, traced through princely Mysore. Free, and a short hop from the office if you are already that side.",
-     cost:"Free on RSVP", free:true,
-     url:"https://bangaloreinternationalcentre.org/event/development/", added:"2026-08-13"},
-
-    /* ================= CEDAT — FREE WEEKNIGHT STARTUP SERIES =================
+            /* ================= CEDAT — FREE WEEKNIGHT STARTUP SERIES =================
        All free, all 6–7 PM on a weeknight. Two of them run at South India Angel Network,
        which is on Trinity Circle — the office. Walk down, spend an hour, walk back. */
-    {date:"2026-08-18", a:"south", cat:"startup", name:"Startup Pitches by CEDAT",
-     when:"Tue 18 Aug · 6:00–7:00 PM", where:"IKP EDEN, Tavarekere Main Road",
-     note:"An hour of founders pitching, free, on a Tuesday. Short enough that it costs you nothing if the room turns out to be wrong.",
-     cost:"Free", free:true,
-     url:"https://allevents.in/bangalore/startup-pitches-by-cedat-tickets/80003751947556", added:"2026-08-13"},
-
-    {date:"2026-09-16", a:"cbd", cat:"startup", name:"Startup Talks by CEDAT",
+        {date:"2026-09-16", a:"cbd", cat:"startup", name:"Startup Talks by CEDAT",
      when:"Wed 16 Sep · 6:00–7:00 PM", where:"South India Angel Network, Trinity Circle",
      note:"Free, an hour long, and it runs in the building on Trinity Circle — you can walk there from the desk. Nothing else on this board is this easy to attend on a Wednesday.",
      cost:"Free", free:true, ts:"45–60 min", tm:"5 min walk",
@@ -2150,24 +1852,8 @@
      note:"Two hours of mass Zumba at the HSR stadium — no skill required and nobody is watching you. An 8 AM start is civilised by running-event standards.",
      cost:"Ticketed", url:"https://allevents.in/bangalore/the-united-zumbathon/3900030491063405", added:"2026-08-13"},
 
-    {date:"2026-08-15", a:"south", cat:"outdoors", name:"Run for Fun & Health 2026",
-     when:"Sat 15 Aug · 6:00–9:00 AM", where:"Art of Living International Centre, Kanakapura Road",
-     note:"An Independence Day morning run on the Art of Living campus, which is worth seeing once regardless of the run. Done by nine, so the day is still yours.",
-     cost:"Ticketed", ts:"55–70 min", tm:"60–75 min",
-     url:"https://allevents.in/bangalore/run-for-fun-and-health-2026/200030292467858", added:"2026-08-13"},
-
-    {date:"2026-08-16", a:"indira", cat:"wellness", name:"Breathe. Meditate. Heal.",
-     when:"Sun 16 Aug", where:"TreeHouse, Indiranagar",
-     note:"Breathwork and meditation at the same Indiranagar room that hosts the magic-and-music nights. A quiet Sunday option that is not a yoga class.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/breathemeditateheal/3900030536603908", added:"2026-08-13"},
-
-    /* ===== added 15 Aug ===== */
-    {date:"2026-08-15", a:"indira", cat:"stage", name:"Naanum Foodie Dhaan — Praveen Kumar",
-     when:"Sat 15 Aug · 7:00–8:40 PM", where:"Bangalore International Centre, Domlur",
-     note:"A Tamil-language standup hour about India's relationship with food — cravings, delivery apps, emotional eating. His ninth special, in the same auditorium that runs the free weeknight talks.",
-     cost:"Ticketed", url:"https://allevents.in/bangalore/naanum-foodie-dhaan-by-praveen-kumar/3900030437500801", added:"2026-08-15"},
-
-    {date:"2026-08-20", a:"indira", cat:"books", name:"Losing Words, Losing Worlds",
+            /* ===== added 15 Aug ===== */
+        {date:"2026-08-20", a:"indira", cat:"books", name:"Losing Words, Losing Worlds",
      when:"Thu 20 Aug · 6:30–8:00 PM", where:"BIC seminar halls, Domlur II Stage",
      note:"On what disappears when a language dies, free on RSVP. A Thursday, which keeps building out the one weeknight this board can now reliably point to.",
      cost:"Free on RSVP", free:true,
@@ -2178,6 +1864,25 @@
      note:"A classical recital at BIC rather than a talk — worth knowing the venue does both. Same free-on-RSVP terms as everything else there.",
      cost:"Free on RSVP", free:true,
      url:"https://bangaloreinternationalcentre.org/event/bach-to-saint-saens/", added:"2026-08-15"},
+
+    /* ===== added 19 Aug ===== */
+    {date:"2026-08-21", a:"indira", cat:"books", name:"Beyond Digitisation",
+     when:"Fri 21 Aug · 7:00–8:15 PM", where:"BIC seminar halls, Domlur II Stage",
+     note:"A BIC talk on what digitisation leaves out. Free on RSVP, same terms as the venue's whole weeknight programme.",
+     cost:"Free on RSVP", free:true,
+     url:"https://bangaloreinternationalcentre.org/event/beyond-digitisation/", added:"2026-08-19"},
+
+    {date:"2026-08-22", a:"indira", cat:"books", name:"Hoovyaru Belasidare — Who Grew the Flowers?",
+     when:"Sat 22 Aug · 11:00 AM–12:30 PM", where:"BIC seminar halls, Domlur II Stage",
+     note:"A Kannada-language BIC session, free on RSVP — a Saturday-morning slot rather than the venue's usual evening timing.",
+     cost:"Free on RSVP", free:true,
+     url:"https://bangaloreinternationalcentre.org/event/hoovyaru-belasidare-who-grew-the-flowers/", added:"2026-08-19"},
+
+    {date:"2026-08-23", a:"indira", cat:"speak", name:"Beyond 'I Like It'",
+     when:"Sun 23 Aug · 11:00 AM–1:00 PM", where:"BIC seminar halls, Domlur II Stage",
+     note:"A BIC discussion format rather than a lecture — free on RSVP, a Sunday late-morning slot.",
+     cost:"Free on RSVP", free:true,
+     url:"https://bangaloreinternationalcentre.org/event/beyond-i-like-it/", added:"2026-08-19"},
 
     {date:"2026-08-21", a:"multi", cat:"startup", name:"Namma Bengaluru Startups Meetup — CEDAT",
      when:"Fri 21 Aug · 6:00–8:00 PM", where:"Kaarya Shared Workspaces",
@@ -2202,37 +1907,7 @@
      cost:"Free", free:true,
      url:"https://www.meetup.com/womenwhogobangalore/events/315860397/", added:"2026-08-15"},
 
-    {date:"2026-08-15", a:"sarjapur", cat:"social", name:"Vijay Antony — The OG Night",
-     when:"Sat 15 Aug · 7:00 PM–1:00 AM", where:"Babylonia, 7th Block Koramangala",
-     note:"Free entry, live music till 1 AM. A long Independence Day weekend night out that costs nothing to walk into.",
-     cost:"Free", free:true,
-     url:"https://allevents.in/bangalore/vijay-antony-the-og-night-tickets/80001741575115", added:"2026-08-15"},
-
-    {date:"2026-08-16", a:"kora", cat:"music", name:"Madras to Malabar 3.0 — Onam DJ edition",
-     when:"Sun 16 Aug · 2:00 PM–1:00 AM", where:"VIBE PUB, 5th Block Koramangala",
-     note:"Tamil and Malayalam hits till 1 AM, at ₹199 among the cheapest nights out on the board. Free entry for women before 4 PM.",
-     cost:"₹199",
-     url:"https://allevents.in/bangalore/madras-to-malabar-30-onam-edition-tickets/80001809761028", added:"2026-08-15"},
-
-    {date:"2026-08-15", a:"kora", cat:"stage", name:"SWIPE RIGHT — matchmaking comedy",
-     when:"Sat 15 Aug · 8:00–9:30 PM", where:"Ministry Of Comedy, Koramangala",
-     note:"Standup and speed-dating in one room — single women matched on stage with single guys in the audience. Unlike anything else on this board, for better or worse; know it is filmed before you book.",
-     cost:"Ticketed",
-     url:"https://allevents.in/bangalore/swipe-right-matchmaking/3900030483899828", added:"2026-08-15"},
-
-    {date:"2026-08-16", a:"north", cat:"craft", name:"Temple, Stories and Dosa — Malleshwaram",
-     when:"Sun 16 Aug · 9:00 AM–12:30 PM", where:"Sri Dakshinamukha Nandi Tirtha, Malleshwaram",
-     note:"A heritage walk through Malleshwaram's temples that ends at Veena Stores and CTR for idli, vada, benne dosa and filter coffee. Walking tours are the easiest format for talking to strangers — everyone is already moving.",
-     cost:"₹550",
-     url:"https://allevents.in/bangalore/templestories-and-dosa-malleshwaram-tickets/80004337906790", added:"2026-08-15"},
-
-    {date:"2026-08-15", a:"sarjapur", cat:"craft", name:"Make Your Own Pizza",
-     when:"Sat 15 Aug · 3:00–4:30 PM", where:"Brik Oven, Ecoworld, Bellandur",
-     note:"A hands-on Independence Day afternoon a few minutes from home, rather than the usual Koramangala trek for a craft session.",
-     cost:"Check listing",
-     url:"https://allevents.in/bangalore/make-your-own-pizza/3900030525043523", added:"2026-08-15"},
-
-    {date:"2026-08-23", a:"sarjapur", cat:"social", name:"SCC Gourmet Cinema — Chef",
+                        {date:"2026-08-23", a:"sarjapur", cat:"social", name:"SCC Gourmet Cinema — Chef",
      when:"Sun 23 Aug · 7:00–9:00 PM", where:"Helens Place, Marathahalli",
      note:"A five-course tasting menu built around the film Chef, watched while you eat it — a genuinely different format from a normal dinner or a normal cinema trip. Pre-set menu, so check the vegetarian option before booking.",
      cost:"Check listing",
