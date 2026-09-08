@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Bangalore Circle - where to be, every day of the week.">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20260908-010603-1288">
+<meta name="build" content="20260908-190421-9334">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -977,7 +977,7 @@
 (function(){
   "use strict";
 
-  var TODAY = "2026-09-08";      // refresh marker — bump on every update
+  var TODAY = "2026-09-09";      // refresh marker — bump on every update
   var BASELINE = "2026-07-25";   // initial load; entries from this date are not "new"
   var NEW_WINDOW_DAYS = 3;       // "NEW" badge lifetime after that
 
@@ -1042,6 +1042,7 @@
   /* VENUES:BEGIN */
   var VENUES = {
     "1 MG — Lido Mall":[12.97358,77.62038,1],
+    "2gethr @ ORR, Bellandur":[12.93205,77.68429,2],
     "43 Workspace and Events, Kalyan Nagar":[13.02214,77.64034,2],
     "Agara Lake":[12.92017,77.64182,1],
     "Agara Lake, HSR":[12.92017,77.64182,1],
@@ -1052,6 +1053,7 @@
     "Babylonia, 7th Block Koramangala":[12.92501,77.63150,2],
     "Bangalore Creative Circus, Yeshwanthpur":[13.01382,77.54835,1],
     "Bangalore International Centre, Domlur":[12.96677,77.63529,1],
+    "Bharatiya Vidya Bhavan, Race Course Road":[12.98424,77.58651,1],
     "Bhoganahalli Road, Bellandur — near Ecoworld":[12.93072,77.70283,1],
     "BIC auditorium, Domlur II Stage":[12.96709,77.63519,1],
     "BIC seminar halls, Domlur II Stage":[12.96060,77.64012,2],
@@ -1078,6 +1080,7 @@
     "Courtyard, Phoenix Market City, Whitefield":[12.99574,77.75795,2],
     "Cubbon Park":[12.97425,77.59219,1],
     "Cubbon Park, by the metro gate":[12.97425,77.59219,1],
+    "Decathlon Sarjapur Road":[12.91753,77.64469,1],
     "Dialogues Cafe, Koramangala":[12.93255,77.63186,1],
     "DND The Venue, HSR Layout":[12.91162,77.63886,2],
     "DND, Bellandur":[12.93205,77.68429,2],
@@ -1104,7 +1107,9 @@
     "Good Move Studios, Koramangala":[12.93574,77.62408,2],
     "Good Shepherd Auditorium":[12.97043,77.60466,1],
     "GoRally Pickleball, Indiranagar":[12.97329,77.64047,2],
+    "GYLT, Visthar":[13.07197,77.65737,2],
     "Hard Rock Cafe, Whitefield":[12.98695,77.73608,1],
+    "Helens Place, Marathahalli":[12.95526,77.69842,2],
     "Hustlehub Tech Park, Sector 2, HSR":[12.90108,77.65097,1],
     "ICB Indian Craft Brewery, Nagawara":[13.04279,77.61628,1],
     "IKP EDEN, Koramangala":[12.93411,77.60992,1],
@@ -1123,6 +1128,7 @@
     "Kadubeesanahalli":[12.93661,77.70473,1],
     "KICO Community, Church Street":[12.97491,77.60526,2],
     "Koramangala Club":[12.93830,77.62432,1],
+    "Koramangala Indoor Stadium":[12.94343,77.62279,1],
     "Koramangala Social":[12.93560,77.61418,1],
     "Kothnaur–Arekere Main Road, JP Nagar 7th Phase":[12.91184,77.58707,2],
     "KTPO, Whitefield":[12.97687,77.72125,1],
@@ -1134,17 +1140,21 @@
     "Ministry Of Comedy, Koramangala":[12.93039,77.63322,1],
     "MLR Convention Centre, Whitefield":[12.99574,77.75795,2],
     "Monsoon, The Park, MG Road":[12.97553,77.60679,2],
+    "NICE Tollgate, Hosakerehalli":[12.93660,77.53146,1],
     "Now Boarding Café, HSR Layout":[12.91162,77.63886,2],
     "Nritya Darpan, JP Nagar 7th Phase":[12.91184,77.58707,2],
     "Phoenix Market City, Whitefield":[12.99770,77.69669,1],
     "Phoenix Market City, Whitefield Road":[12.99682,77.69662,1],
+    "Phoenix Marketcity Courtyard, Whitefield":[12.99574,77.75795,2],
     "Pinball, Koramangala":[12.93574,77.62408,2],
     "PLaY Arena, Kasavanahalli":[12.91169,77.67559,1],
     "PlayHouse, Koramangala":[12.93574,77.62408,2],
     "Prestige Centre for Performing Arts, Konanakunte":[12.87929,77.56975,2],
+    "PSN Club House, ITPL Road":[12.99460,77.72969,1],
     "Purple Pilates, HSR Layout":[12.91162,77.63886,2],
     "Pyramid Valley International, Kanakapura Road":[12.90631,77.57336,2],
     "Quad AI School of Tech, 1st Sector, HSR":[12.91162,77.63886,2],
+    "Radisson Blu Atria, Palace Road":[12.98000,77.58610,1],
     "Ranga Shankara, JP Nagar":[12.91161,77.58708,1],
     "Sabha, Bengaluru":[12.98344,77.61115,1],
     "Seetharampalya, Hoodi, Whitefield":[12.98053,77.70890,1],
@@ -1153,6 +1163,7 @@
     "Sri Dakshinamukha Nandi Tirtha, Malleshwaram":[13.00274,77.57033,2],
     "St Joseph\u0027s School, Bengaluru":[12.96274,77.56994,1],
     "St Joseph\u0027s University Auditorium":[12.96255,77.59553,1],
+    "Taj West End, Race Course Road":[12.98543,77.58451,1],
     "Taj Yeshwantpur":[13.02916,77.54093,1],
     "The Bay at Ecoworld, Bellandur":[12.93205,77.68429,2],
     "The Chancery Pavilion, Ashok Nagar":[12.96944,77.60923,2],
@@ -1164,6 +1175,7 @@
     "The Studs Sports Bar \u0026 Grill, Sahakara Nagar":[13.06215,77.58006,2],
     "The Underground Comedy Club, 5th Block Koramangala":[12.93546,77.61630,2],
     "The Underground Comedy Club, Koramangala":[12.93574,77.62408,2],
+    "Thelagram, JP Nagar":[12.90567,77.60121,1],
     "Third Wave Coffee, Lavelle Road":[12.97145,77.59785,1],
     "Tim Hortons, HSR Layout":[12.91202,77.64776,1],
     "Toffee And Talk, Jayanagar":[12.92927,77.58242,2],
@@ -1175,11 +1187,13 @@
     "Urban Vault, 477 HSR Layout":[12.91185,77.63900,1],
     "Urban Vault, HSR Layout":[12.91185,77.63900,1],
     "UrbanVault, 477 HSR Layout":[12.91035,77.64485,1],
+    "URU Whitefield":[12.96137,77.73201,1],
     "URU, Brookefield":[12.96137,77.73201,1],
     "URU, JP Nagar":[12.90969,77.58661,2],
     "URU, Whitefield":[12.96137,77.73201,1],
     "VIBE PUB, 5th Block Koramangala":[12.93546,77.61630,2],
     "Vidyaranyapura, North Bengaluru":[13.07664,77.55773,1],
+    "Vyoma Artspace, JP Nagar":[12.90969,77.58661,2],
     "Whitefield":[12.99574,77.75795,1],
     "Wild Rabbit Cafe and Bakehouse, Kundalahalli":[12.97759,77.71556,2],
     "Yazu Pan Asian Supper Club, St Marks Road":[12.97277,77.60131,2]
@@ -1998,7 +2012,118 @@
     {date:"2026-09-19", a:"indira", cat:"ai", name:"IndieWebClub Meetup",
      when:"Sat 19 Sep · 2:00–5:00 PM", where:"Underline Center, Domlur",
      note:"A working meetup for people building personal sites, blogs and online identities outside social-media silos. Beginners can bring a half-finished site and get practical help from others in the room.",
-     cost:"₹249", url:"https://www.district.in/events/indiewebclub-meetup-buy-tickets", added:"2026-09-08"}
+     cost:"₹249", url:"https://www.district.in/events/indiewebclub-meetup-buy-tickets", added:"2026-09-08"},
+
+    /* ===== added 9 Sep 2026 — refresh + verify ===== */
+    {date:"2026-09-13", a:"indira", cat:"stage", name:"BUILD — Sticks and Clay Theatre",
+     when:"Sun 13 Sep · 11:00 AM–12:30 PM", where:"Bangalore International Centre, Domlur",
+     note:"Two performers turn sticks, clay, sound and rhythm into a non-verbal theatre piece for ages two to five. Children participate with a parent or caretaker, making this a rare genuinely interactive family event.",
+     cost:"Free on RSVP", free:true, url:"https://bangaloreinternationalcentre.org/event/build/", added:"2026-09-09"},
+
+    {date:"2026-09-13", a:"indira", cat:"books", name:"The Future of Protest",
+     when:"Sun 13 Sep · 11:30 AM–1:00 PM", where:"Bangalore International Centre, Domlur",
+     note:"Rachita Taneja, Mihir Rajamane and Ganga examine how memes and humour have become part of Gen Z political language. The panel connects online culture to real political action instead of treating internet jokes as background noise.",
+     cost:"Free on RSVP", free:true, url:"https://bangaloreinternationalcentre.org/event/the-future-of-protest/", added:"2026-09-09"},
+
+    {date:"2026-09-16", a:"indira", cat:"stage", name:"Départ — Film and Conversation",
+     when:"Wed 16 Sep · 6:30–8:00 PM", where:"Bangalore International Centre, Domlur",
+     note:"Mrinalini Tewari’s 54-minute documentary follows the French colonial afterlife still visible in Mahé’s language, identities and memory. The filmmaker joins the evening, giving the screening a useful conversation beyond the film itself.",
+     cost:"Free on RSVP", free:true, url:"https://bangaloreinternationalcentre.org/event/depart/", added:"2026-09-09"},
+
+    {date:"2026-09-17", a:"indira", cat:"books", name:"Leading Climate Action from the Ground Up",
+     when:"Thu 17 Sep · 6:30–8:00 PM", where:"Bangalore International Centre, Domlur",
+     note:"Conservationists, a coffee planter and a media scholar examine who gets to decide the Western Ghats’ future. The discussion centres community land action and public communication rather than another broad climate overview.",
+     cost:"Free on RSVP", free:true, url:"https://bangaloreinternationalcentre.org/event/leading-climate-action-from-the-ground-up/", added:"2026-09-09"},
+
+    {date:"2026-09-18", a:"cbd", cat:"ai", name:"Privacy by Design 2026",
+     when:"Fri 18 Sep · 9:00 AM–5:30 PM", where:"Radisson Blu Atria, Palace Road",
+     note:"A full-day summit works through India’s DPDP Act, responsible AI, product design, investor diligence and the May 2027 compliance deadline. Workshops and founder panels make it practical for product, security, legal and growth teams handling customer data.",
+     cost:"Paid delegate pass", url:"https://echai.ventures/events/privacy-by-design-2026-sep-18-2026", added:"2026-09-09"},
+
+    {date:"2026-09-12", a:"sarjapur", cat:"startup", name:"Global Startups Club — Bengaluru Networking",
+     when:"Sat 12 Sep · 10:30 AM–1:30 PM", where:"2gethr @ ORR, Bellandur",
+     note:"Business speed-dating, 30-second founder pitches and open networking give this morning a clear structure. The format suits founders who arrive with a specific introduction, hire or customer ask.",
+     cost:"₹475", url:"https://allevents.in/bangalore/global-startups-club-l-startup-networking-bengaluru-2026-tickets/80001664140666", added:"2026-09-09"},
+
+    {date:"2026-09-25", a:"cbd", cat:"ai", name:"RACEx360 Emerging Technology Conference",
+     when:"Fri 25 Sep · 8:30 AM–5:00 PM", where:"Taj West End, Race Course Road",
+     note:"More than 750 builders and decision-makers are expected across GenAI, cybersecurity, cloud, deep tech and sustainability tracks. The 60-plus-speaker programme makes this a substantial professional conference rather than a light mixer.",
+     cost:"Registration required", url:"https://allevents.in/bangalore/racex360-emerging-technology-conference-2026/3900030589529258", added:"2026-09-09"},
+
+    {date:"2026-09-19", a:"indira", cat:"craft", name:"Modular Type Workshop — A Letter Atelier",
+     when:"Sat 19 Sep · 2:00–5:00 PM", where:"Underline Center, Domlur",
+     note:"Participants build a reusable alphabet system from recurring shapes, then turn it into a personalised notebook cover. The analog lettering process is specific enough to stand apart from the board’s usual paint-and-clay workshops.",
+     cost:"₹1,499", url:"https://www.district.in/events/modular-type-workshop-by-a-letter-atelier-sep19-2026-buy-tickets", added:"2026-09-09"},
+
+    {date:"2026-09-12", a:"kora", cat:"stage", name:"SIIMA 2026",
+     when:"Sat 12 Sep · 7:00–11:59 PM", where:"Koramangala Indoor Stadium",
+     note:"The South Indian International Movie Awards bring performers, filmmakers and major talent from four regional industries into one live arena show. It is the board’s largest film-industry night this month and has a clearly listed entry tier.",
+     cost:"₹900–₹5,000", url:"https://allevents.in/bangalore/siima-2026/4100030637803355", added:"2026-09-09"},
+
+    {date:"2026-09-12", a:"white", cat:"stage", name:"Do You Know Who I Am? — Daniel Fernandes",
+     when:"Sat 12 Sep · 6:00–7:30 PM", where:"URU Whitefield",
+     note:"Daniel Fernandes blends observational comedy with personal stories about family, identity and inherited emotional baggage. The 90-minute Whitefield set offers a sharper storytelling alternative to the arena-scale shows that evening.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/do-you-know-who-i-am-by-daniel-fernandes/3900030666531303", added:"2026-09-09"},
+
+    {date:"2026-09-13", a:"cbd", cat:"outdoors", name:"Bengaluru Freshathon Shine India",
+     when:"Sun 13 Sep · 5:30 AM", where:"Cubbon Park",
+     note:"Choose a 3K fun run or timed 5K and 10K routes through Cubbon Park before the city heats up. Three distances make it workable for mixed groups instead of only trained marathoners.",
+     cost:"Registration required", url:"https://allevents.in/bangalore/bengaluru-freshathon-shine-india-2026/200030424862509", added:"2026-09-09"},
+
+    {date:"2026-09-13", a:"south", cat:"stage", name:"Mini Matchbox — A Theatre Play",
+     when:"Sun 13 Sep · 7:00–8:00 PM", where:"Vyoma Artspace, JP Nagar",
+     note:"Actors developed these short stories collectively through a 13-day hybrid workshop and now perform the final devised piece. The ₹199 ticket makes this small independent production an easy Sunday experiment.",
+     cost:"₹199", url:"https://allevents.in/bangalore/mini-matchbox-a-theatre-play-tickets/80007315821120", added:"2026-09-09"},
+
+    {date:"2026-09-12", a:"north", cat:"music", name:"The Devoid Experience 2.0",
+     when:"Sat 12 Sep · 5:00 PM–1:00 AM", where:"GYLT, Visthar",
+     note:"Large-scale projection mapping, original visual environments and specialised production hardware turn the venue into an eight-hour audiovisual experience. It is a destination electronic night with more intent than a routine club listing.",
+     cost:"₹299–₹1,099", url:"https://allevents.in/bangalore/the-devoid-experience-20/4100030633689611", added:"2026-09-09"},
+
+    {date:"2026-10-02", a:"cbd", cat:"stage", name:"Naman — An Evening of Indian Classical Dance",
+     when:"Fri 2 Oct · 5:30–8:30 PM", where:"Bharatiya Vidya Bhavan, Race Course Road",
+     note:"Guru Durga Arya and Sathyanarayana Raju lead a curated classical-dance evening with a guest performance by Sampada Pillai. The programme adds a clearly priced traditional stage option on the Gandhi Jayanti holiday.",
+     cost:"₹399", url:"https://allevents.in/bangalore/naman-a-divine-evening-with-indian-classical-dance-tickets/80002402464925", added:"2026-09-09"},
+
+    {date:"2026-09-27", a:"white", cat:"food", name:"Gujarati Jamanvaar 2026",
+     when:"Sun 27 Sep · 11:30 AM–2:30 PM", where:"PSN Club House, ITPL Road",
+     note:"A three-hour communal lunch is built around a full Gujarati spread rather than a single tasting dish. The shared-table format gives Whitefield a food-led social plan with the menu culture at its centre.",
+     cost:"₹750–₹850", url:"https://allevents.in/bangalore/gujarati-jamanvaar-2026-tickets/80003835763848", added:"2026-09-09"},
+
+    {date:"2026-09-13", a:"white", cat:"food", name:"SCC Gourmet Cinema — Yeh Jawaani Hai Deewani",
+     when:"Sun 13 Sep · 7:00–10:00 PM", where:"Helens Place, Marathahalli",
+     note:"Sunset Cinema Club pairs an outdoor-style screening of Yeh Jawaani Hai Deewani with a dinner setting at Helens Place. It works as a ready-made group plan for people who want conversation around the film rather than a silent multiplex visit.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/scc-gourmet-cinema-yeh-jawaani-hai-deewani/3900030650989245", added:"2026-09-09"},
+
+    {date:"2026-10-17", a:"white", cat:"social", name:"Dandiya Nights 2026 — Whitefield",
+     when:"Sat 17 Oct · 4:00–9:30 PM", where:"Phoenix Marketcity Courtyard, Whitefield",
+     note:"Live music, DJs, dhol, dance performances and fire acts fill the Phoenix courtyard for a five-and-a-half-hour Navratri social. Entry starts at ₹199, so a mixed group can join without committing to a premium pass.",
+     cost:"₹199–₹1,999", url:"https://allevents.in/bangalore/dandiya-nights-2026-whitefield/4100030620514421", added:"2026-09-09"},
+
+    {date:"2026-09-20", a:"south", cat:"wellness", name:"Morning Sound Bath Reset",
+     when:"Sun 20 Sep · 8:30–9:30 AM", where:"Thelagram, JP Nagar",
+     note:"A one-hour sound journey uses singing bowls and gentle therapeutic instruments to ease mental fatigue and slow the nervous system. The morning slot makes it easier to try than the board’s longer destination sound-bath sessions.",
+     cost:"Price on listing", url:"https://allevents.in/bangalore/morning-sound-bath-reset-and-detox-brew-jp-nagar/3900030664864017", added:"2026-09-09"},
+
+    {date:"2026-10-06", a:"kora", cat:"startup", name:"Startup Founders Meetup by CEDAT — 6 Oct",
+     when:"Tue 6 Oct · 6:00–7:00 PM", where:"IKP EDEN, Tavarekere Main Road",
+     note:"CEDAT brings founders, co-founders and small-business operators together for one focused hour of introductions and practical peer support. The free Tuesday slot extends the board’s useful weeknight startup coverage beyond September.",
+     cost:"Free", free:true, url:"https://allevents.in/bangalore/startup-founders-meetup-by-cedat-tickets/80006329445767", added:"2026-09-09"},
+
+    {date:"2026-11-14", a:"sarjapur", cat:"outdoors", name:"World Diabetic Awareness Day Run",
+     when:"Sat 14 Nov · 6:00 AM", where:"Decathlon Sarjapur Road",
+     note:"A community run uses the World Diabetes Day weekend to connect exercise with public awareness. The Sarjapur start point makes it one of the board’s most practical organised runs from home.",
+     cost:"₹550–₹950", url:"https://allevents.in/bangalore/world-diabetic-awareness-day-run-tickets/80002657258604", added:"2026-09-09"},
+
+    {date:"2026-11-15", a:"south", cat:"outdoors", name:"Bengaluru Corporate Wellness Run",
+     when:"Sun 15 Nov · 5:00 AM", where:"NICE Tollgate, Hosakerehalli",
+     note:"This early-morning run is designed around workplace fitness and team participation rather than elite race times. It gives companies and mixed-ability groups a clear November target after the main marathon season.",
+     cost:"₹999–₹1,200", url:"https://allevents.in/bangalore/bengaluru-corporate-wellness-run-2026-tickets/80001337443417", added:"2026-09-09"},
+
+    {date:"2026-09-27", a:"white", cat:"stage", name:"TOXIC — Abhishek Upmanyu Live",
+     when:"Sun 27 Sep · 4:30–5:30 PM", where:"MLR Convention Centre, Whitefield",
+     note:"Abhishek Upmanyu’s new hour moves through relationships, technology and everyday Indian absurdities in his tightly observed style. The one-hour afternoon slot leaves enough time to pair it with dinner or the evening qawwali elsewhere on the board.",
+     cost:"Ticketed", url:"https://allevents.in/bangalore/toxic-abhishek-upmanyu-live/3900030586179704", added:"2026-09-09"}
   ];
 
   var CLASSES = [
