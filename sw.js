@@ -1,5 +1,5 @@
-﻿/* Bangalore Circle - build 20261007-185849-4738 */
-var CACHE = "blr-circle-20261007-185849-4738";
+﻿/* Bangalore Circle - build 20261007-202226-7319 */
+var CACHE = "blr-circle-20261007-202226-7319";
 var ASSETS = ["./", "./index.html", "./manifest.json",
               "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 
