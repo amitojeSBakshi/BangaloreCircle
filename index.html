@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="Browse events and communities in Bangalore, Karnataka. Explore dates, venues, categories and links to event organizers and booking pages.">
 <meta name="twitter:image" content="https://inthecircle.in/icon-512.png">
 <meta name="theme-color" content="#fdf9f3">
-<meta name="build" content="20261017-082133-6926">
+<meta name="build" content="20261017-084737-4904">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -787,6 +787,9 @@
 
 /* Shared Circle subscription and verified host details */
 .subscribe-link{display:inline-flex;align-items:center;justify-content:center;padding:9px 14px;border:1px solid currentColor;border-radius:100px;color:var(--ink,#231d17);font:600 12px/1.2 Arial,sans-serif;text-decoration:none;white-space:nowrap}.masthead-links{flex-wrap:wrap;gap:10px}.hostline{font-size:12px;line-height:1.5;color:var(--ink-3,#6c6258);margin:10px 0 0}.hostline a{color:inherit;text-underline-offset:3px}.tel{overflow-wrap:anywhere}.verified-label{font-size:11px;color:var(--ink-4,#8a8075);margin:5px 0 0}.circle-subscribe{width:min(760px,calc(100% - 24px));max-height:92vh;border:1px solid #c6b9a8;border-radius:14px;padding:14px;background:#fdf9f3;color:#231d17;box-shadow:0 20px 90px #0005}.circle-subscribe::backdrop{background:#19130eb3}.circle-subscribe .subscribe-head{display:flex;justify-content:space-between;align-items:center;gap:16px}.circle-subscribe h2{font:700 22px Georgia,serif;margin:6px 0}.circle-subscribe button{border:1px solid #b7a794;background:transparent;border-radius:30px;padding:8px 12px;cursor:pointer}.circle-subscribe iframe{width:100%;height:65vh;border:0;background:#fff}.circle-subscribe p{font:13px/1.5 Arial,sans-serif}.circle-subscribe .subscribe-fallback{font-size:12px}.dd-menu{max-height:min(70vh,580px);overflow:auto}.tag{max-width:100%;white-space:normal}.card{min-width:0}.where,.note,.hostline{overflow-wrap:anywhere}
+
+/* Card summaries stay compact at every viewport. */
+.card .note{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;max-height:3em}
 </style>
 
 <canvas id="bgCanvas" aria-hidden="true"></canvas>
@@ -1235,15 +1238,15 @@
 
   /* areas, and the drive-time estimate from each of the two anchors */
   var AREAS = [
-    {"k":"cbd","label":"MG Road & Church Street"},
+    {"k":"cbd","label":"Central Bengaluru"},
     {"k":"indira","label":"Indiranagar"},
     {"k":"kora","label":"Koramangala"},
     {"k":"hsr","label":"HSR Layout"},
-    {"k":"sarjapur","label":"Sarjapur Rd & Bellandur"},
+    {"k":"sarjapur","label":"Sarjapur Road"},
     {"k":"white","label":"Whitefield"},
     {"k":"north","label":"North Bengaluru"},
-    {"k":"south","label":"South & West"},
-    {"k":"multi","label":"Other verified venues"},
+    {"k":"south","label":"South Bengaluru"},
+    {"k":"multi","label":"Other areas"},
     {"k":"domlur","label":"Domlur","parent":"indira"},
     {"k":"ulsoor","label":"Ulsoor & Halasuru","parent":"indira"},
     {"k":"vasanth","label":"Vasanth Nagar & Palace Road","parent":"cbd"},
@@ -1259,6 +1262,13 @@
     {"k":"bellandur","label":"Bellandur & Kadubeesanahalli","parent":"sarjapur"}
   ];
   var AREAMAP = {}; AREAS.forEach(function(a){ AREAMAP[a.k] = a; });
+  function mainArea(key){
+    var seen = {};
+    while (AREAMAP[key] && AREAMAP[key].parent && !seen[key]) {
+      seen[key] = true; key = AREAMAP[key].parent;
+    }
+    return key;
+  }
 
   /* s = from home, Amblipura / Sarjapur Rd
      m = from the office, Trinity Circle / Trinity Metro — the east end of MG Road
@@ -2240,7 +2250,7 @@
     return false;
   }
   function matches(e){
-    if (state.area !== "all" && e.a !== state.area && (AREAMAP[e.a] || {}).parent !== state.area) return false;
+    if (state.area !== "all" && mainArea(e.a) !== state.area) return false;
     if (state.cats.length && state.cats.indexOf(e.cat) === -1) return false;
     if (state.free && !e.free) return false;
     if (state.onlyNew && !isNew(e)) return false;
@@ -2349,8 +2359,8 @@
     var costCls = 'cost';
     if (e.free) costCls += ' is-free';
     else { var pr = costOf(e); if (pr !== null) costCls += (pr < 500 ? ' is-budget' : ' is-premium'); }
-    var area = AREAMAP[e.a]
-      ? '<span class="tag">' + AREAMAP[e.a].label + '</span>' : '';
+    var area = AREAMAP[mainArea(e.a)]
+      ? '<span class="tag">' + AREAMAP[mainArea(e.a)].label + '</span>' : '';
     var far = distanceLabel(e);
     var upcoming = '';
     if (false) {
@@ -2497,7 +2507,7 @@
   anyArea.innerHTML = 'Anywhere in the city<span class="tick">✓</span>';
   areaRow.appendChild(anyArea);
   areaRow.appendChild(Object.assign(document.createElement("div"), {className:"dd-sep"}));
-  AREAS.forEach(function(a){
+  AREAS.filter(function(a){ return !a.parent; }).sort(function(a,b){ return Number(a.k === "multi") - Number(b.k === "multi"); }).forEach(function(a){
     var b = document.createElement("button");
     b.className = "dd-item"; b.type = "button";
     b.setAttribute("data-area", a.k);
@@ -2885,7 +2895,7 @@
       var k = kv.slice(0, i), v = decodeURIComponent(kv.slice(i + 1));
       /* validate against the real maps — a stale or mistyped link should fall back to the
          normal board, never render an empty one with no explanation */
-      if      (k === "area" && (v === "all" || AREAMAP[v])) { state.area = v; got = true; }
+      if      (k === "area" && (v === "all" || AREAMAP[v])) { state.area = mainArea(v); got = true; }
       else if (k === "cat"){
         /* accepts one key or a comma list; unknown keys are dropped rather than
            rendering an empty board with no explanation */
